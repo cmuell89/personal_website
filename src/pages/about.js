@@ -12,7 +12,6 @@ const ContentContainer = styled.div`
 `;
 
 export default function About({data, location}) {
-  console.log(data)
 
   return (
     <Layout location={location}>
@@ -38,7 +37,7 @@ export default function About({data, location}) {
           <h3>Links</h3>
           <h5>Professional</h5>
           <ul>
-            <li><a href="">CV</a></li>
+            <li><a href="CV.pdf" download>CV</a></li>
           </ul>
           <h5>Social</h5>
           <ul>
