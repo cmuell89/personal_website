@@ -1,0 +1,739 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Dylan La Com' RSS feed]]></title><description><![CDATA[Carl Mueller's website]]></description><link>https://www.carl-mueller.com</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 25 Sep 2020 16:27:19 GMT</lastBuildDate><item><title><![CDATA[Augmented Reality for Constrained Learning from Demosntration]]></title><link>https://www.carl-mueller.com/research/arc-lfd/</link><guid isPermaLink="false">https://www.carl-mueller.com/research/arc-lfd/</guid><pubDate>Fri, 25 Sep 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;strong&gt;Lightning in a Bot’s first product, &lt;a href=&quot;https://shoppybot.com&quot;&gt;Shoppy Bot&lt;/a&gt;, is a natural language chatbot that Shopify store owners can use to query their business data.&lt;/strong&gt; The natural language interface is a novel approach to reporting and analytics in a backend retail setting, and one we hypothesis can provide faster and more efficient access to important data.&lt;/p&gt;
+&lt;p&gt;The first version of Shoppy Bot used &lt;a href=&quot;https://wit.ai&quot;&gt;Wit.ai’s&lt;/a&gt; natural language API to convert user requests such as “how many customers have we had this week?” into structured data that we could convert into SQL queries and other various functions. Problems with these cloud services became apparent early on, therefore we began to explore what it would take to build our own Natural Language Understanding (NLU) service, one designed specifically for the task at hand.&lt;/p&gt;
+&lt;p&gt;This post serves as an overview of the theory behind our approach and outlines specific implementation details in developing our own NLU system, now known internally as “Bolt”.&lt;/p&gt;
+&lt;h2&gt;Theory&lt;/h2&gt;
+&lt;h3&gt;Semantic Challenges&lt;/h3&gt;
+&lt;p&gt;Semantics is a field of linguistics which concerns itself with the meaning of language, both written and spoken. Natural Language Understanding is a broad field that attempts to assign semantics to spoken or written language in order to derive understanding. Computer scientists, linguists, and machine learning engineers attempt to use this understanding as actionable information when developing applications. NLU presents unique challenges to engineers due to ambiguousness, variability in style and formation, context, prior knowledge dependency and the disparity between different languages themselves.&lt;/p&gt;
+&lt;h3&gt;Intent-Slot Paradigm&lt;/h3&gt;
+&lt;p&gt;One successful method that provides a good framework for generating actionable information from natural language is the &lt;a href=&quot;http://www.cs.toronto.edu/~aditya/publications/contextual.pdf&quot;&gt;intent-slot paradigm&lt;/a&gt;. The intent-slot paradigm is a method of Natural Language Understanding that combines a number of core Natural Language Processing and Information Extraction techniques in order to derive a semantic understanding of written language. In Shoppy Bot’s case, the derivation is a semantic understanding of the user’s question about their business data. There are three major types of information extracted under this NLU model: Intents, Slots, and Entities.&lt;/p&gt;
+&lt;h4&gt;Intents&lt;/h4&gt;
+&lt;p&gt;Intents are global properties of a text document (or user query) that map the document to an assigned goal or desire of the user. They can map to very broad concepts such as ‘weather’, ‘banking’, ‘location search’ or to specific concepts such as ‘get product info’, ‘schedule meeting, etc,. These intents are sometimes called user actions and it is the goal of Bolt to categorize queries into a set number of intents. The following query would be categorized to the given intent:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Query&lt;/strong&gt;: What is the shipping information for order #2314?&lt;br&gt;
+&lt;strong&gt;Intent&lt;/strong&gt;: get-order-shipping-information  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4&gt;Slots&lt;/h4&gt;
+&lt;p&gt;Slots are regions or spans within a text document, sometimes overlapping, that map to a specific type of information. They often constitute a semantically loaded region of the text.  An NLP system must correctly detect the right span/region that contains these semantic slots of information. The following date-time phrase provides an example of a slot:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Query&lt;/strong&gt;: How many returning customers did I have in [the first quarter of 2015]?&lt;br&gt;
+&lt;strong&gt;Slot Type&lt;/strong&gt;: Date-time&lt;br&gt;
+&lt;strong&gt;Extraction Information&lt;/strong&gt;: 1/1/2015 - 4/1/2015&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4&gt;Entities&lt;/h4&gt;
+&lt;p&gt;Entities are also regions of text that contain semantic information but often boil down to a single word or compound. They can be thought of as a highly specific slot. Generally, entities encompass names, organizations, locations, and domain specific pieces of information. It is the goal of a named entity recognition system to identify these entities. For example:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Query&lt;/strong&gt;: Get me [Winona Snyder’s] most recent order.&lt;br&gt;
+&lt;strong&gt;Entity&lt;/strong&gt;: Customer Name = Winona Snyder&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;Implementation&lt;/h2&gt;
+&lt;h4&gt;Model Generality vs Specificity&lt;/h4&gt;
+&lt;p&gt;Often a goal of the design of an NLU system, especially one designed for a targeted domain, is to provide as much generality as possible. This often means that the system’s goal centers around supporting as many users and/or as many use cases as possible with a minimal amount of model generation and methods. The reason being is that the implementation of certain NLP features can be reused and shared. Share models are easier to maintain (no management of devoted models). Additionally, new training data generated by user behavior effectively crowd sourced. For example, in Bolt, the mechanism that determines a user’s intent is shared amongst all users. This way, new data (such as new variations of a similar query) can be incorporated into a newly trained model for which all users share the benefit.&lt;/p&gt;
+&lt;p&gt;However, there are certain times when specificity takes precedence over generality. In our case, each one of our Shoppy Bot users has a store with a wide range of products, each with unique names. When parsing a query for slots and entities, an NLU system has to return information that is specific to that user. Avoiding returning information from one user to another is also a requirement as our customers expect their data and analytics to be protected. Bolt employs a fast dictionary/gazetteer algorithm that utilizes distinct data structures specific to each of our users.&lt;/p&gt;
+&lt;p&gt;The following outlines three specific implementation details of the Bolt NLU system developed for Shoppy Bot in terms of the intent-slot NLU paradigm.&lt;/p&gt;
+&lt;h4&gt;Intent Classification&lt;/h4&gt;
+&lt;p&gt;Intent categorization is achieved most commonly through state-of-the-art text classifiers. Bolt uses a discriminative classifier known as a support vector machine. Briefly, support vector machines (SVMs) are classifiers that construct non-probabilistic models represented in a geometric manner. Data is mapped into a geometric space. The different categories or classes of data are separated by a hyperplane optimized for achieving the largest distance between the closest data points of two different categories. The technical details of support vector machines are beyond the scope of this post, but they are the soup du jour for text classifiers (especially for smaller datasets) and are fairly robust against outlier data.
+Bolt uses the fantastic library Scikit-learn and its implementation of an SVM. Specifically we use the class &lt;a href=&quot;http://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html#sklearn.svm.LinearSVC&quot;&gt;LinearSVC&lt;/a&gt;. It supports multi-class classification and scales to larger datasets decently by employing &lt;a href=&quot;https://www.csie.ntu.edu.tw/~cjlin/liblinear/&quot;&gt;liblinear&lt;/a&gt; instead of &lt;a href=&quot;https://www.csie.ntu.edu.tw/~cjlin/libsvm/&quot;&gt;libsvm&lt;/a&gt;. One challenge is that many SVM’s underlying implementations, such as libsvm, are quadratic in their algorithmic complexity which can make datasets &gt;10000 samples highly inefficient. LinearSVC performs well as it does not use any kernel function to turn a dataset that is non-linear into a linearly interpretable dataset, thus dramatically enhancing the algorithmic efficiency.&lt;/p&gt;
+&lt;p&gt;Any machine learning technique is powerless without data. Data must be curated in a way that best represents pertinent information about your problem. Bolt’s intent classification challenge is first and foremost a text classification problem. We take a user’s text query and classify that text into an intent category. Determining what type of data you give your machine learning algorithm is a process called feature generation. One of the most common ways to generate features (data tailored for use in a machine learning algorithm) from text is to employ a simple technique known as the ‘bag-of-words’ technique. The frequency (number of occurrences) of all the words for each text category are used as specific values for data points in the geometric space we generate. &lt;/p&gt;
+&lt;p&gt;Similar words are used repeatedly for similar user intents. It plays to Bolt’s advantage that queries are often specific to the task at hand, which limits the amount of noise (overlap of categories) and number of outliers (single data points invading deep into the region of a different category). This means that the distinction between one category and another in our geometric space is sharp. I won’t go too deep into how SVM’s work, but I suggest Wikipedia as a good starting point.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 392px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/ee94b5d9c99d348b59a03549a5ce621b/0acb4/hyperplane.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 95.57522123893806%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAYAAACQjC21AAAACXBIWXMAAAsTAAALEwEAmpwYAAAE3ElEQVQ4y2NgAIJJHT3iNY01wq2tzfxdbW18yLgTiDtAdHs7gt3WJtDd3i42Y+pUzmmTJjExQEFfdzcDQ9vsPu6G/hYZBhJAX1s708SeXrbVq1YyzZw2jWvW9Okc61evZgRLrlm4VNi3Jr7AJj8gP7oqXQQs1jOHtba5jrO3o5W9uW4qZ1XpLK7G2l6OzrZ2jo7Wbrb25nb+1sZ2gZamVpa25mY2oMt4JvX3C/f39gowzGzrFUgoyxB1Kgk7YlsSfNWpLKw5uT5P7M6szcwVtR3c//8zgL10/rIDS19vCfuyZSksHW2VfNOnp/BOm1LB2tHSwdne0swOMriro0OQoaG1nhekoXBKnZpDZfgJi+KAjxaF/vNg3ovy+qLq5/DY1cnimky4439mkFhK0GfdYNd7/uhB0dXZycXQ197Bk1aXzw4SCGpLtwUaet2yOOCFdVFwNUgs1PuBup/jo4wI9328wU53xYNdn5rH+d0PDXJ55uztcMMKpCY64DTYF0AX8jL0tLfz9HZ0MZc3VoJd6t2UlG5XGfYQaOhDu5KwAJCYj/NxXQvzS172gf+FswLuc61ZUc6ZEvzROdzjSaqn3QUOkJrmhkksYBd2AQ1cXl7K2ldfyw1zuldjfI9tRegzy+LAy65VwRq2uv+Vtli5SGXZHQy1t3lgFupxwc3Z8rgssne7uzrZujs7ORmmNNRzM/z/D3byDwcLu/cmBr4gtkd97Hqb8pAXNiUBOw18Llne07U3nGLdEmjg8lUtyOWQu7f9PS0fhwduCUHvwC7saOvlBLqQjQFoGPMTbzfLC872Sj8drHQvOFpKgBRkdhWoOtfFHrcuC35pU+41CSRmYvdcNdT9mkFs8BlpEN/X8YqGj/0tc4iXJ/L1dHczMqzs7+N56WKXeszHA+yF9/HhnG9c7ML/m+l7TstwLnCsibplUR7w2D6jsLuW4T9XQtp8EX+Xi1Go8fsf6OUOno72dkaGiQ0NPGrXHzK9crH3uxrsr34/wNfivbNpyA7vbK9c/3+WXi0xOQ4lvi8sciPeu6SVZIK0JyetlAMZUla4jBESfm0s3Z1dXGCzqyZO4jyXGMv71Mbc95eLrdJ7S+PeD3b6Oo8cA1232FcEgdT4V0dNt6kKempR6nvaujBMBSRW2lfIgoiQLpbOjg6IgdOqKrlA4XjPw9n4i5GO8Etbc9Uzmto8YI84ajp9MjdKWNRYLOjSHL/euiLkDTDRb06uL+VbP38ZBzxBd3RwAmOYFcxZVF/Hkrp4Kff1AG+Fd8a6YiCxXx4OUl9sLVyeWZhZ1+WEs4HE4iYXqzo3xpyyLAt6Y1MS7AZ2ZWcNOEMADeMBuhJS6swrLmSumDVb6IuDle0tQ11wWnxnZ2H40txQYZehLtiw8NIQsPeCerNcHOoiX9tWhtaBXTapmw9qIDfQy5DSZnp5OXPDlKkib61N1a6YGXGh58+DPp6MU4ElhHGxLzgfe7UnVTrWRx0AO2bGDI7JEydwtre1gfUBaQaG3v5+5t6WFnHURADBuIBne9Jkl5Y4IxB74uR+YaDrwD7r6epiYCgvLASVaRLrGupZO2trWbp7elgmTZzI1lBfz9XW2soDLKF5gDaD6caOZr4zFStZ0/vKVKN78u1vN2xjaW5tFunu6AAHCTAbMwAAMnXbuLftc78AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Hyperplane separating two categories&quot;
+        title=&quot;Hyperplane separating two categories&quot;
+        src=&quot;/static/ee94b5d9c99d348b59a03549a5ce621b/0acb4/hyperplane.png&quot;
+        srcset=&quot;/static/ee94b5d9c99d348b59a03549a5ce621b/2519b/hyperplane.png 113w,
+/static/ee94b5d9c99d348b59a03549a5ce621b/3684f/hyperplane.png 225w,
+/static/ee94b5d9c99d348b59a03549a5ce621b/0acb4/hyperplane.png 392w&quot;
+        sizes=&quot;(max-width: 392px) 100vw, 392px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;em&gt;A hyperplane (which is a standard flat plane in three dimensions) separating two categories distinguished by red and blue spheres. &lt;a href=&quot;https://i.stack.imgur.com/zeRTm.png&quot;&gt;Source&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;h4&gt;Slot Detection&lt;/h4&gt;
+&lt;p&gt;Slot detection sometimes blurs the line between entity parsing and recognition. It can help to think of named entity recognition (NER), where one parses a product name, city and state etc., as a subset of slot detection. Slots can be a feature of the entire piece of text being analyzed or a localized span of text. One example of a slot that spans the entirety of a user query would be plurality. For example, if the user asks, “Who is my top customer?”, Bolt is able to recognize that the person is asking for only one customer, without needing any explicit number to exist in the query. These results are passed back to Shoppy Bot where a response is sent to the user with the results for one customer. &lt;/p&gt;
+&lt;p&gt;Bolt actually uses a binary classifier to determine the query’s plurality. We use a similar ‘bag of words’ technique as the intent classifier but also employ a technique that emphasizes particular features. The emphasized features are words associated with plurality. For example, verb conjugation plays an obvious role in identifying whether or not the query is asking for plural results. The verbs ‘is/are’, ‘was/were’ greatly increase the accuracy of the classification model without the need for large amounts of data. It is a case where smart feature engineering helped defeat a lack of data on our end. As the slot detection of plurality is independent of any specific user, it is a generalizable model.&lt;/p&gt;
+&lt;h4&gt;Named Entity Recognition&lt;/h4&gt;
+&lt;p&gt;Named entity recognition is the probably the most well-known aspect of information retrieval and slot detection in terms of NLP. Shoppy Bot users each have a large set of product names associated with their Shopify store. These “named entities” must be identified and parsed specific to the user. Bolt employs a set of data structures and a specialized string comparison algorithm to successfully parse product names from a user’s query.&lt;/p&gt;
+&lt;p&gt;The data structure that Bolt’s gazetteer uses is called a trie. In this scenario, a trie is an ordered tree structure that stores strings compactly, where each node of the tree is an object or structure that stores the current letter, potentially a word, and references or pointers to the next node. The idea is that in traversing a branch of the trie, you slowly build up a word letter by letter. Words that share the same prefix will start along the same branch.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 450px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/037763317989df7427c7fac152dedcb9/6a068/search_trie.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 75.2212389380531%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAECBf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAd1UigD/xAAWEAEBAQAAAAAAAAAAAAAAAAAQEQD/2gAIAQEAAQUCZof/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAUEAEAAAAAAAAAAAAAAAAAAAAg/9oACAEBAAY/Al//xAAZEAEBAQADAAAAAAAAAAAAAAABABExQXH/2gAIAQEAAT8hXSOe4dkXqy//2gAMAwEAAgADAAAAEDQP/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPxA//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPxA//8QAGxABAQADAQEBAAAAAAAAAAAAAREAITFBgZH/2gAIAQEAAT8Q5jC9qY4BW+C9/cCp4xxBojEuW04gc3rAH3bn/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;String search trie&quot;
+        title=&quot;String search trie&quot;
+        src=&quot;/static/037763317989df7427c7fac152dedcb9/20e5d/search_trie.jpg&quot;
+        srcset=&quot;/static/037763317989df7427c7fac152dedcb9/30b1b/search_trie.jpg 113w,
+/static/037763317989df7427c7fac152dedcb9/863e1/search_trie.jpg 225w,
+/static/037763317989df7427c7fac152dedcb9/20e5d/search_trie.jpg 450w,
+/static/037763317989df7427c7fac152dedcb9/512c0/search_trie.jpg 675w,
+/static/037763317989df7427c7fac152dedcb9/8e1fc/search_trie.jpg 900w,
+/static/037763317989df7427c7fac152dedcb9/6a068/search_trie.jpg 960w&quot;
+        sizes=&quot;(max-width: 450px) 100vw, 450px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;em&gt;&lt;a href=&quot;http://images.slideplayer.com/32/9814580/slides/slide_5.jpg&quot;&gt;Source&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;This data structure allows one to check if a word is in a dictionary extremely quickly but also allows for additional algorithms to function during the search process. Hash lookups for words are generally the fastest mechanism for dictionary lookups. However, if you want to perform string similarity comparisons while searching for a word in a dictionary at the same time, the search trie is your best bet. This allows for robust dictionary lookup of words pulled from the query to see if they match (or are close to matching) the words stored in the trie. Ultimately this is a very robust way to perform fuzzy dictionary lookups. &lt;/p&gt;
+&lt;p&gt;The string similarity mechanism Bolt’s gazetteer uses is the &lt;a href=&quot;https://people.cs.pitt.edu/~kirk/cs1501/Pruhs/Spring2006/assignments/editdistance/Levenshtein%20Distance.htm&quot;&gt;Levenshtein&lt;/a&gt; string similarity algorithm. Briefly, it is an algorithm that outputs an integer value called the string distance representing the number of insertions, switches, and deletions it takes to convert one word into another. After removing common words and certain specialty words from the query, the remaining words are grouped in a number of combinations. These combinations of words are each run through the gazetteer’s search algorithm to find matches within a certain Levenshtein string distance. The algorithm traverses down the trie building test words from the letters along the nodes in the path. The algorithm can dynamically append or remove new letters from the current current trie word so that the Levenshtein algorithm only has to readjust for the new letter in its comparison with the test word from the query. Thus we are not constantly performing and reperforming the entire Levenshtein algorithm for every word in the trie.&lt;/p&gt;
+&lt;p&gt;One additional step Bolt takes to ensure robustness is to add n-grams and skip-grams of the product names into the trie. For example, ‘sally sells sea shells’ as n-grams of length 3 (tri-grams) would be split into ‘sally sells sea’ and ‘sells sea shells’. Skip-grams of length skip distance 1 would result in ‘sally sea shells’ and ‘sally sells shells’. The purpose of these n-grams and skip grams is to account for the different ways a user might express a product name. Perhaps they don’t type every single word if it is a long product name.&lt;/p&gt;
+&lt;h4&gt;The Big Picture&lt;/h4&gt;
+&lt;p&gt;Bolt first classifies the user’s query to an intent. Each intent is associated with a set of possible slots/entities that can be parsed for that intent. Those slots/entities are then parsed. In summary, Bolt generally operates with the following procedure:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Classify User Query to Intent:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Query&lt;/strong&gt;: What is the shipping information for order #2314?&lt;br&gt;
+&lt;strong&gt;Intent&lt;/strong&gt;: get-order-shipping-information&lt;br&gt;
+&lt;strong&gt;Associated Slots/Entities&lt;/strong&gt;: Order Number  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Perform slot/entity detection&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Query&lt;/strong&gt;: What is the shipping information for order #2314?&lt;br&gt;
+&lt;strong&gt;Entities&lt;/strong&gt;: Order Number = #2314&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;Return information to Shoppy Bot server&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;This post provided a fairly indepth overview of some of the theory and implementation details that go into making the Bolt NLU system function. Natural language understanding is exploding and becoming more advanced day by day. The intent-slot paradigm for NLU is a robust and relatively simplistic approach to NLU that can be achieved fairly easily with some simple and clever algorithms and engineering. With this approach, we’re able to provide an NLU system that outperforms other cloud-based solutions on the market, and offer a more sophisticated chatbot experience.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[2020 AAAI, HRI Pioneers, COVID19]]></title><link>https://www.carl-mueller.com/posts/update-march2020/</link><guid isPermaLink="false">https://www.carl-mueller.com/posts/update-march2020/</guid><pubDate>Tue, 01 Sep 2020 22:00:00 GMT</pubDate><content:encoded>&lt;p&gt;This past February, I had the privliege to attend 2020 AAAI Conference in New York City. I was selected into the Doctoral Consortium, which serves as a workshop for promising PhD students in the greater AI community. I had a wonderful time meeting people from all walks of life and enjoying the world’s most cosmopolitan city. I got to sit in on all sorts of interesting talks on all sorts of topics in AI and Machine Learning. I even sawy Geoffrey Hinton, Yann LeCunn, and Yoshio Bengio recieve their Turing Awards. Pretty amazing!&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 450px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/77ab0596824f0bcfadf6052e275458c2/a0850/DrearyNYC.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 75.2212389380531%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABQAB/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQD/2gAMAwEAAhADEAAAAUcDwW4Sj//EABgQAQEBAQEAAAAAAAAAAAAAAAECABIR/9oACAEBAAEFAupM3Bm4xfu6rCJ//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAIAQIBAT8BV//EABgQAQADAQAAAAAAAAAAAAAAAAABMTIC/9oACAEBAAY/AtQ1DUKUvp//xAAbEAEAAgIDAAAAAAAAAAAAAAABABEhMUFxkf/aAAgBAQABPyF3pbSAHPvKd9TMczUDbL0k80E//9oADAMBAAIAAwAAABA7P//EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oACAEDAQE/EIj/xAAVEQEBAAAAAAAAAAAAAAAAAAAQEf/aAAgBAgEBPxCj/8QAGxAAAwEBAAMAAAAAAAAAAAAAAREhADFRYbH/2gAIAQEAAT8QSgFzr+YgWEGVzTiYw1cBtkk+Jl2IoWsmPwCQ/U3/2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Shot from the rooftop of Google NYC. It was bitterly cold that weekend..&quot;
+        title=&quot;Shot from the rooftop of Google NYC. It was bitterly cold that weekend..&quot;
+        src=&quot;/static/77ab0596824f0bcfadf6052e275458c2/20e5d/DrearyNYC.jpg&quot;
+        srcset=&quot;/static/77ab0596824f0bcfadf6052e275458c2/30b1b/DrearyNYC.jpg 113w,
+/static/77ab0596824f0bcfadf6052e275458c2/863e1/DrearyNYC.jpg 225w,
+/static/77ab0596824f0bcfadf6052e275458c2/20e5d/DrearyNYC.jpg 450w,
+/static/77ab0596824f0bcfadf6052e275458c2/512c0/DrearyNYC.jpg 675w,
+/static/77ab0596824f0bcfadf6052e275458c2/8e1fc/DrearyNYC.jpg 900w,
+/static/77ab0596824f0bcfadf6052e275458c2/a0850/DrearyNYC.jpg 4096w&quot;
+        sizes=&quot;(max-width: 450px) 100vw, 450px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 450px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/8e7f2a53ddea34f66149ec199d9a7f31/a0850/PanPizza.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 75.2212389380531%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAABAACA//EABUBAQEAAAAAAAAAAAAAAAAAAAAC/9oADAMBAAIQAxAAAAEqi7iukWP/xAAaEAEBAAMBAQAAAAAAAAAAAAACAQADEhMx/9oACAEBAAEFAqDLx5SkbMS4wubEvv8A/8QAFhEBAQEAAAAAAAAAAAAAAAAAABEx/9oACAEDAQE/AdR//8QAFhEBAQEAAAAAAAAAAAAAAAAAABIx/9oACAECAQE/AcU//8QAHBAAAgICAwAAAAAAAAAAAAAAAAERIgIDEDFx/9oACAEBAAY/AmTh5JOx2LZKR274/8QAHBABAAMBAAMBAAAAAAAAAAAAAQARIUExUWGR/9oACAEBAAE/ITQ2slRVV11KeqMa7N1pcBnjx2J6i+v2f//aAAwDAQACAAMAAAAQu/8A/8QAFhEBAQEAAAAAAAAAAAAAAAAAAAER/9oACAEDAQE/EJTL/8QAGBEBAAMBAAAAAAAAAAAAAAAAARARITH/2gAIAQIBAT8QpwnY/wD/xAAbEAEBAAMBAQEAAAAAAAAAAAABEQAhMWGxQf/aAAgBAQABPxCmQaF2s8OOFRSU0UozhrNMMsdR+8y10GVPgYKwQWUvE9MGxaNaj4Z//9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Amazing Pan Pizza. NYC has the best pizza. The best!&quot;
+        title=&quot;Amazing Pan Pizza. NYC has the best pizza. The best!&quot;
+        src=&quot;/static/8e7f2a53ddea34f66149ec199d9a7f31/20e5d/PanPizza.jpg&quot;
+        srcset=&quot;/static/8e7f2a53ddea34f66149ec199d9a7f31/30b1b/PanPizza.jpg 113w,
+/static/8e7f2a53ddea34f66149ec199d9a7f31/863e1/PanPizza.jpg 225w,
+/static/8e7f2a53ddea34f66149ec199d9a7f31/20e5d/PanPizza.jpg 450w,
+/static/8e7f2a53ddea34f66149ec199d9a7f31/512c0/PanPizza.jpg 675w,
+/static/8e7f2a53ddea34f66149ec199d9a7f31/8e1fc/PanPizza.jpg 900w,
+/static/8e7f2a53ddea34f66149ec199d9a7f31/a0850/PanPizza.jpg 4096w&quot;
+        sizes=&quot;(max-width: 450px) 100vw, 450px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Missy also came to vist the weekend proceeding the conference. My parents also came down that weekend. My Uncle, Charlie Mueller PhD, took us to see Book of Mormon. It was truly hilarious and I hihgly recommend seeing it. Missy and I also saw the Lumineers in Brooklyn. The ongoing theme was the bitter cold. It was as cold as the East Coast gets.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 450px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/4055f883f751a48c4d1f673f5313441b/a0850/MissyInNYC.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 75.2212389380531%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAMBBAX/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEAMQAAABWxkGYXyX/8QAGRABAAMBAQAAAAAAAAAAAAAAAgEDERIA/9oACAEBAAEFAisKnr07og5p6uCVn//EABYRAAMAAAAAAAAAAAAAAAAAAAEQEv/aAAgBAwEBPwGQv//EABcRAQADAAAAAAAAAAAAAAAAAAABERL/2gAIAQIBAT8B1K3/xAAaEAACAwEBAAAAAAAAAAAAAAAAAQIRIRIx/9oACAEBAAY/AqKjg+taPNKhjLUqR//EABoQAQADAQEBAAAAAAAAAAAAAAEAESExUUH/2gAIAQEAAT8hYV8IVGWvayCk1FXECz6yCIstzkSC8En/2gAMAwEAAgADAAAAENPv/8QAFxEBAQEBAAAAAAAAAAAAAAAAAREAIf/aAAgBAwEBPxAZqaTm/8QAFxEBAQEBAAAAAAAAAAAAAAAAAQAhMf/aAAgBAgEBPxBI7Adv/8QAGxABAQEAAwEBAAAAAAAAAAAAAREAMUGBIXH/2gAIAQEAAT8QKaQLOcmHTujvu+YzzNrwOWqQUcGfuIAMI+4Tx03QAokJv//Z&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Walkting the High Line with Missy&quot;
+        title=&quot;Walkting the High Line with Missy&quot;
+        src=&quot;/static/4055f883f751a48c4d1f673f5313441b/20e5d/MissyInNYC.jpg&quot;
+        srcset=&quot;/static/4055f883f751a48c4d1f673f5313441b/30b1b/MissyInNYC.jpg 113w,
+/static/4055f883f751a48c4d1f673f5313441b/863e1/MissyInNYC.jpg 225w,
+/static/4055f883f751a48c4d1f673f5313441b/20e5d/MissyInNYC.jpg 450w,
+/static/4055f883f751a48c4d1f673f5313441b/512c0/MissyInNYC.jpg 675w,
+/static/4055f883f751a48c4d1f673f5313441b/8e1fc/MissyInNYC.jpg 900w,
+/static/4055f883f751a48c4d1f673f5313441b/a0850/MissyInNYC.jpg 4096w&quot;
+        sizes=&quot;(max-width: 450px) 100vw, 450px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 450px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/6769451079588740aabcd022b54ca88e/67226/TheHighLine.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 133.62831858407077%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAbABQDASIAAhEBAxEB/8QAGQAAAwEBAQAAAAAAAAAAAAAAAAECAwQF/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQL/2gAMAwEAAhADEAAAAcOnzaTQxBtw0oZF/wD/xAAcEAACAgMBAQAAAAAAAAAAAAAAAgERAxIhBBP/2gAIAQEAAQUCwtWT08KL67TJZsbH0KIWKhVP/8QAGREAAwADAAAAAAAAAAAAAAAAAAERAhAS/9oACAEDAQE/AXjXTnUP/8QAFxEAAwEAAAAAAAAAAAAAAAAAABAREv/aAAgBAgEBPwGmlT//xAAaEAACAwEBAAAAAAAAAAAAAAAAAQIQMTNB/9oACAEBAAY/AkvGQrRNvK5xOUDlC8P/xAAgEAEAAgEEAgMAAAAAAAAAAAABABEhMVFx0UFhgZGh/9oACAEBAAE/IVdd6YBfmZ6g8tRIUR7luLQC2IvWab/N7nM+HuCrH0vcBtEKyOMif//aAAwDAQACAAMAAAAQHzF+/8QAFxEBAQEBAAAAAAAAAAAAAAAAAAERIf/aAAgBAwEBPxCETCdaf//EABcRAQEBAQAAAAAAAAAAAAAAAAEAESH/2gAIAQIBAT8QGCWp5Zv/xAAcEAADAAMBAQEAAAAAAAAAAAAAAREhMUFhkaH/2gAIAQEAAT8Q3oJeHN/g6gLTl45GNGvqWfBjRXEqHmAQVRvHvqpWR+CTNLhGkbCA2ppoZmVNzLKlp0//2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;View of the High Line in NYC.&quot;
+        title=&quot;View of the High Line in NYC.&quot;
+        src=&quot;/static/6769451079588740aabcd022b54ca88e/20e5d/TheHighLine.jpg&quot;
+        srcset=&quot;/static/6769451079588740aabcd022b54ca88e/30b1b/TheHighLine.jpg 113w,
+/static/6769451079588740aabcd022b54ca88e/863e1/TheHighLine.jpg 225w,
+/static/6769451079588740aabcd022b54ca88e/20e5d/TheHighLine.jpg 450w,
+/static/6769451079588740aabcd022b54ca88e/512c0/TheHighLine.jpg 675w,
+/static/6769451079588740aabcd022b54ca88e/8e1fc/TheHighLine.jpg 900w,
+/static/6769451079588740aabcd022b54ca88e/67226/TheHighLine.jpg 3072w&quot;
+        sizes=&quot;(max-width: 450px) 100vw, 450px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;A month or so after the conference, I found out that I was also accepted into the HRI Pioneers workshop. This is a similar event as the AAAI Doctoral Consortium but more focused on an individual paper, and much more focused on my niche field of Human-Robot Interaction. Unfortunately, the conference was cancelled due to the COVID19 pandemic. I was supposed to go to Cambridge, UK so I was quite disappointed. What crazy times.&lt;/p&gt;
+&lt;p&gt;Due to CU Boulder shutting down in the late Spring and through the Summer, I was fortunate to be able to go to California and live with Missy for the summer. We didn’t get to do much since we were respecting social distancing, but we did sneak a trip to South Lake Tahoe. I got some solid mountain biking in there, and throughout the summer. I may have also got a new mountain bike as well…But more importantly, it was really nice to be able be with Missy as we still do long-distance. &lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 450px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/0021dbd702b4e8db3e12fd881f3daa86/a0850/Utah.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 75.2212389380531%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAMEAgX/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAv/aAAwDAQACEAMQAAABpVzNTTyYP//EABoQAAMAAwEAAAAAAAAAAAAAAAABAwISEzH/2gAIAQEAAQUCVJGdZo7CPTU//8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAIAQMBAT8BiP/EABURAQEAAAAAAAAAAAAAAAAAAAAS/9oACAECAQE/AaU//8QAGhAAAgIDAAAAAAAAAAAAAAAAAAEgIjEyof/aAAgBAQAGPwLfhVtmIf/EABsQAAIBBQAAAAAAAAAAAAAAAAABESExUWGx/9oACAEBAAE/IYt60xxAgb4DCDqP/9oADAMBAAIAAwAAABBbD//EABYRAQEBAAAAAAAAAAAAAAAAAAABEf/aAAgBAwEBPxCSy//EABYRAQEBAAAAAAAAAAAAAAAAAAABEf/aAAgBAgEBPxC00//EAB0QAQADAAEFAAAAAAAAAAAAAAEAESGRMWFxgbH/2gAIAQEAAT8QSnoMRXyAJj9p5ljPcsMrOGUVBfmIpGif/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Driving across Utah. The landscape is surreal.&quot;
+        title=&quot;Driving across Utah. The landscape is surreal.&quot;
+        src=&quot;/static/0021dbd702b4e8db3e12fd881f3daa86/20e5d/Utah.jpg&quot;
+        srcset=&quot;/static/0021dbd702b4e8db3e12fd881f3daa86/30b1b/Utah.jpg 113w,
+/static/0021dbd702b4e8db3e12fd881f3daa86/863e1/Utah.jpg 225w,
+/static/0021dbd702b4e8db3e12fd881f3daa86/20e5d/Utah.jpg 450w,
+/static/0021dbd702b4e8db3e12fd881f3daa86/512c0/Utah.jpg 675w,
+/static/0021dbd702b4e8db3e12fd881f3daa86/8e1fc/Utah.jpg 900w,
+/static/0021dbd702b4e8db3e12fd881f3daa86/a0850/Utah.jpg 4096w&quot;
+        sizes=&quot;(max-width: 450px) 100vw, 450px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 450px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/879c8bfd085be4b9909cd66deb13a814/a0850/LakeTahoe.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 75.2212389380531%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAAB/8QAFgEBAQEAAAAAAAAAAAAAAAAAAAEC/9oADAMBAAIQAxAAAAFQyayuFR//xAAZEAACAwEAAAAAAAAAAAAAAAABAgADERL/2gAIAQEAAQUCDoYuJZbYAxnJ0z//xAAWEQEBAQAAAAAAAAAAAAAAAAAAERL/2gAIAQMBAT8Byj//xAAVEQEBAAAAAAAAAAAAAAAAAAAAEv/aAAgBAgEBPwG1v//EAB0QAAECBwAAAAAAAAAAAAAAAAABIRARIjEyQYH/2gAIAQEABj8CuZtLZS/RY//EABwQAAIDAAMBAAAAAAAAAAAAAAERACExQVFxof/aAAgBAQABPyENkewspuBfIm0LYAhOjsJMUcho2p//2gAMAwEAAgADAAAAEGsv/8QAFxEAAwEAAAAAAAAAAAAAAAAAAAERUf/aAAgBAwEBPxBUTh//xAAWEQEBAQAAAAAAAAAAAAAAAAABABH/2gAIAQIBAT8QcNpv/8QAGxABAQADAQEBAAAAAAAAAAAAAREAIUExUZH/2gAIAQEAAT8QA7DorzLx1Kwelg8yEQRw3+ZTAYEOk44K0O57kEgz5n//2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Views of South Lake Tahoe&quot;
+        title=&quot;Views of South Lake Tahoe&quot;
+        src=&quot;/static/879c8bfd085be4b9909cd66deb13a814/20e5d/LakeTahoe.jpg&quot;
+        srcset=&quot;/static/879c8bfd085be4b9909cd66deb13a814/30b1b/LakeTahoe.jpg 113w,
+/static/879c8bfd085be4b9909cd66deb13a814/863e1/LakeTahoe.jpg 225w,
+/static/879c8bfd085be4b9909cd66deb13a814/20e5d/LakeTahoe.jpg 450w,
+/static/879c8bfd085be4b9909cd66deb13a814/512c0/LakeTahoe.jpg 675w,
+/static/879c8bfd085be4b9909cd66deb13a814/8e1fc/LakeTahoe.jpg 900w,
+/static/879c8bfd085be4b9909cd66deb13a814/a0850/LakeTahoe.jpg 4096w&quot;
+        sizes=&quot;(max-width: 450px) 100vw, 450px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;I also am no longer with the Deming Center Venture Fund as I resigned from my position as Portfolio Manager. I wanted to clear up commitments and focus on getting as much research accomplished this year as possible. It was a great experience and I wish the team the very best!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Guest Post - Sunsetting Shoppy Bot]]></title><link>https://www.carl-mueller.com/posts/sunsetting-shoppy-bot/</link><guid isPermaLink="false">https://www.carl-mueller.com/posts/sunsetting-shoppy-bot/</guid><pubDate>Tue, 23 Jun 2020 22:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;This is a post from my former partner in crime (Dylan La Com).&lt;/h3&gt;
+&lt;p&gt;We started Lightning in a Bot Inc., together. Alas, ShoppyBot (and for the most part LIAB) has been set out to pasture. I share many of his sentiments below.&lt;/p&gt;
+&lt;h3&gt;Sunsetting Shoppy Bot&lt;/h3&gt;
+&lt;p&gt;Last Friday I made the decision to shut down Shoppy Bot, a software product I had been operating since 2016. It’s a decision I’d been contemplating vaguely for over a year, and more seriously within the last couple months. And while it’s sad to turn the lights off on a product I’ve poured so much effort into keeping the lights on, there is a certain peace that comes with accepting that it is time to move on.&lt;/p&gt;
+&lt;p&gt;Ultimately, I came to understand that I was not going to be able to build Shoppy Bot into what I envisioned for it with the time and resources I have. And I can no longer continue supporting it in it’s current, free version.&lt;/p&gt;
+&lt;p&gt;Here are a few of my favorite memories or highlights from Shoppy Bot:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Driving up to Carl’s house in Santa Barbara with Matt and Ian in May of 2016 to sign the incorporation paperwork. Talk about a Dream Team.&lt;/li&gt;
+&lt;li&gt;Launching Shoppy Bot on the Shopify app store and getting featured on their homepage.&lt;/li&gt;
+&lt;li&gt;Seeing Carl develop his machine learning skillset to create our Natural Language Processing technology.&lt;/li&gt;
+&lt;li&gt;Meeting many, many amazing business owners, like Ashley running Pour This, Kenny and Nick running The Social Life, and David running Great Lakes. It was truly inspiring to be working with these and other incredible humans all doing really cool things.&lt;/li&gt;
+&lt;li&gt;Of course, the many interesting technologies we worked on, including chat bots, language processing, reporting and analytics.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In many ways, Shoppy Bot is a major reason I am where I am today. It was an incredible period of growth and learning for me. And, from a career standpoint, it helped me leapfrog into job positions and opportunities that I don’t think I would have otherwise gotten.&lt;/p&gt;
+&lt;p&gt;So what’s next for me?&lt;/p&gt;
+&lt;p&gt;I want to get back in touch with my sense of curiousity, and let myself go down some rabbit holes. One skill I’d like to improve is my writing, hence I’m dusting off this website you’re reading right now. I also want to spend time thinking about other projects. Some old––things I’ve wanted to do for a while––and some new. And I’m starting with one very specific question…&lt;/p&gt;
+&lt;p&gt;What are the most important problems in my field, and why am I not working on them?&lt;/p&gt;
+&lt;p&gt;This question can be traced back to Bell Labs and a &lt;a href=&quot;http://www.cs.virginia.edu/~robins/YouAndYourResearch.html&quot;&gt;speech by Turing Award winner Richard Hamming&lt;/a&gt; given in 1986. It comes up ever so often in the writing of other inspiring figures, including Paul Graham in his 2005 essay &lt;a href=&quot;http://www.paulgraham.com/procrastination.html&quot;&gt;“Good and Bad Procrastination”&lt;/a&gt;. More recently, Sam Altman of Y Combinator and OpenAI &lt;a href=&quot;https://blog.samaltman.com/researchers-and-founders&quot;&gt;wrote&lt;/a&gt;, “In general, no one reflects on this question enough, but the best people do it the most”.&lt;/p&gt;
+&lt;p&gt;One thing I’ve learned about myself is I’m drawn to the “mission”. I want to apply my energy to big hairy problems that have the potential to help hundreds, thousands, perhaps millions of people. There’s still so much left to do.&lt;/p&gt;
+&lt;p&gt;I want to thank all the amazing people that have worked on Shoppy Bot or helped in one way or another over the years. Whether it was a simple conversation or an introduction you made, it means the world to me, thank you! If &lt;a href=&quot;https://www.youtube.com/watch?v=rBpaUICxEhk&quot;&gt;life is like a dance&lt;/a&gt;, you joined my dance, if only momentarily, and gave it a little twist, a zig, a zag, but forever left your mark on an immutable composition.&lt;/p&gt;
+&lt;p&gt;And so with that, farewell Shoppy Bot, and thanks for the good times.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[IROS, Departmental Award & Other Updates]]></title><link>https://www.carl-mueller.com/posts/update-2018/</link><guid isPermaLink="false">https://www.carl-mueller.com/posts/update-2018/</guid><pubDate>Wed, 23 Jan 2019 22:00:00 GMT</pubDate><content:encoded>&lt;p&gt;This past October, I got to travel to Madrid Spain to present my research at IROS 2018. It was a wonderful experience and I was so grateful for the opportunity. As my first trip to Europe, I was quite enamored with Madrid. Although chances are any European city would have charmed me, others told me Madrid is definitely a standout in Europe. I can’t wait to make it back which is more motivation to publish my next paper!&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 450px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/dc49688db46d3d751779986c28df9dab/a0850/madridpalace.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 75.2212389380531%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAECAwT/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQL/2gAMAwEAAhADEAAAAeCpWazMP//EABsQAAMAAgMAAAAAAAAAAAAAAAABAgMEERIU/9oACAEBAAEFAo18lS9ejzoV8Do7H//EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oACAEDAQE/AUf/xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAgBAgEBPwGq/8QAHhAAAAQHAAAAAAAAAAAAAAAAAAECIQMQETFBYZH/2gAIAQEABj8Cqmx7GOh4iQxz/8QAHBAAAgICAwAAAAAAAAAAAAAAAAERMWFxIUFR/9oACAEBAAE/IV9SsCTahsiCg8HcFrgltzsl4f/aAAwDAQACAAMAAAAQt+//xAAWEQEBAQAAAAAAAAAAAAAAAAAAEQH/2gAIAQMBAT8Qmqf/xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAgBAgEBPxBt/8QAGxABAAIDAQEAAAAAAAAAAAAAAQARITFBgWH/2gAIAQEAAT8QXxLiIfSXt2sZccToTKvY4QV2YmClReo0FAOUT//Z&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Palacio Real de Madrid.&quot;
+        title=&quot;Palacio Real de Madrid.&quot;
+        src=&quot;/static/dc49688db46d3d751779986c28df9dab/20e5d/madridpalace.jpg&quot;
+        srcset=&quot;/static/dc49688db46d3d751779986c28df9dab/30b1b/madridpalace.jpg 113w,
+/static/dc49688db46d3d751779986c28df9dab/863e1/madridpalace.jpg 225w,
+/static/dc49688db46d3d751779986c28df9dab/20e5d/madridpalace.jpg 450w,
+/static/dc49688db46d3d751779986c28df9dab/512c0/madridpalace.jpg 675w,
+/static/dc49688db46d3d751779986c28df9dab/8e1fc/madridpalace.jpg 900w,
+/static/dc49688db46d3d751779986c28df9dab/a0850/madridpalace.jpg 4096w&quot;
+        sizes=&quot;(max-width: 450px) 100vw, 450px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 450px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/98a4c09673725c640714846264bd6677/a0850/elmatador.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 75.2212389380531%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAAC/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQL/2gAMAwEAAhADEAAAASMHiKdCh//EABkQAAIDAQAAAAAAAAAAAAAAAAEDAAISIv/aAAgBAQABBQKt4loEY4aIJm+rOwf/xAAYEQACAwAAAAAAAAAAAAAAAAAAAQIhUf/aAAgBAwEBPwFR0o//xAAXEQEAAwAAAAAAAAAAAAAAAAAAEiFR/9oACAECAQE/AZYt/8QAHhAAAgEDBQAAAAAAAAAAAAAAAAERAhIhEyIxQZH/2gAIAQEABj8Ce6IHd2+TCMEOhEadHh//xAAbEAEAAwADAQAAAAAAAAAAAAABABEhMUFRkf/aAAgBAQABPyFD4lpASrLNXOcEqUOTKnfqekeVf//aAAwDAQACAAMAAAAQq8//xAAXEQADAQAAAAAAAAAAAAAAAAAAESEB/9oACAEDAQE/EM0IjP/EABcRAAMBAAAAAAAAAAAAAAAAAAABESH/2gAIAQIBAT8QdMa2H//EAB0QAQEAAgIDAQAAAAAAAAAAAAERACFBUTFhgcH/2gAIAQEAAT8QA2WoLO+MQpAN6Q5wBCA2nnPViAybtp+3FDdUlp3EyrpARE0+5//Z&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;El Matador Bar - My go-to.&quot;
+        title=&quot;El Matador Bar - My go-to.&quot;
+        src=&quot;/static/98a4c09673725c640714846264bd6677/20e5d/elmatador.jpg&quot;
+        srcset=&quot;/static/98a4c09673725c640714846264bd6677/30b1b/elmatador.jpg 113w,
+/static/98a4c09673725c640714846264bd6677/863e1/elmatador.jpg 225w,
+/static/98a4c09673725c640714846264bd6677/20e5d/elmatador.jpg 450w,
+/static/98a4c09673725c640714846264bd6677/512c0/elmatador.jpg 675w,
+/static/98a4c09673725c640714846264bd6677/8e1fc/elmatador.jpg 900w,
+/static/98a4c09673725c640714846264bd6677/a0850/elmatador.jpg 4096w&quot;
+        sizes=&quot;(max-width: 450px) 100vw, 450px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;While I’m amidst a “sophomore slump” with regards to my next publication, I have one major project in the pipeline as well as a chance to be second author on two other publications related to my own research. Two colleagues are taking my research and expanding upon it through the lens of augmented reality and natural language. These projects are likely to target the coming fall deadlines. Fall may seem far away, but time sure does go by quickly these days. &lt;/p&gt;
+&lt;p&gt;This past spring break, I got to travel back to my “home away from home” (Santa Barbara) to see friends and be with Missy. It was so nice to spend time together as we’re still in a long distance relationship. We had a wonderful time and got to see the California “superbloom” and spend a few days in snowy Mammoth Lakes snowboarding.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 450px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/003d0b853f32d365f9204c26efa1f7ec/67226/mammothdinner.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 133.62831858407077%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAbABQDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAQCAwUB/8QAFQEBAQAAAAAAAAAAAAAAAAAAAgP/2gAMAwEAAhADEAAAAc2c7gkzgi1O7PnR0XJr/8QAHhAAAQMEAwAAAAAAAAAAAAAAAgEDEQASEyIhIzH/2gAIAQEAAQUCHVyRyXjIQtLyhNlLbSnRt2U0ujnUOQjVPP/EABcRAAMBAAAAAAAAAAAAAAAAAAABESH/2gAIAQMBAT8BhBPSo//EABcRAQEBAQAAAAAAAAAAAAAAAAAREkH/2gAIAQIBAT8BVxmv/8QAHhAAAgICAgMAAAAAAAAAAAAAAAECESExEiIyQVH/2gAIAQEABj8CvBco8h9KJasUfZ1TLTr6J3vR5FwwXJ2I/8QAHBAAAgIDAQEAAAAAAAAAAAAAAAERITFBUXFh/9oACAEBAAE/IZMSHGQsjXCcFvQ3KU4KSEhkp2gxZLfoxaDO+BsnBSCHZLO3jt2VL4U8j//aAAwDAQACAAMAAAAQ/Mdy/8QAGBEBAQEBAQAAAAAAAAAAAAAAAQAhEXH/2gAIAQMBAT8QQjl5u2CSdL//xAAYEQEBAQEBAAAAAAAAAAAAAAABEQAhQf/aAAgBAgEBPxAUiul7cj6y1bv/xAAdEAEAAgMBAQEBAAAAAAAAAAABESEAMUFhUXGh/9oACAEBAAE/EL0qOuR7A9yG2QsUsbr2JzScGamCteYpWISSVU/hhIO7WiEv9jma7AkM+sV8VhAyWMZQt6zzO8aKs7wz2tMWJ8RpxgjhAB8ArEgKIZ//2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Dinner in Mammoth with Missy.&quot;
+        title=&quot;Dinner in Mammoth with Missy.&quot;
+        src=&quot;/static/003d0b853f32d365f9204c26efa1f7ec/20e5d/mammothdinner.jpg&quot;
+        srcset=&quot;/static/003d0b853f32d365f9204c26efa1f7ec/30b1b/mammothdinner.jpg 113w,
+/static/003d0b853f32d365f9204c26efa1f7ec/863e1/mammothdinner.jpg 225w,
+/static/003d0b853f32d365f9204c26efa1f7ec/20e5d/mammothdinner.jpg 450w,
+/static/003d0b853f32d365f9204c26efa1f7ec/512c0/mammothdinner.jpg 675w,
+/static/003d0b853f32d365f9204c26efa1f7ec/8e1fc/mammothdinner.jpg 900w,
+/static/003d0b853f32d365f9204c26efa1f7ec/67226/mammothdinner.jpg 3072w&quot;
+        sizes=&quot;(max-width: 450px) 100vw, 450px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 450px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/8b5393a15490e5a9faaa121dd7224e25/a0850/missyflowers.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 75.2212389380531%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAEEA//EABYBAQEBAAAAAAAAAAAAAAAAAAEAA//aAAwDAQACEAMQAAAB2cizaSIL/8QAHBAAAQMFAAAAAAAAAAAAAAAAAQACEQMQEhMh/9oACAEBAAEFAhUlF8LaFgXs7b//xAAXEQADAQAAAAAAAAAAAAAAAAAAARES/9oACAEDAQE/AcoiP//EABgRAAIDAAAAAAAAAAAAAAAAAAASAQIR/9oACAECAQE/AXnBrH//xAAbEAABBAMAAAAAAAAAAAAAAAAAAQIQESExMv/aAAgBAQAGPwLDTk0LU//EABsQAQACAgMAAAAAAAAAAAAAAAEAESFRQWHw/9oACAEBAAE/IQxse2Cqas8WFr1uOzccPM//2gAMAwEAAgADAAAAEAQP/8QAFhEBAQEAAAAAAAAAAAAAAAAAAGGx/9oACAEDAQE/EII6/8QAGREAAwADAAAAAAAAAAAAAAAAAAEhEWGh/9oACAECAQE/EHVmm/iP/8QAGxABAQADAAMAAAAAAAAAAAAAAREAITFhcZH/2gAIAQEAAT8QsaTQ0Y+EHa4u84WgBLspLPmEJ2nXXjFTQ9Jn/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Missy enoying the wildflower bloom in California.&quot;
+        title=&quot;Missy enoying the wildflower bloom in California.&quot;
+        src=&quot;/static/8b5393a15490e5a9faaa121dd7224e25/20e5d/missyflowers.jpg&quot;
+        srcset=&quot;/static/8b5393a15490e5a9faaa121dd7224e25/30b1b/missyflowers.jpg 113w,
+/static/8b5393a15490e5a9faaa121dd7224e25/863e1/missyflowers.jpg 225w,
+/static/8b5393a15490e5a9faaa121dd7224e25/20e5d/missyflowers.jpg 450w,
+/static/8b5393a15490e5a9faaa121dd7224e25/512c0/missyflowers.jpg 675w,
+/static/8b5393a15490e5a9faaa121dd7224e25/8e1fc/missyflowers.jpg 900w,
+/static/8b5393a15490e5a9faaa121dd7224e25/a0850/missyflowers.jpg 4096w&quot;
+        sizes=&quot;(max-width: 450px) 100vw, 450px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;More recently, this week I was awarded the Departmental Award for Outstanding PhD Research and was accepted to the Deming Center Venture Fund (DCVF). The award recognizes four computer science PhD students for novel and impactful research within their field. The DCVF is a student run venture capital fund that invests in newly formed startups in the local Denver area.  Exciting stuff!&lt;/p&gt;
+&lt;p&gt;Spring is on its way and biking season is upon us! Whoop whoop!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Concept Constrained Learning from Demonstration]]></title><link>https://www.carl-mueller.com/research/cc-lfd/</link><guid isPermaLink="false">https://www.carl-mueller.com/research/cc-lfd/</guid><pubDate>Fri, 26 Oct 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;strong&gt;Lightning in a Bot’s first product, &lt;a href=&quot;https://shoppybot.com&quot;&gt;Shoppy Bot&lt;/a&gt;, is a natural language chatbot that Shopify store owners can use to query their business data.&lt;/strong&gt; The natural language interface is a novel approach to reporting and analytics in a backend retail setting, and one we hypothesis can provide faster and more efficient access to important data.&lt;/p&gt;
+&lt;p&gt;The first version of Shoppy Bot used &lt;a href=&quot;https://wit.ai&quot;&gt;Wit.ai’s&lt;/a&gt; natural language API to convert user requests such as “how many customers have we had this week?” into structured data that we could convert into SQL queries and other various functions. Problems with these cloud services became apparent early on, therefore we began to explore what it would take to build our own Natural Language Understanding (NLU) service, one designed specifically for the task at hand.&lt;/p&gt;
+&lt;p&gt;This post serves as an overview of the theory behind our approach and outlines specific implementation details in developing our own NLU system, now known internally as “Bolt”.&lt;/p&gt;
+&lt;h2&gt;Theory&lt;/h2&gt;
+&lt;h3&gt;Semantic Challenges&lt;/h3&gt;
+&lt;p&gt;Semantics is a field of linguistics which concerns itself with the meaning of language, both written and spoken. Natural Language Understanding is a broad field that attempts to assign semantics to spoken or written language in order to derive understanding. Computer scientists, linguists, and machine learning engineers attempt to use this understanding as actionable information when developing applications. NLU presents unique challenges to engineers due to ambiguousness, variability in style and formation, context, prior knowledge dependency and the disparity between different languages themselves.&lt;/p&gt;
+&lt;h3&gt;Intent-Slot Paradigm&lt;/h3&gt;
+&lt;p&gt;One successful method that provides a good framework for generating actionable information from natural language is the &lt;a href=&quot;http://www.cs.toronto.edu/~aditya/publications/contextual.pdf&quot;&gt;intent-slot paradigm&lt;/a&gt;. The intent-slot paradigm is a method of Natural Language Understanding that combines a number of core Natural Language Processing and Information Extraction techniques in order to derive a semantic understanding of written language. In Shoppy Bot’s case, the derivation is a semantic understanding of the user’s question about their business data. There are three major types of information extracted under this NLU model: Intents, Slots, and Entities.&lt;/p&gt;
+&lt;h4&gt;Intents&lt;/h4&gt;
+&lt;p&gt;Intents are global properties of a text document (or user query) that map the document to an assigned goal or desire of the user. They can map to very broad concepts such as ‘weather’, ‘banking’, ‘location search’ or to specific concepts such as ‘get product info’, ‘schedule meeting, etc,. These intents are sometimes called user actions and it is the goal of Bolt to categorize queries into a set number of intents. The following query would be categorized to the given intent:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Query&lt;/strong&gt;: What is the shipping information for order #2314?&lt;br&gt;
+&lt;strong&gt;Intent&lt;/strong&gt;: get-order-shipping-information  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4&gt;Slots&lt;/h4&gt;
+&lt;p&gt;Slots are regions or spans within a text document, sometimes overlapping, that map to a specific type of information. They often constitute a semantically loaded region of the text.  An NLP system must correctly detect the right span/region that contains these semantic slots of information. The following date-time phrase provides an example of a slot:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Query&lt;/strong&gt;: How many returning customers did I have in [the first quarter of 2015]?&lt;br&gt;
+&lt;strong&gt;Slot Type&lt;/strong&gt;: Date-time&lt;br&gt;
+&lt;strong&gt;Extraction Information&lt;/strong&gt;: 1/1/2015 - 4/1/2015&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4&gt;Entities&lt;/h4&gt;
+&lt;p&gt;Entities are also regions of text that contain semantic information but often boil down to a single word or compound. They can be thought of as a highly specific slot. Generally, entities encompass names, organizations, locations, and domain specific pieces of information. It is the goal of a named entity recognition system to identify these entities. For example:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Query&lt;/strong&gt;: Get me [Winona Snyder’s] most recent order.&lt;br&gt;
+&lt;strong&gt;Entity&lt;/strong&gt;: Customer Name = Winona Snyder&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;Implementation&lt;/h2&gt;
+&lt;h4&gt;Model Generality vs Specificity&lt;/h4&gt;
+&lt;p&gt;Often a goal of the design of an NLU system, especially one designed for a targeted domain, is to provide as much generality as possible. This often means that the system’s goal centers around supporting as many users and/or as many use cases as possible with a minimal amount of model generation and methods. The reason being is that the implementation of certain NLP features can be reused and shared. Share models are easier to maintain (no management of devoted models). Additionally, new training data generated by user behavior effectively crowd sourced. For example, in Bolt, the mechanism that determines a user’s intent is shared amongst all users. This way, new data (such as new variations of a similar query) can be incorporated into a newly trained model for which all users share the benefit.&lt;/p&gt;
+&lt;p&gt;However, there are certain times when specificity takes precedence over generality. In our case, each one of our Shoppy Bot users has a store with a wide range of products, each with unique names. When parsing a query for slots and entities, an NLU system has to return information that is specific to that user. Avoiding returning information from one user to another is also a requirement as our customers expect their data and analytics to be protected. Bolt employs a fast dictionary/gazetteer algorithm that utilizes distinct data structures specific to each of our users.&lt;/p&gt;
+&lt;p&gt;The following outlines three specific implementation details of the Bolt NLU system developed for Shoppy Bot in terms of the intent-slot NLU paradigm.&lt;/p&gt;
+&lt;h4&gt;Intent Classification&lt;/h4&gt;
+&lt;p&gt;Intent categorization is achieved most commonly through state-of-the-art text classifiers. Bolt uses a discriminative classifier known as a support vector machine. Briefly, support vector machines (SVMs) are classifiers that construct non-probabilistic models represented in a geometric manner. Data is mapped into a geometric space. The different categories or classes of data are separated by a hyperplane optimized for achieving the largest distance between the closest data points of two different categories. The technical details of support vector machines are beyond the scope of this post, but they are the soup du jour for text classifiers (especially for smaller datasets) and are fairly robust against outlier data.
+Bolt uses the fantastic library Scikit-learn and its implementation of an SVM. Specifically we use the class &lt;a href=&quot;http://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html#sklearn.svm.LinearSVC&quot;&gt;LinearSVC&lt;/a&gt;. It supports multi-class classification and scales to larger datasets decently by employing &lt;a href=&quot;https://www.csie.ntu.edu.tw/~cjlin/liblinear/&quot;&gt;liblinear&lt;/a&gt; instead of &lt;a href=&quot;https://www.csie.ntu.edu.tw/~cjlin/libsvm/&quot;&gt;libsvm&lt;/a&gt;. One challenge is that many SVM’s underlying implementations, such as libsvm, are quadratic in their algorithmic complexity which can make datasets &gt;10000 samples highly inefficient. LinearSVC performs well as it does not use any kernel function to turn a dataset that is non-linear into a linearly interpretable dataset, thus dramatically enhancing the algorithmic efficiency.&lt;/p&gt;
+&lt;p&gt;Any machine learning technique is powerless without data. Data must be curated in a way that best represents pertinent information about your problem. Bolt’s intent classification challenge is first and foremost a text classification problem. We take a user’s text query and classify that text into an intent category. Determining what type of data you give your machine learning algorithm is a process called feature generation. One of the most common ways to generate features (data tailored for use in a machine learning algorithm) from text is to employ a simple technique known as the ‘bag-of-words’ technique. The frequency (number of occurrences) of all the words for each text category are used as specific values for data points in the geometric space we generate. &lt;/p&gt;
+&lt;p&gt;Similar words are used repeatedly for similar user intents. It plays to Bolt’s advantage that queries are often specific to the task at hand, which limits the amount of noise (overlap of categories) and number of outliers (single data points invading deep into the region of a different category). This means that the distinction between one category and another in our geometric space is sharp. I won’t go too deep into how SVM’s work, but I suggest Wikipedia as a good starting point.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 392px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/ee94b5d9c99d348b59a03549a5ce621b/0acb4/hyperplane.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 95.57522123893806%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAYAAACQjC21AAAACXBIWXMAAAsTAAALEwEAmpwYAAAE3ElEQVQ4y2NgAIJJHT3iNY01wq2tzfxdbW18yLgTiDtAdHs7gt3WJtDd3i42Y+pUzmmTJjExQEFfdzcDQ9vsPu6G/hYZBhJAX1s708SeXrbVq1YyzZw2jWvW9Okc61evZgRLrlm4VNi3Jr7AJj8gP7oqXQQs1jOHtba5jrO3o5W9uW4qZ1XpLK7G2l6OzrZ2jo7Wbrb25nb+1sZ2gZamVpa25mY2oMt4JvX3C/f39gowzGzrFUgoyxB1Kgk7YlsSfNWpLKw5uT5P7M6szcwVtR3c//8zgL10/rIDS19vCfuyZSksHW2VfNOnp/BOm1LB2tHSwdne0swOMriro0OQoaG1nhekoXBKnZpDZfgJi+KAjxaF/vNg3ovy+qLq5/DY1cnimky4439mkFhK0GfdYNd7/uhB0dXZycXQ197Bk1aXzw4SCGpLtwUaet2yOOCFdVFwNUgs1PuBup/jo4wI9328wU53xYNdn5rH+d0PDXJ55uztcMMKpCY64DTYF0AX8jL0tLfz9HZ0MZc3VoJd6t2UlG5XGfYQaOhDu5KwAJCYj/NxXQvzS172gf+FswLuc61ZUc6ZEvzROdzjSaqn3QUOkJrmhkksYBd2AQ1cXl7K2ldfyw1zuldjfI9tRegzy+LAy65VwRq2uv+Vtli5SGXZHQy1t3lgFupxwc3Z8rgssne7uzrZujs7ORmmNNRzM/z/D3byDwcLu/cmBr4gtkd97Hqb8pAXNiUBOw18Llne07U3nGLdEmjg8lUtyOWQu7f9PS0fhwduCUHvwC7saOvlBLqQjQFoGPMTbzfLC872Sj8drHQvOFpKgBRkdhWoOtfFHrcuC35pU+41CSRmYvdcNdT9mkFs8BlpEN/X8YqGj/0tc4iXJ/L1dHczMqzs7+N56WKXeszHA+yF9/HhnG9c7ML/m+l7TstwLnCsibplUR7w2D6jsLuW4T9XQtp8EX+Xi1Go8fsf6OUOno72dkaGiQ0NPGrXHzK9crH3uxrsr34/wNfivbNpyA7vbK9c/3+WXi0xOQ4lvi8sciPeu6SVZIK0JyetlAMZUla4jBESfm0s3Z1dXGCzqyZO4jyXGMv71Mbc95eLrdJ7S+PeD3b6Oo8cA1232FcEgdT4V0dNt6kKempR6nvaujBMBSRW2lfIgoiQLpbOjg6IgdOqKrlA4XjPw9n4i5GO8Etbc9Uzmto8YI84ajp9MjdKWNRYLOjSHL/euiLkDTDRb06uL+VbP38ZBzxBd3RwAmOYFcxZVF/Hkrp4Kff1AG+Fd8a6YiCxXx4OUl9sLVyeWZhZ1+WEs4HE4iYXqzo3xpyyLAt6Y1MS7AZ2ZWcNOEMADeMBuhJS6swrLmSumDVb6IuDle0tQ11wWnxnZ2H40txQYZehLtiw8NIQsPeCerNcHOoiX9tWhtaBXTapmw9qIDfQy5DSZnp5OXPDlKkib61N1a6YGXGh58+DPp6MU4ElhHGxLzgfe7UnVTrWRx0AO2bGDI7JEydwtre1gfUBaQaG3v5+5t6WFnHURADBuIBne9Jkl5Y4IxB74uR+YaDrwD7r6epiYCgvLASVaRLrGupZO2trWbp7elgmTZzI1lBfz9XW2soDLKF5gDaD6caOZr4zFStZ0/vKVKN78u1vN2xjaW5tFunu6AAHCTAbMwAAMnXbuLftc78AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Hyperplane separating two categories&quot;
+        title=&quot;Hyperplane separating two categories&quot;
+        src=&quot;/static/ee94b5d9c99d348b59a03549a5ce621b/0acb4/hyperplane.png&quot;
+        srcset=&quot;/static/ee94b5d9c99d348b59a03549a5ce621b/2519b/hyperplane.png 113w,
+/static/ee94b5d9c99d348b59a03549a5ce621b/3684f/hyperplane.png 225w,
+/static/ee94b5d9c99d348b59a03549a5ce621b/0acb4/hyperplane.png 392w&quot;
+        sizes=&quot;(max-width: 392px) 100vw, 392px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;em&gt;A hyperplane (which is a standard flat plane in three dimensions) separating two categories distinguished by red and blue spheres. &lt;a href=&quot;https://i.stack.imgur.com/zeRTm.png&quot;&gt;Source&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;h4&gt;Slot Detection&lt;/h4&gt;
+&lt;p&gt;Slot detection sometimes blurs the line between entity parsing and recognition. It can help to think of named entity recognition (NER), where one parses a product name, city and state etc., as a subset of slot detection. Slots can be a feature of the entire piece of text being analyzed or a localized span of text. One example of a slot that spans the entirety of a user query would be plurality. For example, if the user asks, “Who is my top customer?”, Bolt is able to recognize that the person is asking for only one customer, without needing any explicit number to exist in the query. These results are passed back to Shoppy Bot where a response is sent to the user with the results for one customer. &lt;/p&gt;
+&lt;p&gt;Bolt actually uses a binary classifier to determine the query’s plurality. We use a similar ‘bag of words’ technique as the intent classifier but also employ a technique that emphasizes particular features. The emphasized features are words associated with plurality. For example, verb conjugation plays an obvious role in identifying whether or not the query is asking for plural results. The verbs ‘is/are’, ‘was/were’ greatly increase the accuracy of the classification model without the need for large amounts of data. It is a case where smart feature engineering helped defeat a lack of data on our end. As the slot detection of plurality is independent of any specific user, it is a generalizable model.&lt;/p&gt;
+&lt;h4&gt;Named Entity Recognition&lt;/h4&gt;
+&lt;p&gt;Named entity recognition is the probably the most well-known aspect of information retrieval and slot detection in terms of NLP. Shoppy Bot users each have a large set of product names associated with their Shopify store. These “named entities” must be identified and parsed specific to the user. Bolt employs a set of data structures and a specialized string comparison algorithm to successfully parse product names from a user’s query.&lt;/p&gt;
+&lt;p&gt;The data structure that Bolt’s gazetteer uses is called a trie. In this scenario, a trie is an ordered tree structure that stores strings compactly, where each node of the tree is an object or structure that stores the current letter, potentially a word, and references or pointers to the next node. The idea is that in traversing a branch of the trie, you slowly build up a word letter by letter. Words that share the same prefix will start along the same branch.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 450px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/037763317989df7427c7fac152dedcb9/6a068/search_trie.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 75.2212389380531%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAECBf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAd1UigD/xAAWEAEBAQAAAAAAAAAAAAAAAAAQEQD/2gAIAQEAAQUCZof/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAUEAEAAAAAAAAAAAAAAAAAAAAg/9oACAEBAAY/Al//xAAZEAEBAQADAAAAAAAAAAAAAAABABExQXH/2gAIAQEAAT8hXSOe4dkXqy//2gAMAwEAAgADAAAAEDQP/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPxA//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPxA//8QAGxABAQADAQEBAAAAAAAAAAAAAREAITFBgZH/2gAIAQEAAT8Q5jC9qY4BW+C9/cCp4xxBojEuW04gc3rAH3bn/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;String search trie&quot;
+        title=&quot;String search trie&quot;
+        src=&quot;/static/037763317989df7427c7fac152dedcb9/20e5d/search_trie.jpg&quot;
+        srcset=&quot;/static/037763317989df7427c7fac152dedcb9/30b1b/search_trie.jpg 113w,
+/static/037763317989df7427c7fac152dedcb9/863e1/search_trie.jpg 225w,
+/static/037763317989df7427c7fac152dedcb9/20e5d/search_trie.jpg 450w,
+/static/037763317989df7427c7fac152dedcb9/512c0/search_trie.jpg 675w,
+/static/037763317989df7427c7fac152dedcb9/8e1fc/search_trie.jpg 900w,
+/static/037763317989df7427c7fac152dedcb9/6a068/search_trie.jpg 960w&quot;
+        sizes=&quot;(max-width: 450px) 100vw, 450px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;em&gt;&lt;a href=&quot;http://images.slideplayer.com/32/9814580/slides/slide_5.jpg&quot;&gt;Source&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;This data structure allows one to check if a word is in a dictionary extremely quickly but also allows for additional algorithms to function during the search process. Hash lookups for words are generally the fastest mechanism for dictionary lookups. However, if you want to perform string similarity comparisons while searching for a word in a dictionary at the same time, the search trie is your best bet. This allows for robust dictionary lookup of words pulled from the query to see if they match (or are close to matching) the words stored in the trie. Ultimately this is a very robust way to perform fuzzy dictionary lookups. &lt;/p&gt;
+&lt;p&gt;The string similarity mechanism Bolt’s gazetteer uses is the &lt;a href=&quot;https://people.cs.pitt.edu/~kirk/cs1501/Pruhs/Spring2006/assignments/editdistance/Levenshtein%20Distance.htm&quot;&gt;Levenshtein&lt;/a&gt; string similarity algorithm. Briefly, it is an algorithm that outputs an integer value called the string distance representing the number of insertions, switches, and deletions it takes to convert one word into another. After removing common words and certain specialty words from the query, the remaining words are grouped in a number of combinations. These combinations of words are each run through the gazetteer’s search algorithm to find matches within a certain Levenshtein string distance. The algorithm traverses down the trie building test words from the letters along the nodes in the path. The algorithm can dynamically append or remove new letters from the current current trie word so that the Levenshtein algorithm only has to readjust for the new letter in its comparison with the test word from the query. Thus we are not constantly performing and reperforming the entire Levenshtein algorithm for every word in the trie.&lt;/p&gt;
+&lt;p&gt;One additional step Bolt takes to ensure robustness is to add n-grams and skip-grams of the product names into the trie. For example, ‘sally sells sea shells’ as n-grams of length 3 (tri-grams) would be split into ‘sally sells sea’ and ‘sells sea shells’. Skip-grams of length skip distance 1 would result in ‘sally sea shells’ and ‘sally sells shells’. The purpose of these n-grams and skip grams is to account for the different ways a user might express a product name. Perhaps they don’t type every single word if it is a long product name.&lt;/p&gt;
+&lt;h4&gt;The Big Picture&lt;/h4&gt;
+&lt;p&gt;Bolt first classifies the user’s query to an intent. Each intent is associated with a set of possible slots/entities that can be parsed for that intent. Those slots/entities are then parsed. In summary, Bolt generally operates with the following procedure:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Classify User Query to Intent:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Query&lt;/strong&gt;: What is the shipping information for order #2314?&lt;br&gt;
+&lt;strong&gt;Intent&lt;/strong&gt;: get-order-shipping-information&lt;br&gt;
+&lt;strong&gt;Associated Slots/Entities&lt;/strong&gt;: Order Number  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Perform slot/entity detection&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Query&lt;/strong&gt;: What is the shipping information for order #2314?&lt;br&gt;
+&lt;strong&gt;Entities&lt;/strong&gt;: Order Number = #2314&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;Return information to Shoppy Bot server&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;This post provided a fairly indepth overview of some of the theory and implementation details that go into making the Bolt NLU system function. Natural language understanding is exploding and becoming more advanced day by day. The intent-slot paradigm for NLU is a robust and relatively simplistic approach to NLU that can be achieved fairly easily with some simple and clever algorithms and engineering. With this approach, we’re able to provide an NLU system that outperforms other cloud-based solutions on the market, and offer a more sophisticated chatbot experience.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Developing the Natural Language Understanding Behind Shoppy Bot]]></title><link>https://www.carl-mueller.com/posts/developing-natural-language-understanding-for-shoppy-bot/</link><guid isPermaLink="false">https://www.carl-mueller.com/posts/developing-natural-language-understanding-for-shoppy-bot/</guid><pubDate>Thu, 26 Oct 2017 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;strong&gt;Lightning in a Bot’s first product, &lt;a href=&quot;https://shoppybot.com&quot;&gt;Shoppy Bot&lt;/a&gt;, is a natural language chatbot that Shopify store owners can use to query their business data.&lt;/strong&gt; The natural language interface is a novel approach to reporting and analytics in a backend retail setting, and one we hypothesis can provide faster and more efficient access to important data.&lt;/p&gt;
+&lt;p&gt;The first version of Shoppy Bot used &lt;a href=&quot;https://wit.ai&quot;&gt;Wit.ai’s&lt;/a&gt; natural language API to convert user requests such as “how many customers have we had this week?” into structured data that we could convert into SQL queries and other various functions. Problems with these cloud services became apparent early on, therefore we began to explore what it would take to build our own Natural Language Understanding (NLU) service, one designed specifically for the task at hand.&lt;/p&gt;
+&lt;p&gt;This post serves as an overview of the theory behind our approach and outlines specific implementation details in developing our own NLU system, now known internally as “Bolt”.&lt;/p&gt;
+&lt;h2&gt;Theory&lt;/h2&gt;
+&lt;h3&gt;Semantic Challenges&lt;/h3&gt;
+&lt;p&gt;Semantics is a field of linguistics which concerns itself with the meaning of language, both written and spoken. Natural Language Understanding is a broad field that attempts to assign semantics to spoken or written language in order to derive understanding. Computer scientists, linguists, and machine learning engineers attempt to use this understanding as actionable information when developing applications. NLU presents unique challenges to engineers due to ambiguousness, variability in style and formation, context, prior knowledge dependency and the disparity between different languages themselves.&lt;/p&gt;
+&lt;h3&gt;Intent-Slot Paradigm&lt;/h3&gt;
+&lt;p&gt;One successful method that provides a good framework for generating actionable information from natural language is the &lt;a href=&quot;http://www.cs.toronto.edu/~aditya/publications/contextual.pdf&quot;&gt;intent-slot paradigm&lt;/a&gt;. The intent-slot paradigm is a method of Natural Language Understanding that combines a number of core Natural Language Processing and Information Extraction techniques in order to derive a semantic understanding of written language. In Shoppy Bot’s case, the derivation is a semantic understanding of the user’s question about their business data. There are three major types of information extracted under this NLU model: Intents, Slots, and Entities.&lt;/p&gt;
+&lt;h4&gt;Intents&lt;/h4&gt;
+&lt;p&gt;Intents are global properties of a text document (or user query) that map the document to an assigned goal or desire of the user. They can map to very broad concepts such as ‘weather’, ‘banking’, ‘location search’ or to specific concepts such as ‘get product info’, ‘schedule meeting, etc,. These intents are sometimes called user actions and it is the goal of Bolt to categorize queries into a set number of intents. The following query would be categorized to the given intent:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Query&lt;/strong&gt;: What is the shipping information for order #2314?&lt;br&gt;
+&lt;strong&gt;Intent&lt;/strong&gt;: get-order-shipping-information  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4&gt;Slots&lt;/h4&gt;
+&lt;p&gt;Slots are regions or spans within a text document, sometimes overlapping, that map to a specific type of information. They often constitute a semantically loaded region of the text.  An NLP system must correctly detect the right span/region that contains these semantic slots of information. The following date-time phrase provides an example of a slot:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Query&lt;/strong&gt;: How many returning customers did I have in [the first quarter of 2015]?&lt;br&gt;
+&lt;strong&gt;Slot Type&lt;/strong&gt;: Date-time&lt;br&gt;
+&lt;strong&gt;Extraction Information&lt;/strong&gt;: 1/1/2015 - 4/1/2015&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4&gt;Entities&lt;/h4&gt;
+&lt;p&gt;Entities are also regions of text that contain semantic information but often boil down to a single word or compound. They can be thought of as a highly specific slot. Generally, entities encompass names, organizations, locations, and domain specific pieces of information. It is the goal of a named entity recognition system to identify these entities. For example:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Query&lt;/strong&gt;: Get me [Winona Snyder’s] most recent order.&lt;br&gt;
+&lt;strong&gt;Entity&lt;/strong&gt;: Customer Name = Winona Snyder&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;Implementation&lt;/h2&gt;
+&lt;h4&gt;Model Generality vs Specificity&lt;/h4&gt;
+&lt;p&gt;Often a goal of the design of an NLU system, especially one designed for a targeted domain, is to provide as much generality as possible. This often means that the system’s goal centers around supporting as many users and/or as many use cases as possible with a minimal amount of model generation and methods. The reason being is that the implementation of certain NLP features can be reused and shared. Share models are easier to maintain (no management of devoted models). Additionally, new training data generated by user behavior effectively crowd sourced. For example, in Bolt, the mechanism that determines a user’s intent is shared amongst all users. This way, new data (such as new variations of a similar query) can be incorporated into a newly trained model for which all users share the benefit.&lt;/p&gt;
+&lt;p&gt;However, there are certain times when specificity takes precedence over generality. In our case, each one of our Shoppy Bot users has a store with a wide range of products, each with unique names. When parsing a query for slots and entities, an NLU system has to return information that is specific to that user. Avoiding returning information from one user to another is also a requirement as our customers expect their data and analytics to be protected. Bolt employs a fast dictionary/gazetteer algorithm that utilizes distinct data structures specific to each of our users.&lt;/p&gt;
+&lt;p&gt;The following outlines three specific implementation details of the Bolt NLU system developed for Shoppy Bot in terms of the intent-slot NLU paradigm.&lt;/p&gt;
+&lt;h4&gt;Intent Classification&lt;/h4&gt;
+&lt;p&gt;Intent categorization is achieved most commonly through state-of-the-art text classifiers. Bolt uses a discriminative classifier known as a support vector machine. Briefly, support vector machines (SVMs) are classifiers that construct non-probabilistic models represented in a geometric manner. Data is mapped into a geometric space. The different categories or classes of data are separated by a hyperplane optimized for achieving the largest distance between the closest data points of two different categories. The technical details of support vector machines are beyond the scope of this post, but they are the soup du jour for text classifiers (especially for smaller datasets) and are fairly robust against outlier data.
+Bolt uses the fantastic library Scikit-learn and its implementation of an SVM. Specifically we use the class &lt;a href=&quot;http://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html#sklearn.svm.LinearSVC&quot;&gt;LinearSVC&lt;/a&gt;. It supports multi-class classification and scales to larger datasets decently by employing &lt;a href=&quot;https://www.csie.ntu.edu.tw/~cjlin/liblinear/&quot;&gt;liblinear&lt;/a&gt; instead of &lt;a href=&quot;https://www.csie.ntu.edu.tw/~cjlin/libsvm/&quot;&gt;libsvm&lt;/a&gt;. One challenge is that many SVM’s underlying implementations, such as libsvm, are quadratic in their algorithmic complexity which can make datasets &gt;10000 samples highly inefficient. LinearSVC performs well as it does not use any kernel function to turn a dataset that is non-linear into a linearly interpretable dataset, thus dramatically enhancing the algorithmic efficiency.&lt;/p&gt;
+&lt;p&gt;Any machine learning technique is powerless without data. Data must be curated in a way that best represents pertinent information about your problem. Bolt’s intent classification challenge is first and foremost a text classification problem. We take a user’s text query and classify that text into an intent category. Determining what type of data you give your machine learning algorithm is a process called feature generation. One of the most common ways to generate features (data tailored for use in a machine learning algorithm) from text is to employ a simple technique known as the ‘bag-of-words’ technique. The frequency (number of occurrences) of all the words for each text category are used as specific values for data points in the geometric space we generate. &lt;/p&gt;
+&lt;p&gt;Similar words are used repeatedly for similar user intents. It plays to Bolt’s advantage that queries are often specific to the task at hand, which limits the amount of noise (overlap of categories) and number of outliers (single data points invading deep into the region of a different category). This means that the distinction between one category and another in our geometric space is sharp. I won’t go too deep into how SVM’s work, but I suggest Wikipedia as a good starting point.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 392px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/ee94b5d9c99d348b59a03549a5ce621b/0acb4/hyperplane.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 95.57522123893806%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAYAAACQjC21AAAACXBIWXMAAAsTAAALEwEAmpwYAAAE3ElEQVQ4y2NgAIJJHT3iNY01wq2tzfxdbW18yLgTiDtAdHs7gt3WJtDd3i42Y+pUzmmTJjExQEFfdzcDQ9vsPu6G/hYZBhJAX1s708SeXrbVq1YyzZw2jWvW9Okc61evZgRLrlm4VNi3Jr7AJj8gP7oqXQQs1jOHtba5jrO3o5W9uW4qZ1XpLK7G2l6OzrZ2jo7Wbrb25nb+1sZ2gZamVpa25mY2oMt4JvX3C/f39gowzGzrFUgoyxB1Kgk7YlsSfNWpLKw5uT5P7M6szcwVtR3c//8zgL10/rIDS19vCfuyZSksHW2VfNOnp/BOm1LB2tHSwdne0swOMriro0OQoaG1nhekoXBKnZpDZfgJi+KAjxaF/vNg3ovy+qLq5/DY1cnimky4439mkFhK0GfdYNd7/uhB0dXZycXQ197Bk1aXzw4SCGpLtwUaet2yOOCFdVFwNUgs1PuBup/jo4wI9328wU53xYNdn5rH+d0PDXJ55uztcMMKpCY64DTYF0AX8jL0tLfz9HZ0MZc3VoJd6t2UlG5XGfYQaOhDu5KwAJCYj/NxXQvzS172gf+FswLuc61ZUc6ZEvzROdzjSaqn3QUOkJrmhkksYBd2AQ1cXl7K2ldfyw1zuldjfI9tRegzy+LAy65VwRq2uv+Vtli5SGXZHQy1t3lgFupxwc3Z8rgssne7uzrZujs7ORmmNNRzM/z/D3byDwcLu/cmBr4gtkd97Hqb8pAXNiUBOw18Llne07U3nGLdEmjg8lUtyOWQu7f9PS0fhwduCUHvwC7saOvlBLqQjQFoGPMTbzfLC872Sj8drHQvOFpKgBRkdhWoOtfFHrcuC35pU+41CSRmYvdcNdT9mkFs8BlpEN/X8YqGj/0tc4iXJ/L1dHczMqzs7+N56WKXeszHA+yF9/HhnG9c7ML/m+l7TstwLnCsibplUR7w2D6jsLuW4T9XQtp8EX+Xi1Go8fsf6OUOno72dkaGiQ0NPGrXHzK9crH3uxrsr34/wNfivbNpyA7vbK9c/3+WXi0xOQ4lvi8sciPeu6SVZIK0JyetlAMZUla4jBESfm0s3Z1dXGCzqyZO4jyXGMv71Mbc95eLrdJ7S+PeD3b6Oo8cA1232FcEgdT4V0dNt6kKempR6nvaujBMBSRW2lfIgoiQLpbOjg6IgdOqKrlA4XjPw9n4i5GO8Etbc9Uzmto8YI84ajp9MjdKWNRYLOjSHL/euiLkDTDRb06uL+VbP38ZBzxBd3RwAmOYFcxZVF/Hkrp4Kff1AG+Fd8a6YiCxXx4OUl9sLVyeWZhZ1+WEs4HE4iYXqzo3xpyyLAt6Y1MS7AZ2ZWcNOEMADeMBuhJS6swrLmSumDVb6IuDle0tQ11wWnxnZ2H40txQYZehLtiw8NIQsPeCerNcHOoiX9tWhtaBXTapmw9qIDfQy5DSZnp5OXPDlKkib61N1a6YGXGh58+DPp6MU4ElhHGxLzgfe7UnVTrWRx0AO2bGDI7JEydwtre1gfUBaQaG3v5+5t6WFnHURADBuIBne9Jkl5Y4IxB74uR+YaDrwD7r6epiYCgvLASVaRLrGupZO2trWbp7elgmTZzI1lBfz9XW2soDLKF5gDaD6caOZr4zFStZ0/vKVKN78u1vN2xjaW5tFunu6AAHCTAbMwAAMnXbuLftc78AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Hyperplane separating two categories&quot;
+        title=&quot;Hyperplane separating two categories&quot;
+        src=&quot;/static/ee94b5d9c99d348b59a03549a5ce621b/0acb4/hyperplane.png&quot;
+        srcset=&quot;/static/ee94b5d9c99d348b59a03549a5ce621b/2519b/hyperplane.png 113w,
+/static/ee94b5d9c99d348b59a03549a5ce621b/3684f/hyperplane.png 225w,
+/static/ee94b5d9c99d348b59a03549a5ce621b/0acb4/hyperplane.png 392w&quot;
+        sizes=&quot;(max-width: 392px) 100vw, 392px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;em&gt;A hyperplane (which is a standard flat plane in three dimensions) separating two categories distinguished by red and blue spheres. &lt;a href=&quot;https://i.stack.imgur.com/zeRTm.png&quot;&gt;Source&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;h4&gt;Slot Detection&lt;/h4&gt;
+&lt;p&gt;Slot detection sometimes blurs the line between entity parsing and recognition. It can help to think of named entity recognition (NER), where one parses a product name, city and state etc., as a subset of slot detection. Slots can be a feature of the entire piece of text being analyzed or a localized span of text. One example of a slot that spans the entirety of a user query would be plurality. For example, if the user asks, “Who is my top customer?”, Bolt is able to recognize that the person is asking for only one customer, without needing any explicit number to exist in the query. These results are passed back to Shoppy Bot where a response is sent to the user with the results for one customer. &lt;/p&gt;
+&lt;p&gt;Bolt actually uses a binary classifier to determine the query’s plurality. We use a similar ‘bag of words’ technique as the intent classifier but also employ a technique that emphasizes particular features. The emphasized features are words associated with plurality. For example, verb conjugation plays an obvious role in identifying whether or not the query is asking for plural results. The verbs ‘is/are’, ‘was/were’ greatly increase the accuracy of the classification model without the need for large amounts of data. It is a case where smart feature engineering helped defeat a lack of data on our end. As the slot detection of plurality is independent of any specific user, it is a generalizable model.&lt;/p&gt;
+&lt;h4&gt;Named Entity Recognition&lt;/h4&gt;
+&lt;p&gt;Named entity recognition is the probably the most well-known aspect of information retrieval and slot detection in terms of NLP. Shoppy Bot users each have a large set of product names associated with their Shopify store. These “named entities” must be identified and parsed specific to the user. Bolt employs a set of data structures and a specialized string comparison algorithm to successfully parse product names from a user’s query.&lt;/p&gt;
+&lt;p&gt;The data structure that Bolt’s gazetteer uses is called a trie. In this scenario, a trie is an ordered tree structure that stores strings compactly, where each node of the tree is an object or structure that stores the current letter, potentially a word, and references or pointers to the next node. The idea is that in traversing a branch of the trie, you slowly build up a word letter by letter. Words that share the same prefix will start along the same branch.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 450px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/037763317989df7427c7fac152dedcb9/6a068/search_trie.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 75.2212389380531%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAECBf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAd1UigD/xAAWEAEBAQAAAAAAAAAAAAAAAAAQEQD/2gAIAQEAAQUCZof/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAUEAEAAAAAAAAAAAAAAAAAAAAg/9oACAEBAAY/Al//xAAZEAEBAQADAAAAAAAAAAAAAAABABExQXH/2gAIAQEAAT8hXSOe4dkXqy//2gAMAwEAAgADAAAAEDQP/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPxA//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPxA//8QAGxABAQADAQEBAAAAAAAAAAAAAREAITFBgZH/2gAIAQEAAT8Q5jC9qY4BW+C9/cCp4xxBojEuW04gc3rAH3bn/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;String search trie&quot;
+        title=&quot;String search trie&quot;
+        src=&quot;/static/037763317989df7427c7fac152dedcb9/20e5d/search_trie.jpg&quot;
+        srcset=&quot;/static/037763317989df7427c7fac152dedcb9/30b1b/search_trie.jpg 113w,
+/static/037763317989df7427c7fac152dedcb9/863e1/search_trie.jpg 225w,
+/static/037763317989df7427c7fac152dedcb9/20e5d/search_trie.jpg 450w,
+/static/037763317989df7427c7fac152dedcb9/512c0/search_trie.jpg 675w,
+/static/037763317989df7427c7fac152dedcb9/8e1fc/search_trie.jpg 900w,
+/static/037763317989df7427c7fac152dedcb9/6a068/search_trie.jpg 960w&quot;
+        sizes=&quot;(max-width: 450px) 100vw, 450px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;em&gt;&lt;a href=&quot;http://images.slideplayer.com/32/9814580/slides/slide_5.jpg&quot;&gt;Source&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;This data structure allows one to check if a word is in a dictionary extremely quickly but also allows for additional algorithms to function during the search process. Hash lookups for words are generally the fastest mechanism for dictionary lookups. However, if you want to perform string similarity comparisons while searching for a word in a dictionary at the same time, the search trie is your best bet. This allows for robust dictionary lookup of words pulled from the query to see if they match (or are close to matching) the words stored in the trie. Ultimately this is a very robust way to perform fuzzy dictionary lookups. &lt;/p&gt;
+&lt;p&gt;The string similarity mechanism Bolt’s gazetteer uses is the &lt;a href=&quot;https://people.cs.pitt.edu/~kirk/cs1501/Pruhs/Spring2006/assignments/editdistance/Levenshtein%20Distance.htm&quot;&gt;Levenshtein&lt;/a&gt; string similarity algorithm. Briefly, it is an algorithm that outputs an integer value called the string distance representing the number of insertions, switches, and deletions it takes to convert one word into another. After removing common words and certain specialty words from the query, the remaining words are grouped in a number of combinations. These combinations of words are each run through the gazetteer’s search algorithm to find matches within a certain Levenshtein string distance. The algorithm traverses down the trie building test words from the letters along the nodes in the path. The algorithm can dynamically append or remove new letters from the current current trie word so that the Levenshtein algorithm only has to readjust for the new letter in its comparison with the test word from the query. Thus we are not constantly performing and reperforming the entire Levenshtein algorithm for every word in the trie.&lt;/p&gt;
+&lt;p&gt;One additional step Bolt takes to ensure robustness is to add n-grams and skip-grams of the product names into the trie. For example, ‘sally sells sea shells’ as n-grams of length 3 (tri-grams) would be split into ‘sally sells sea’ and ‘sells sea shells’. Skip-grams of length skip distance 1 would result in ‘sally sea shells’ and ‘sally sells shells’. The purpose of these n-grams and skip grams is to account for the different ways a user might express a product name. Perhaps they don’t type every single word if it is a long product name.&lt;/p&gt;
+&lt;h4&gt;The Big Picture&lt;/h4&gt;
+&lt;p&gt;Bolt first classifies the user’s query to an intent. Each intent is associated with a set of possible slots/entities that can be parsed for that intent. Those slots/entities are then parsed. In summary, Bolt generally operates with the following procedure:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Classify User Query to Intent:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Query&lt;/strong&gt;: What is the shipping information for order #2314?&lt;br&gt;
+&lt;strong&gt;Intent&lt;/strong&gt;: get-order-shipping-information&lt;br&gt;
+&lt;strong&gt;Associated Slots/Entities&lt;/strong&gt;: Order Number  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Perform slot/entity detection&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Query&lt;/strong&gt;: What is the shipping information for order #2314?&lt;br&gt;
+&lt;strong&gt;Entities&lt;/strong&gt;: Order Number = #2314&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;Return information to Shoppy Bot server&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;This post provided a fairly indepth overview of some of the theory and implementation details that go into making the Bolt NLU system function. Natural language understanding is exploding and becoming more advanced day by day. The intent-slot paradigm for NLU is a robust and relatively simplistic approach to NLU that can be achieved fairly easily with some simple and clever algorithms and engineering. With this approach, we’re able to provide an NLU system that outperforms other cloud-based solutions on the market, and offer a more sophisticated chatbot experience.&lt;/p&gt;</content:encoded></item></channel></rss>
