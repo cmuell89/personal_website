@@ -1,8 +1,8 @@
 {
-  "name": "dylan-lacom-personal-site",
-  "description": "Dylan La Com's blog at https://dylan-la.com",
+  "name": "carl-mueller-personal-website",
+  "description": "Dylan La Com's blog at www.carl-mueller.com",
   "version": "1.0.0",
-  "author": "Dylan La Com <dylan.lacom@gmail.com>",
+  "author": "Carl Mueller <cmuell89@gmail.com>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.7",
     "gatsby": "^2.23.11",
@@ -18,7 +18,9 @@
     "gatsby-plugin-styled-components": "^3.3.6",
     "gatsby-plugin-typography": "^2.5.6",
     "gatsby-remark-copy-linked-files": "^2.3.7",
+    "gatsby-remark-figure-caption": "^2.0.0",
     "gatsby-remark-images": "^3.3.13",
+    "gatsby-remark-images-grid": "^1.1.0",
     "gatsby-remark-prismjs": "^3.5.6",
     "gatsby-remark-responsive-iframe": "^2.4.7",
     "gatsby-remark-smartypants": "^2.3.6",
@@ -51,14 +53,11 @@
     "serve": "gatsby serve",
     "build": "gatsby build",
     "clean": "gatsby clean",
-    "deploy": "gatsby build --prefix-paths && s3-deploy './public/**' --cwd './public/' --bucket www.dylan-la.com  --deleteRemoved --gzip --profile default && npm run clear",
-    "clear": "aws-cloudfront-invalidate E1YTDQN5752D05",
+    "deploy": "echo \"Error: no deploy specified\" && exit 1",
+    "clear": "echo \"Error: no clear specified\" && exit 1",
     "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js"
   },
-  "devDependencies": {
-    "aws-cloudfront-invalidate": "^0.1.3",
-    "s3-deploy": "^1.4.0"
-  },
+  "devDependencies": {},
   "engines": {
     "node": ">=10.0.0",
     "npm": ">=6.0.0"

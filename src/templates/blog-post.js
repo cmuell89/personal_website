@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Img from 'gatsby-image';
+// import Img from 'gatsby-image';
 
-import Layout from '../components/Layout';
+import Layout from '../components/layout';
 import { ArticleCoverAbout, ArticleFooter } from '../components';
 import media from '../utils/mediaQueryTemplates';
 
@@ -44,20 +44,20 @@ const ArticleEndHorizontalRule = styled.hr`
 const PostDate = styled.p`
   font-size: 0.9em;
 `;
-const CoverImageContainer = styled.div`
-  flex-grow: 1;
-  flex-shrink: 1;
-  overflow: hidden;
-  display: none;
+// const CoverImageContainer = styled.div`
+//   flex-grow: 1;
+//   flex-shrink: 1;
+//   overflow: hidden;
+//   display: none;
 
-  ${media.small`
-    display: block;
-  `}
-`;
-const CoverImage = styled(Img)`
-  width: 640px;
-  overflow-x: hidden;
-`;
+//   ${media.small`
+//     display: block;
+//   `}
+// `;
+// const CoverImage = styled(Img)`
+//   width: 350px;
+//   overflow-x: hidden;
+// `;
 const PostContent = styled.div`
   & img {
     display: block;
@@ -95,14 +95,13 @@ export default function BlogPostTemplate({ data, location }) {
             img={post.frontmatter.featuredImage}
           />
         </Article>
-        {post.frontmatter.featuredImage
+        {/* {post.frontmatter.featuredImage
           ? (
             <CoverImageContainer>
-              <CoverImage fluid={post.frontmatter.featuredImage.childImageSharp.fluid} />
             </CoverImageContainer>
           )
           : null
-        }
+        } */}
       </ArticleContainer>
     </Layout>
   );
@@ -129,6 +128,7 @@ export const pageQuery = graphql`
           childImageSharp {
             fluid(maxHeight: 1000) {
               ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluidLimitPresentationSize
             }
           }
         }

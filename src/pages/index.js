@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import Layout from '../components/Layout';
+import Layout from '../components/layout';
 import { ArticleCard } from '../components';
 import media from '../utils/mediaQueryTemplates';
 
@@ -17,12 +17,12 @@ const StyledWall = styled.div`
 
   ${media.small`
     padding: 0;
-    grid-template-columns: 20em 20em 20em;
+    grid-template-columns: 20em 20em;
     grid-gap: 1em;
   `}
 
   ${media.medium`
-    grid-template-columns: 20em 20em 20em;
+    grid-template-columns: 20em 20em;
     grid-gap: 2em;
   `}
 `;
@@ -49,7 +49,7 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC },
       filter: {
-        frontmatter: { draft: { eq: false } }
+        frontmatter: { draft: { eq: false }, type: {ne: "research"} }
       }
     ) {
       edges {
@@ -65,8 +65,9 @@ export const pageQuery = graphql`
             type
             featuredImage {
               childImageSharp {
-                fluid(maxWidth: 640) {
+                fluid(maxWidth: 650) {
                   ...GatsbyImageSharpFluid
+                  ...GatsbyImageSharpFluidLimitPresentationSize
                 }
               }
             }

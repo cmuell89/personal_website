@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: 'Dylan La Com',
-    siteUrl: 'https://dylan-la.com',
-    description: 'Dylan La Com\'s blog',
+    title: 'Carl Mueller',
+    siteUrl: 'https://www.carl-mueller.com',
+    description: 'Carl Mueller\'s website',
   },
   pathPrefix: '/',
   plugins: [
@@ -11,6 +11,14 @@ module.exports = {
       options: {
         path: `${__dirname}/src/pages`,
         name: 'pages',
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images/`,
+        ignore: [`**/\.*`], // ignore files starting with a dot
       },
     },
     {
@@ -23,10 +31,11 @@ module.exports = {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
+          "gatsby-remark-images-grid",
           {
             resolve: 'gatsby-remark-images',
             options: {
-              maxWidth: 640,
+              maxWidth: 450,
             },
           },
           {
@@ -37,7 +46,7 @@ module.exports = {
           },
           "gatsby-remark-prismjs",
           "gatsby-remark-copy-linked-files",
-          "gatsby-remark-smartypants",
+          "gatsby-remark-smartypants"
         ],
       },
     },
