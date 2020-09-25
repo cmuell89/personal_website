@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Dylan La Com' RSS feed]]></title><description><![CDATA[Carl Mueller's website]]></description><link>https://www.carl-mueller.com</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 25 Sep 2020 17:37:07 GMT</lastBuildDate><item><title><![CDATA[Augmented Reality for Constrained Learning from Demosntration]]></title><link>https://www.carl-mueller.com/research/arc-lfd/</link><guid isPermaLink="false">https://www.carl-mueller.com/research/arc-lfd/</guid><pubDate>Fri, 25 Sep 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;strong&gt;Lightning in a Bot’s first product, &lt;a href=&quot;https://shoppybot.com&quot;&gt;Shoppy Bot&lt;/a&gt;, is a natural language chatbot that Shopify store owners can use to query their business data.&lt;/strong&gt; The natural language interface is a novel approach to reporting and analytics in a backend retail setting, and one we hypothesis can provide faster and more efficient access to important data.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Dylan La Com' RSS feed]]></title><description><![CDATA[Carl Mueller's website]]></description><link>https://www.carl-mueller.com</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 25 Sep 2020 17:44:03 GMT</lastBuildDate><item><title><![CDATA[Augmented Reality for Constrained Learning from Demosntration]]></title><link>https://www.carl-mueller.com/research/arc-lfd/</link><guid isPermaLink="false">https://www.carl-mueller.com/research/arc-lfd/</guid><pubDate>Fri, 25 Sep 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;strong&gt;Lightning in a Bot’s first product, &lt;a href=&quot;https://shoppybot.com&quot;&gt;Shoppy Bot&lt;/a&gt;, is a natural language chatbot that Shopify store owners can use to query their business data.&lt;/strong&gt; The natural language interface is a novel approach to reporting and analytics in a backend retail setting, and one we hypothesis can provide faster and more efficient access to important data.&lt;/p&gt;
 &lt;p&gt;The first version of Shoppy Bot used &lt;a href=&quot;https://wit.ai&quot;&gt;Wit.ai’s&lt;/a&gt; natural language API to convert user requests such as “how many customers have we had this week?” into structured data that we could convert into SQL queries and other various functions. Problems with these cloud services became apparent early on, therefore we began to explore what it would take to build our own Natural Language Understanding (NLU) service, one designed specifically for the task at hand.&lt;/p&gt;
 &lt;p&gt;This post serves as an overview of the theory behind our approach and outlines specific implementation details in developing our own NLU system, now known internally as “Bolt”.&lt;/p&gt;
 &lt;h2&gt;Theory&lt;/h2&gt;
@@ -41,7 +41,7 @@ Bolt uses the fantastic library Scikit-learn and its implementation of an SVM. S
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/personal_website/static/ee94b5d9c99d348b59a03549a5ce621b/0acb4/hyperplane.png&quot;
+    href=&quot;/static/ee94b5d9c99d348b59a03549a5ce621b/0acb4/hyperplane.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -54,10 +54,10 @@ Bolt uses the fantastic library Scikit-learn and its implementation of an SVM. S
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Hyperplane separating two categories&quot;
         title=&quot;Hyperplane separating two categories&quot;
-        src=&quot;/personal_website/static/ee94b5d9c99d348b59a03549a5ce621b/0acb4/hyperplane.png&quot;
-        srcset=&quot;/personal_website/static/ee94b5d9c99d348b59a03549a5ce621b/2519b/hyperplane.png 113w,
-/personal_website/static/ee94b5d9c99d348b59a03549a5ce621b/3684f/hyperplane.png 225w,
-/personal_website/static/ee94b5d9c99d348b59a03549a5ce621b/0acb4/hyperplane.png 392w&quot;
+        src=&quot;/static/ee94b5d9c99d348b59a03549a5ce621b/0acb4/hyperplane.png&quot;
+        srcset=&quot;/static/ee94b5d9c99d348b59a03549a5ce621b/2519b/hyperplane.png 113w,
+/static/ee94b5d9c99d348b59a03549a5ce621b/3684f/hyperplane.png 225w,
+/static/ee94b5d9c99d348b59a03549a5ce621b/0acb4/hyperplane.png 392w&quot;
         sizes=&quot;(max-width: 392px) 100vw, 392px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -77,7 +77,7 @@ Bolt uses the fantastic library Scikit-learn and its implementation of an SVM. S
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/personal_website/static/037763317989df7427c7fac152dedcb9/6a068/search_trie.jpg&quot;
+    href=&quot;/static/037763317989df7427c7fac152dedcb9/6a068/search_trie.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -90,13 +90,13 @@ Bolt uses the fantastic library Scikit-learn and its implementation of an SVM. S
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;String search trie&quot;
         title=&quot;String search trie&quot;
-        src=&quot;/personal_website/static/037763317989df7427c7fac152dedcb9/20e5d/search_trie.jpg&quot;
-        srcset=&quot;/personal_website/static/037763317989df7427c7fac152dedcb9/30b1b/search_trie.jpg 113w,
-/personal_website/static/037763317989df7427c7fac152dedcb9/863e1/search_trie.jpg 225w,
-/personal_website/static/037763317989df7427c7fac152dedcb9/20e5d/search_trie.jpg 450w,
-/personal_website/static/037763317989df7427c7fac152dedcb9/512c0/search_trie.jpg 675w,
-/personal_website/static/037763317989df7427c7fac152dedcb9/8e1fc/search_trie.jpg 900w,
-/personal_website/static/037763317989df7427c7fac152dedcb9/6a068/search_trie.jpg 960w&quot;
+        src=&quot;/static/037763317989df7427c7fac152dedcb9/20e5d/search_trie.jpg&quot;
+        srcset=&quot;/static/037763317989df7427c7fac152dedcb9/30b1b/search_trie.jpg 113w,
+/static/037763317989df7427c7fac152dedcb9/863e1/search_trie.jpg 225w,
+/static/037763317989df7427c7fac152dedcb9/20e5d/search_trie.jpg 450w,
+/static/037763317989df7427c7fac152dedcb9/512c0/search_trie.jpg 675w,
+/static/037763317989df7427c7fac152dedcb9/8e1fc/search_trie.jpg 900w,
+/static/037763317989df7427c7fac152dedcb9/6a068/search_trie.jpg 960w&quot;
         sizes=&quot;(max-width: 450px) 100vw, 450px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -135,7 +135,7 @@ Bolt uses the fantastic library Scikit-learn and its implementation of an SVM. S
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/personal_website/static/77ab0596824f0bcfadf6052e275458c2/a0850/DrearyNYC.jpg&quot;
+    href=&quot;/static/77ab0596824f0bcfadf6052e275458c2/a0850/DrearyNYC.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -148,13 +148,13 @@ Bolt uses the fantastic library Scikit-learn and its implementation of an SVM. S
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Shot from the rooftop of Google NYC. It was bitterly cold that weekend..&quot;
         title=&quot;Shot from the rooftop of Google NYC. It was bitterly cold that weekend..&quot;
-        src=&quot;/personal_website/static/77ab0596824f0bcfadf6052e275458c2/20e5d/DrearyNYC.jpg&quot;
-        srcset=&quot;/personal_website/static/77ab0596824f0bcfadf6052e275458c2/30b1b/DrearyNYC.jpg 113w,
-/personal_website/static/77ab0596824f0bcfadf6052e275458c2/863e1/DrearyNYC.jpg 225w,
-/personal_website/static/77ab0596824f0bcfadf6052e275458c2/20e5d/DrearyNYC.jpg 450w,
-/personal_website/static/77ab0596824f0bcfadf6052e275458c2/512c0/DrearyNYC.jpg 675w,
-/personal_website/static/77ab0596824f0bcfadf6052e275458c2/8e1fc/DrearyNYC.jpg 900w,
-/personal_website/static/77ab0596824f0bcfadf6052e275458c2/a0850/DrearyNYC.jpg 4096w&quot;
+        src=&quot;/static/77ab0596824f0bcfadf6052e275458c2/20e5d/DrearyNYC.jpg&quot;
+        srcset=&quot;/static/77ab0596824f0bcfadf6052e275458c2/30b1b/DrearyNYC.jpg 113w,
+/static/77ab0596824f0bcfadf6052e275458c2/863e1/DrearyNYC.jpg 225w,
+/static/77ab0596824f0bcfadf6052e275458c2/20e5d/DrearyNYC.jpg 450w,
+/static/77ab0596824f0bcfadf6052e275458c2/512c0/DrearyNYC.jpg 675w,
+/static/77ab0596824f0bcfadf6052e275458c2/8e1fc/DrearyNYC.jpg 900w,
+/static/77ab0596824f0bcfadf6052e275458c2/a0850/DrearyNYC.jpg 4096w&quot;
         sizes=&quot;(max-width: 450px) 100vw, 450px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -167,7 +167,7 @@ Bolt uses the fantastic library Scikit-learn and its implementation of an SVM. S
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/personal_website/static/8e7f2a53ddea34f66149ec199d9a7f31/a0850/PanPizza.jpg&quot;
+    href=&quot;/static/8e7f2a53ddea34f66149ec199d9a7f31/a0850/PanPizza.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -180,13 +180,13 @@ Bolt uses the fantastic library Scikit-learn and its implementation of an SVM. S
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Amazing Pan Pizza. NYC has the best pizza. The best!&quot;
         title=&quot;Amazing Pan Pizza. NYC has the best pizza. The best!&quot;
-        src=&quot;/personal_website/static/8e7f2a53ddea34f66149ec199d9a7f31/20e5d/PanPizza.jpg&quot;
-        srcset=&quot;/personal_website/static/8e7f2a53ddea34f66149ec199d9a7f31/30b1b/PanPizza.jpg 113w,
-/personal_website/static/8e7f2a53ddea34f66149ec199d9a7f31/863e1/PanPizza.jpg 225w,
-/personal_website/static/8e7f2a53ddea34f66149ec199d9a7f31/20e5d/PanPizza.jpg 450w,
-/personal_website/static/8e7f2a53ddea34f66149ec199d9a7f31/512c0/PanPizza.jpg 675w,
-/personal_website/static/8e7f2a53ddea34f66149ec199d9a7f31/8e1fc/PanPizza.jpg 900w,
-/personal_website/static/8e7f2a53ddea34f66149ec199d9a7f31/a0850/PanPizza.jpg 4096w&quot;
+        src=&quot;/static/8e7f2a53ddea34f66149ec199d9a7f31/20e5d/PanPizza.jpg&quot;
+        srcset=&quot;/static/8e7f2a53ddea34f66149ec199d9a7f31/30b1b/PanPizza.jpg 113w,
+/static/8e7f2a53ddea34f66149ec199d9a7f31/863e1/PanPizza.jpg 225w,
+/static/8e7f2a53ddea34f66149ec199d9a7f31/20e5d/PanPizza.jpg 450w,
+/static/8e7f2a53ddea34f66149ec199d9a7f31/512c0/PanPizza.jpg 675w,
+/static/8e7f2a53ddea34f66149ec199d9a7f31/8e1fc/PanPizza.jpg 900w,
+/static/8e7f2a53ddea34f66149ec199d9a7f31/a0850/PanPizza.jpg 4096w&quot;
         sizes=&quot;(max-width: 450px) 100vw, 450px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -200,7 +200,7 @@ Bolt uses the fantastic library Scikit-learn and its implementation of an SVM. S
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/personal_website/static/4055f883f751a48c4d1f673f5313441b/a0850/MissyInNYC.jpg&quot;
+    href=&quot;/static/4055f883f751a48c4d1f673f5313441b/a0850/MissyInNYC.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -213,13 +213,13 @@ Bolt uses the fantastic library Scikit-learn and its implementation of an SVM. S
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Walkting the High Line with Missy&quot;
         title=&quot;Walkting the High Line with Missy&quot;
-        src=&quot;/personal_website/static/4055f883f751a48c4d1f673f5313441b/20e5d/MissyInNYC.jpg&quot;
-        srcset=&quot;/personal_website/static/4055f883f751a48c4d1f673f5313441b/30b1b/MissyInNYC.jpg 113w,
-/personal_website/static/4055f883f751a48c4d1f673f5313441b/863e1/MissyInNYC.jpg 225w,
-/personal_website/static/4055f883f751a48c4d1f673f5313441b/20e5d/MissyInNYC.jpg 450w,
-/personal_website/static/4055f883f751a48c4d1f673f5313441b/512c0/MissyInNYC.jpg 675w,
-/personal_website/static/4055f883f751a48c4d1f673f5313441b/8e1fc/MissyInNYC.jpg 900w,
-/personal_website/static/4055f883f751a48c4d1f673f5313441b/a0850/MissyInNYC.jpg 4096w&quot;
+        src=&quot;/static/4055f883f751a48c4d1f673f5313441b/20e5d/MissyInNYC.jpg&quot;
+        srcset=&quot;/static/4055f883f751a48c4d1f673f5313441b/30b1b/MissyInNYC.jpg 113w,
+/static/4055f883f751a48c4d1f673f5313441b/863e1/MissyInNYC.jpg 225w,
+/static/4055f883f751a48c4d1f673f5313441b/20e5d/MissyInNYC.jpg 450w,
+/static/4055f883f751a48c4d1f673f5313441b/512c0/MissyInNYC.jpg 675w,
+/static/4055f883f751a48c4d1f673f5313441b/8e1fc/MissyInNYC.jpg 900w,
+/static/4055f883f751a48c4d1f673f5313441b/a0850/MissyInNYC.jpg 4096w&quot;
         sizes=&quot;(max-width: 450px) 100vw, 450px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -232,7 +232,7 @@ Bolt uses the fantastic library Scikit-learn and its implementation of an SVM. S
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/personal_website/static/6769451079588740aabcd022b54ca88e/67226/TheHighLine.jpg&quot;
+    href=&quot;/static/6769451079588740aabcd022b54ca88e/67226/TheHighLine.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -245,13 +245,13 @@ Bolt uses the fantastic library Scikit-learn and its implementation of an SVM. S
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;View of the High Line in NYC.&quot;
         title=&quot;View of the High Line in NYC.&quot;
-        src=&quot;/personal_website/static/6769451079588740aabcd022b54ca88e/20e5d/TheHighLine.jpg&quot;
-        srcset=&quot;/personal_website/static/6769451079588740aabcd022b54ca88e/30b1b/TheHighLine.jpg 113w,
-/personal_website/static/6769451079588740aabcd022b54ca88e/863e1/TheHighLine.jpg 225w,
-/personal_website/static/6769451079588740aabcd022b54ca88e/20e5d/TheHighLine.jpg 450w,
-/personal_website/static/6769451079588740aabcd022b54ca88e/512c0/TheHighLine.jpg 675w,
-/personal_website/static/6769451079588740aabcd022b54ca88e/8e1fc/TheHighLine.jpg 900w,
-/personal_website/static/6769451079588740aabcd022b54ca88e/67226/TheHighLine.jpg 3072w&quot;
+        src=&quot;/static/6769451079588740aabcd022b54ca88e/20e5d/TheHighLine.jpg&quot;
+        srcset=&quot;/static/6769451079588740aabcd022b54ca88e/30b1b/TheHighLine.jpg 113w,
+/static/6769451079588740aabcd022b54ca88e/863e1/TheHighLine.jpg 225w,
+/static/6769451079588740aabcd022b54ca88e/20e5d/TheHighLine.jpg 450w,
+/static/6769451079588740aabcd022b54ca88e/512c0/TheHighLine.jpg 675w,
+/static/6769451079588740aabcd022b54ca88e/8e1fc/TheHighLine.jpg 900w,
+/static/6769451079588740aabcd022b54ca88e/67226/TheHighLine.jpg 3072w&quot;
         sizes=&quot;(max-width: 450px) 100vw, 450px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -266,7 +266,7 @@ Bolt uses the fantastic library Scikit-learn and its implementation of an SVM. S
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/personal_website/static/0021dbd702b4e8db3e12fd881f3daa86/a0850/Utah.jpg&quot;
+    href=&quot;/static/0021dbd702b4e8db3e12fd881f3daa86/a0850/Utah.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -279,13 +279,13 @@ Bolt uses the fantastic library Scikit-learn and its implementation of an SVM. S
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Driving across Utah. The landscape is surreal.&quot;
         title=&quot;Driving across Utah. The landscape is surreal.&quot;
-        src=&quot;/personal_website/static/0021dbd702b4e8db3e12fd881f3daa86/20e5d/Utah.jpg&quot;
-        srcset=&quot;/personal_website/static/0021dbd702b4e8db3e12fd881f3daa86/30b1b/Utah.jpg 113w,
-/personal_website/static/0021dbd702b4e8db3e12fd881f3daa86/863e1/Utah.jpg 225w,
-/personal_website/static/0021dbd702b4e8db3e12fd881f3daa86/20e5d/Utah.jpg 450w,
-/personal_website/static/0021dbd702b4e8db3e12fd881f3daa86/512c0/Utah.jpg 675w,
-/personal_website/static/0021dbd702b4e8db3e12fd881f3daa86/8e1fc/Utah.jpg 900w,
-/personal_website/static/0021dbd702b4e8db3e12fd881f3daa86/a0850/Utah.jpg 4096w&quot;
+        src=&quot;/static/0021dbd702b4e8db3e12fd881f3daa86/20e5d/Utah.jpg&quot;
+        srcset=&quot;/static/0021dbd702b4e8db3e12fd881f3daa86/30b1b/Utah.jpg 113w,
+/static/0021dbd702b4e8db3e12fd881f3daa86/863e1/Utah.jpg 225w,
+/static/0021dbd702b4e8db3e12fd881f3daa86/20e5d/Utah.jpg 450w,
+/static/0021dbd702b4e8db3e12fd881f3daa86/512c0/Utah.jpg 675w,
+/static/0021dbd702b4e8db3e12fd881f3daa86/8e1fc/Utah.jpg 900w,
+/static/0021dbd702b4e8db3e12fd881f3daa86/a0850/Utah.jpg 4096w&quot;
         sizes=&quot;(max-width: 450px) 100vw, 450px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -298,7 +298,7 @@ Bolt uses the fantastic library Scikit-learn and its implementation of an SVM. S
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/personal_website/static/879c8bfd085be4b9909cd66deb13a814/a0850/LakeTahoe.jpg&quot;
+    href=&quot;/static/879c8bfd085be4b9909cd66deb13a814/a0850/LakeTahoe.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -311,13 +311,13 @@ Bolt uses the fantastic library Scikit-learn and its implementation of an SVM. S
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Views of South Lake Tahoe&quot;
         title=&quot;Views of South Lake Tahoe&quot;
-        src=&quot;/personal_website/static/879c8bfd085be4b9909cd66deb13a814/20e5d/LakeTahoe.jpg&quot;
-        srcset=&quot;/personal_website/static/879c8bfd085be4b9909cd66deb13a814/30b1b/LakeTahoe.jpg 113w,
-/personal_website/static/879c8bfd085be4b9909cd66deb13a814/863e1/LakeTahoe.jpg 225w,
-/personal_website/static/879c8bfd085be4b9909cd66deb13a814/20e5d/LakeTahoe.jpg 450w,
-/personal_website/static/879c8bfd085be4b9909cd66deb13a814/512c0/LakeTahoe.jpg 675w,
-/personal_website/static/879c8bfd085be4b9909cd66deb13a814/8e1fc/LakeTahoe.jpg 900w,
-/personal_website/static/879c8bfd085be4b9909cd66deb13a814/a0850/LakeTahoe.jpg 4096w&quot;
+        src=&quot;/static/879c8bfd085be4b9909cd66deb13a814/20e5d/LakeTahoe.jpg&quot;
+        srcset=&quot;/static/879c8bfd085be4b9909cd66deb13a814/30b1b/LakeTahoe.jpg 113w,
+/static/879c8bfd085be4b9909cd66deb13a814/863e1/LakeTahoe.jpg 225w,
+/static/879c8bfd085be4b9909cd66deb13a814/20e5d/LakeTahoe.jpg 450w,
+/static/879c8bfd085be4b9909cd66deb13a814/512c0/LakeTahoe.jpg 675w,
+/static/879c8bfd085be4b9909cd66deb13a814/8e1fc/LakeTahoe.jpg 900w,
+/static/879c8bfd085be4b9909cd66deb13a814/a0850/LakeTahoe.jpg 4096w&quot;
         sizes=&quot;(max-width: 450px) 100vw, 450px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -351,7 +351,7 @@ Bolt uses the fantastic library Scikit-learn and its implementation of an SVM. S
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/personal_website/static/dc49688db46d3d751779986c28df9dab/a0850/madridpalace.jpg&quot;
+    href=&quot;/static/dc49688db46d3d751779986c28df9dab/a0850/madridpalace.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -364,13 +364,13 @@ Bolt uses the fantastic library Scikit-learn and its implementation of an SVM. S
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Palacio Real de Madrid.&quot;
         title=&quot;Palacio Real de Madrid.&quot;
-        src=&quot;/personal_website/static/dc49688db46d3d751779986c28df9dab/20e5d/madridpalace.jpg&quot;
-        srcset=&quot;/personal_website/static/dc49688db46d3d751779986c28df9dab/30b1b/madridpalace.jpg 113w,
-/personal_website/static/dc49688db46d3d751779986c28df9dab/863e1/madridpalace.jpg 225w,
-/personal_website/static/dc49688db46d3d751779986c28df9dab/20e5d/madridpalace.jpg 450w,
-/personal_website/static/dc49688db46d3d751779986c28df9dab/512c0/madridpalace.jpg 675w,
-/personal_website/static/dc49688db46d3d751779986c28df9dab/8e1fc/madridpalace.jpg 900w,
-/personal_website/static/dc49688db46d3d751779986c28df9dab/a0850/madridpalace.jpg 4096w&quot;
+        src=&quot;/static/dc49688db46d3d751779986c28df9dab/20e5d/madridpalace.jpg&quot;
+        srcset=&quot;/static/dc49688db46d3d751779986c28df9dab/30b1b/madridpalace.jpg 113w,
+/static/dc49688db46d3d751779986c28df9dab/863e1/madridpalace.jpg 225w,
+/static/dc49688db46d3d751779986c28df9dab/20e5d/madridpalace.jpg 450w,
+/static/dc49688db46d3d751779986c28df9dab/512c0/madridpalace.jpg 675w,
+/static/dc49688db46d3d751779986c28df9dab/8e1fc/madridpalace.jpg 900w,
+/static/dc49688db46d3d751779986c28df9dab/a0850/madridpalace.jpg 4096w&quot;
         sizes=&quot;(max-width: 450px) 100vw, 450px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -383,7 +383,7 @@ Bolt uses the fantastic library Scikit-learn and its implementation of an SVM. S
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/personal_website/static/98a4c09673725c640714846264bd6677/a0850/elmatador.jpg&quot;
+    href=&quot;/static/98a4c09673725c640714846264bd6677/a0850/elmatador.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -396,13 +396,13 @@ Bolt uses the fantastic library Scikit-learn and its implementation of an SVM. S
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;El Matador Bar - My go-to.&quot;
         title=&quot;El Matador Bar - My go-to.&quot;
-        src=&quot;/personal_website/static/98a4c09673725c640714846264bd6677/20e5d/elmatador.jpg&quot;
-        srcset=&quot;/personal_website/static/98a4c09673725c640714846264bd6677/30b1b/elmatador.jpg 113w,
-/personal_website/static/98a4c09673725c640714846264bd6677/863e1/elmatador.jpg 225w,
-/personal_website/static/98a4c09673725c640714846264bd6677/20e5d/elmatador.jpg 450w,
-/personal_website/static/98a4c09673725c640714846264bd6677/512c0/elmatador.jpg 675w,
-/personal_website/static/98a4c09673725c640714846264bd6677/8e1fc/elmatador.jpg 900w,
-/personal_website/static/98a4c09673725c640714846264bd6677/a0850/elmatador.jpg 4096w&quot;
+        src=&quot;/static/98a4c09673725c640714846264bd6677/20e5d/elmatador.jpg&quot;
+        srcset=&quot;/static/98a4c09673725c640714846264bd6677/30b1b/elmatador.jpg 113w,
+/static/98a4c09673725c640714846264bd6677/863e1/elmatador.jpg 225w,
+/static/98a4c09673725c640714846264bd6677/20e5d/elmatador.jpg 450w,
+/static/98a4c09673725c640714846264bd6677/512c0/elmatador.jpg 675w,
+/static/98a4c09673725c640714846264bd6677/8e1fc/elmatador.jpg 900w,
+/static/98a4c09673725c640714846264bd6677/a0850/elmatador.jpg 4096w&quot;
         sizes=&quot;(max-width: 450px) 100vw, 450px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -417,7 +417,7 @@ Bolt uses the fantastic library Scikit-learn and its implementation of an SVM. S
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/personal_website/static/003d0b853f32d365f9204c26efa1f7ec/67226/mammothdinner.jpg&quot;
+    href=&quot;/static/003d0b853f32d365f9204c26efa1f7ec/67226/mammothdinner.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -430,13 +430,13 @@ Bolt uses the fantastic library Scikit-learn and its implementation of an SVM. S
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Dinner in Mammoth with Missy.&quot;
         title=&quot;Dinner in Mammoth with Missy.&quot;
-        src=&quot;/personal_website/static/003d0b853f32d365f9204c26efa1f7ec/20e5d/mammothdinner.jpg&quot;
-        srcset=&quot;/personal_website/static/003d0b853f32d365f9204c26efa1f7ec/30b1b/mammothdinner.jpg 113w,
-/personal_website/static/003d0b853f32d365f9204c26efa1f7ec/863e1/mammothdinner.jpg 225w,
-/personal_website/static/003d0b853f32d365f9204c26efa1f7ec/20e5d/mammothdinner.jpg 450w,
-/personal_website/static/003d0b853f32d365f9204c26efa1f7ec/512c0/mammothdinner.jpg 675w,
-/personal_website/static/003d0b853f32d365f9204c26efa1f7ec/8e1fc/mammothdinner.jpg 900w,
-/personal_website/static/003d0b853f32d365f9204c26efa1f7ec/67226/mammothdinner.jpg 3072w&quot;
+        src=&quot;/static/003d0b853f32d365f9204c26efa1f7ec/20e5d/mammothdinner.jpg&quot;
+        srcset=&quot;/static/003d0b853f32d365f9204c26efa1f7ec/30b1b/mammothdinner.jpg 113w,
+/static/003d0b853f32d365f9204c26efa1f7ec/863e1/mammothdinner.jpg 225w,
+/static/003d0b853f32d365f9204c26efa1f7ec/20e5d/mammothdinner.jpg 450w,
+/static/003d0b853f32d365f9204c26efa1f7ec/512c0/mammothdinner.jpg 675w,
+/static/003d0b853f32d365f9204c26efa1f7ec/8e1fc/mammothdinner.jpg 900w,
+/static/003d0b853f32d365f9204c26efa1f7ec/67226/mammothdinner.jpg 3072w&quot;
         sizes=&quot;(max-width: 450px) 100vw, 450px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -449,7 +449,7 @@ Bolt uses the fantastic library Scikit-learn and its implementation of an SVM. S
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/personal_website/static/8b5393a15490e5a9faaa121dd7224e25/a0850/missyflowers.jpg&quot;
+    href=&quot;/static/8b5393a15490e5a9faaa121dd7224e25/a0850/missyflowers.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -462,13 +462,13 @@ Bolt uses the fantastic library Scikit-learn and its implementation of an SVM. S
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Missy enoying the wildflower bloom in California.&quot;
         title=&quot;Missy enoying the wildflower bloom in California.&quot;
-        src=&quot;/personal_website/static/8b5393a15490e5a9faaa121dd7224e25/20e5d/missyflowers.jpg&quot;
-        srcset=&quot;/personal_website/static/8b5393a15490e5a9faaa121dd7224e25/30b1b/missyflowers.jpg 113w,
-/personal_website/static/8b5393a15490e5a9faaa121dd7224e25/863e1/missyflowers.jpg 225w,
-/personal_website/static/8b5393a15490e5a9faaa121dd7224e25/20e5d/missyflowers.jpg 450w,
-/personal_website/static/8b5393a15490e5a9faaa121dd7224e25/512c0/missyflowers.jpg 675w,
-/personal_website/static/8b5393a15490e5a9faaa121dd7224e25/8e1fc/missyflowers.jpg 900w,
-/personal_website/static/8b5393a15490e5a9faaa121dd7224e25/a0850/missyflowers.jpg 4096w&quot;
+        src=&quot;/static/8b5393a15490e5a9faaa121dd7224e25/20e5d/missyflowers.jpg&quot;
+        srcset=&quot;/static/8b5393a15490e5a9faaa121dd7224e25/30b1b/missyflowers.jpg 113w,
+/static/8b5393a15490e5a9faaa121dd7224e25/863e1/missyflowers.jpg 225w,
+/static/8b5393a15490e5a9faaa121dd7224e25/20e5d/missyflowers.jpg 450w,
+/static/8b5393a15490e5a9faaa121dd7224e25/512c0/missyflowers.jpg 675w,
+/static/8b5393a15490e5a9faaa121dd7224e25/8e1fc/missyflowers.jpg 900w,
+/static/8b5393a15490e5a9faaa121dd7224e25/a0850/missyflowers.jpg 4096w&quot;
         sizes=&quot;(max-width: 450px) 100vw, 450px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -519,7 +519,7 @@ Bolt uses the fantastic library Scikit-learn and its implementation of an SVM. S
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/personal_website/static/ee94b5d9c99d348b59a03549a5ce621b/0acb4/hyperplane.png&quot;
+    href=&quot;/static/ee94b5d9c99d348b59a03549a5ce621b/0acb4/hyperplane.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -532,10 +532,10 @@ Bolt uses the fantastic library Scikit-learn and its implementation of an SVM. S
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Hyperplane separating two categories&quot;
         title=&quot;Hyperplane separating two categories&quot;
-        src=&quot;/personal_website/static/ee94b5d9c99d348b59a03549a5ce621b/0acb4/hyperplane.png&quot;
-        srcset=&quot;/personal_website/static/ee94b5d9c99d348b59a03549a5ce621b/2519b/hyperplane.png 113w,
-/personal_website/static/ee94b5d9c99d348b59a03549a5ce621b/3684f/hyperplane.png 225w,
-/personal_website/static/ee94b5d9c99d348b59a03549a5ce621b/0acb4/hyperplane.png 392w&quot;
+        src=&quot;/static/ee94b5d9c99d348b59a03549a5ce621b/0acb4/hyperplane.png&quot;
+        srcset=&quot;/static/ee94b5d9c99d348b59a03549a5ce621b/2519b/hyperplane.png 113w,
+/static/ee94b5d9c99d348b59a03549a5ce621b/3684f/hyperplane.png 225w,
+/static/ee94b5d9c99d348b59a03549a5ce621b/0acb4/hyperplane.png 392w&quot;
         sizes=&quot;(max-width: 392px) 100vw, 392px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -555,7 +555,7 @@ Bolt uses the fantastic library Scikit-learn and its implementation of an SVM. S
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/personal_website/static/037763317989df7427c7fac152dedcb9/6a068/search_trie.jpg&quot;
+    href=&quot;/static/037763317989df7427c7fac152dedcb9/6a068/search_trie.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -568,13 +568,13 @@ Bolt uses the fantastic library Scikit-learn and its implementation of an SVM. S
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;String search trie&quot;
         title=&quot;String search trie&quot;
-        src=&quot;/personal_website/static/037763317989df7427c7fac152dedcb9/20e5d/search_trie.jpg&quot;
-        srcset=&quot;/personal_website/static/037763317989df7427c7fac152dedcb9/30b1b/search_trie.jpg 113w,
-/personal_website/static/037763317989df7427c7fac152dedcb9/863e1/search_trie.jpg 225w,
-/personal_website/static/037763317989df7427c7fac152dedcb9/20e5d/search_trie.jpg 450w,
-/personal_website/static/037763317989df7427c7fac152dedcb9/512c0/search_trie.jpg 675w,
-/personal_website/static/037763317989df7427c7fac152dedcb9/8e1fc/search_trie.jpg 900w,
-/personal_website/static/037763317989df7427c7fac152dedcb9/6a068/search_trie.jpg 960w&quot;
+        src=&quot;/static/037763317989df7427c7fac152dedcb9/20e5d/search_trie.jpg&quot;
+        srcset=&quot;/static/037763317989df7427c7fac152dedcb9/30b1b/search_trie.jpg 113w,
+/static/037763317989df7427c7fac152dedcb9/863e1/search_trie.jpg 225w,
+/static/037763317989df7427c7fac152dedcb9/20e5d/search_trie.jpg 450w,
+/static/037763317989df7427c7fac152dedcb9/512c0/search_trie.jpg 675w,
+/static/037763317989df7427c7fac152dedcb9/8e1fc/search_trie.jpg 900w,
+/static/037763317989df7427c7fac152dedcb9/6a068/search_trie.jpg 960w&quot;
         sizes=&quot;(max-width: 450px) 100vw, 450px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -649,7 +649,7 @@ Bolt uses the fantastic library Scikit-learn and its implementation of an SVM. S
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/personal_website/static/ee94b5d9c99d348b59a03549a5ce621b/0acb4/hyperplane.png&quot;
+    href=&quot;/static/ee94b5d9c99d348b59a03549a5ce621b/0acb4/hyperplane.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -662,10 +662,10 @@ Bolt uses the fantastic library Scikit-learn and its implementation of an SVM. S
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Hyperplane separating two categories&quot;
         title=&quot;Hyperplane separating two categories&quot;
-        src=&quot;/personal_website/static/ee94b5d9c99d348b59a03549a5ce621b/0acb4/hyperplane.png&quot;
-        srcset=&quot;/personal_website/static/ee94b5d9c99d348b59a03549a5ce621b/2519b/hyperplane.png 113w,
-/personal_website/static/ee94b5d9c99d348b59a03549a5ce621b/3684f/hyperplane.png 225w,
-/personal_website/static/ee94b5d9c99d348b59a03549a5ce621b/0acb4/hyperplane.png 392w&quot;
+        src=&quot;/static/ee94b5d9c99d348b59a03549a5ce621b/0acb4/hyperplane.png&quot;
+        srcset=&quot;/static/ee94b5d9c99d348b59a03549a5ce621b/2519b/hyperplane.png 113w,
+/static/ee94b5d9c99d348b59a03549a5ce621b/3684f/hyperplane.png 225w,
+/static/ee94b5d9c99d348b59a03549a5ce621b/0acb4/hyperplane.png 392w&quot;
         sizes=&quot;(max-width: 392px) 100vw, 392px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -685,7 +685,7 @@ Bolt uses the fantastic library Scikit-learn and its implementation of an SVM. S
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/personal_website/static/037763317989df7427c7fac152dedcb9/6a068/search_trie.jpg&quot;
+    href=&quot;/static/037763317989df7427c7fac152dedcb9/6a068/search_trie.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -698,13 +698,13 @@ Bolt uses the fantastic library Scikit-learn and its implementation of an SVM. S
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;String search trie&quot;
         title=&quot;String search trie&quot;
-        src=&quot;/personal_website/static/037763317989df7427c7fac152dedcb9/20e5d/search_trie.jpg&quot;
-        srcset=&quot;/personal_website/static/037763317989df7427c7fac152dedcb9/30b1b/search_trie.jpg 113w,
-/personal_website/static/037763317989df7427c7fac152dedcb9/863e1/search_trie.jpg 225w,
-/personal_website/static/037763317989df7427c7fac152dedcb9/20e5d/search_trie.jpg 450w,
-/personal_website/static/037763317989df7427c7fac152dedcb9/512c0/search_trie.jpg 675w,
-/personal_website/static/037763317989df7427c7fac152dedcb9/8e1fc/search_trie.jpg 900w,
-/personal_website/static/037763317989df7427c7fac152dedcb9/6a068/search_trie.jpg 960w&quot;
+        src=&quot;/static/037763317989df7427c7fac152dedcb9/20e5d/search_trie.jpg&quot;
+        srcset=&quot;/static/037763317989df7427c7fac152dedcb9/30b1b/search_trie.jpg 113w,
+/static/037763317989df7427c7fac152dedcb9/863e1/search_trie.jpg 225w,
+/static/037763317989df7427c7fac152dedcb9/20e5d/search_trie.jpg 450w,
+/static/037763317989df7427c7fac152dedcb9/512c0/search_trie.jpg 675w,
+/static/037763317989df7427c7fac152dedcb9/8e1fc/search_trie.jpg 900w,
+/static/037763317989df7427c7fac152dedcb9/6a068/search_trie.jpg 960w&quot;
         sizes=&quot;(max-width: 450px) 100vw, 450px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
