@@ -37,7 +37,7 @@ export default function About({data, location}) {
           <h3>Links</h3>
           <h5>Professional</h5>
           <ul>
-            <li><a href="CV.pdf" download>CV</a></li>
+            <li><a href={data.cv.publicURL}>CV</a></li>
           </ul>
           <h5>Social</h5>
           <ul>
@@ -76,6 +76,11 @@ export const query = graphql`
           ...GatsbyImageSharpFluidLimitPresentationSize
         }
       }
+    }
+    cv: file(relativePath: { eq: "CV.pdf" }) {
+      name
+      extension
+      publicURL
     }
   } 
 `
