@@ -58,11 +58,6 @@ export default function NavLinks() {
         title="Contact"
         activeStyle={{ color: 'rgba(0,0,0,1)'}}
       >Contact</StyledNavLink>
-      <StyledSecondaryNavLink
-        to="/rss.xml"
-        title="RSS"
-        activeStyle={{ color: 'rgba(0,0,0,1)'}}
-      >rss</StyledSecondaryNavLink>
     </span>
   );
 }

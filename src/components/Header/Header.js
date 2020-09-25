@@ -81,7 +81,7 @@ export default class Header extends PureComponent {
     pageTitle: PropTypes.string,
   };
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     const { location: currLocation } = this.props;
     const { location: newLocation } = nextProps;
     // Close responsive menu when location changes

@@ -4,7 +4,7 @@ module.exports = {
     siteUrl: 'https://www.carl-mueller.com',
     description: 'Carl Mueller\'s website',
   },
-  pathPrefix: '/',
+  pathPrefix: '/personal_website',
   plugins: [
     {
       resolve: 'gatsby-source-filesystem',
@@ -19,6 +19,13 @@ module.exports = {
         name: `images`,
         path: `${__dirname}/src/images/`,
         ignore: [`**/\.*`], // ignore files starting with a dot
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/data`,
+        name: 'data',
       },
     },
     {
