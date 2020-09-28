@@ -28,15 +28,22 @@ const StyledWall = styled.div`
   `}
 `;
 
+const ContentContainer = styled.div`
+  max-width: 40em;
+  padding: 0 1em;
+`;
+
 
 export default function ResearchIndex({ data, location }) {
   const { edges: posts } = data.allMarkdownRemark;
 
   return (
     <Layout location={location}>
-      <StyledWall>
-        {posts.map(({ node: post}) => (<ArticleCard key={post.id} post={post} />))}
-      </StyledWall>
+      <ContentContainer>      
+        <StyledWall>
+          {posts.map(({ node: post}) => (<ArticleCard key={post.id} post={post} />))}
+        </StyledWall>
+      </ContentContainer>
     </Layout>
   );
 };

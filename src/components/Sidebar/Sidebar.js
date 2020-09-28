@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { NavLinks } from '../../components';
+import { NavLinks, SocialGrid } from '../../components';
 import media from '../../utils/mediaQueryTemplates';
 
 
@@ -22,12 +22,21 @@ const StyledNav = styled.nav`
   position: fixed;
 `;
 
+const StyledIcon = styled.div`
+  position: fixed;
+  margin-top: 180px;
+`;
+
+
 export default function Sidebar() {
   return (
-    <StyledSidebar>
-      <StyledNav>
-        <NavLinks />
-      </StyledNav>
-    </StyledSidebar>
-  );
-}
+        <StyledSidebar>
+          <StyledNav>
+            <NavLinks />
+          </StyledNav>
+          <StyledIcon>
+            <SocialGrid />
+          </StyledIcon>
+        </StyledSidebar>
+      )
+};

@@ -1,6 +1,6 @@
-# Dylan La Com's personal site
+# Carl Muellers's personal site
 
-[dylan-la.com](https://dylan-la.com)
+[carl-mueller.com](https://www.carl-mueller.com)
 
 ## Running Gatsby in development
 `./node_modules/.bin/gatsby develop` or `npm run dev`

@@ -33,6 +33,18 @@ const StyledArticle = styled.article`
     }
   `}
 
+  ${props => props.size === 'medium' && `
+  max-width: 300px;
+
+  & h2 {
+    font-size: 1em;
+  }
+
+  & a {
+    padding: 0.6em;
+  }
+`}
+
   &:hover {
     opacity: 0.85;
   }
