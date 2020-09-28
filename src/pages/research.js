@@ -41,7 +41,7 @@ export default function ResearchIndex({ data, location }) {
     <Layout location={location}>
       <ContentContainer>      
         <StyledWall>
-          {posts.map(({ node: post}) => (<ArticleCard key={post.id} post={post} />))}
+          {posts.map(({ node: post}) => (<ArticleCard key={post.id} post={post} size="medium"/>))}
         </StyledWall>
       </ContentContainer>
     </Layout>
