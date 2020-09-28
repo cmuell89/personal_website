@@ -59,14 +59,22 @@ const PostDate = styled.p`
 //   overflow-x: hidden;
 // `;
 const PostContent = styled.div`
-  & img {
+  & blockquote {
+    font-size: 0.9rem;
+  }  
+
+  & figure {
+  }
+
+  & figure img {
     display: block;
     margin: 0 auto;
   }
 
-  & blockquote {
-    font-size: 0.9rem;
-  }  
+  & figure figcaption {
+      text-align: center;
+      font-size: 14px;
+  }
 `;
 
 
