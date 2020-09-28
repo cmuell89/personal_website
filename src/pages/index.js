@@ -15,15 +15,22 @@ const StyledWall = styled.div`
   grid-gap: 1em;
   padding: 1em;
 
+  ${media.xsmall`
+    padding: 0;
+    grid-template-columns: 10em 10em;
+    grid-gap: 1em;
+  `}
+
+
   ${media.small`
     padding: 0;
-    grid-template-columns: 20em 20em;
+    grid-template-columns: 12em 12em;
     grid-gap: 1em;
   `}
 
   ${media.medium`
-    grid-template-columns: 20em 20em;
-    grid-gap: 2em;
+    grid-template-columns: 12em 12em;
+    grid-gap: 1em;
   `}
 `;
 
@@ -47,7 +54,7 @@ export default function Home({ data, location }) {
       <br></br>
       <h2>Recent Posts...</h2>
       <StyledWall>
-        {posts.map(({ node: post }) => (<ArticleCard key={post.id} post={post} size="medium" />))}
+        {posts.map(({ node: post }) => (<ArticleCard key={post.id} post={post} size="small" />))}
       </StyledWall>
       </ContentContainer>
     </Layout>
@@ -62,16 +69,11 @@ export const homeQuery = graphql`
   query HomeQuery {
     imageOne: file(relativePath: { eq: "carl_headshot.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 400) {
+        fluid(maxWidth: 420) {
           ...GatsbyImageSharpFluid
           ...GatsbyImageSharpFluidLimitPresentationSize
         }
       }
-    }
-    cv: file(relativePath: { eq: "CV.pdf" }) {
-      name
-      extension
-      publicURL
     }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC },
