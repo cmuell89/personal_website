@@ -24,6 +24,9 @@ export default function Footer() {
       <div>
         &copy; {new Date().getFullYear()} {config.title}
       </div>
+      <section>
+          <p>This is a static website built with <a href="https://reactjs.org/" target="_blank" rel="noreferrer" title="React">React</a> and <a href="https://www.gatsbyjs.org/" target="_blank" rel="noreferrer" title="gatsbyjs">Gatsby JS</a>. It is hosted on GitHub pages.</p>
+      </section>
     </StyledFooter>
   );
 }
