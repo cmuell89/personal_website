@@ -38,13 +38,17 @@ export default function About({ data, location }) {
             <figcaption>CU Boulder Short Track Racing.</figcaption>
           </figure>
           <br></br>
-          <p>While I have only recently picked up snowboarding a couple of years ago, it gets more and more fun each season. And the views in the CO mountains are unreal.</p>
+          <p>I recently picked up snowboarding a couple of years ago, but it gets more and more fun each season. The views in the CO mountains are unreal.</p>
           <figure>
             <Img fluid={data.imageThree.childImageSharp.fluid} />
             <figcaption>The summit of Arapahoe Basin, one of my favorite places on earth.</figcaption>
           </figure>
           <br></br>
-          <p>I also enjoy cooking, playing bass guitar, watching movies, and the Celtics.</p>
+          <p>I also enjoy cooking, playing bass guitar, watching movies, and the Boston sports.</p>
+          <figure>
+            <Img fluid={data.imageFour.childImageSharp.fluid} />
+            <figcaption>Red Sox Dodgers circa 2013. The time flies!</figcaption>
+          </figure>
         </section>
       </ContentContainer>
     </Layout>
@@ -70,6 +74,14 @@ export const query = graphql`
       }
     }
     imageThree: file(relativePath: { eq: "Abasin.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 600) {
+          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluidLimitPresentationSize
+        }
+      }
+    }
+    imageFour: file(relativePath: { eq: "RedSoxDodgers.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 600) {
           ...GatsbyImageSharpFluid
