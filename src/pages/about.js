@@ -44,7 +44,7 @@ export default function About({ data, location }) {
             <figcaption>The summit of Arapahoe Basin, one of my favorite places on earth.</figcaption>
           </figure>
           <br></br>
-          <p>I also enjoy cooking, playing bass guitar, watching movies, and the Boston sports.</p>
+          <p>I also enjoy cooking, playing bass guitar, watching movies, and Boston sports.</p>
           <figure>
             <Img fluid={data.imageFour.childImageSharp.fluid} />
             <figcaption>Red Sox Dodgers circa 2013. The time flies!</figcaption>
