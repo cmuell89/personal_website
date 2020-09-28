@@ -10,10 +10,9 @@ const ContentContainer = styled.div`
   max-width: 40em;
   padding: 0 1em;
 
-`;
-
-const FigCaption = styled.figcaption`
-  font-size: 14px;
+  & figure figcaption {
+      font-size: 14px;
+  }
 `;
 
 export default function About({ data, location }) {
@@ -26,7 +25,7 @@ export default function About({ data, location }) {
           <p>Currently, I am senior member of <a href="https://www.cairo-lab.com/" title="CAIRO Lab">CAIRO lab</a> at CU Boulder, advised by Professor Bradley Hayes. I also helped co-found a technology startup called <a href="https://lightninginabot.com" title="Lightning in a Bot">Lightning in a Bot</a>, which developed the Shoppy Bot product, a novel reporting software for ecommerce businesses.</p>
           <figure>
             <Img fluid={data.VeniceWithMissy.childImageSharp.fluid} />
-            <FigCaption>Venice Beach with Missy circa 2015.</FigCaption>
+            <figcaption>Venice Beach with Missy circa 2015.</figcaption>
           </figure>
         </section>
         <h3>A Brief History Of Time</h3>
@@ -36,7 +35,7 @@ export default function About({ data, location }) {
           </p>
           <figure>
             <Img fluid={data.FrostedFlatirons.childImageSharp.fluid} />
-            <FigCaption>Early morning view of the Flatirons after a health snowfall.</FigCaption>
+            <figcaption>Early morning view of the Flatirons after a health snowfall.</figcaption>
           </figure>
           <br></br>
         </section>
@@ -45,19 +44,19 @@ export default function About({ data, location }) {
           <p>I love to mountain bike. While I enjoy road cycling, gravel, and cyclocross, mountain biking is absolutely the most fun thing in the world.</p>
           <figure>
             <Img fluid={data.CUShortTrack.childImageSharp.fluid} />
-            <FigCaption>CU Boulder Short Track Racing.</FigCaption>
+            <figcaption>CU Boulder Short Track Racing.</figcaption>
           </figure>
           <br></br>
           <p>I recently picked up snowboarding a couple of years ago, but it gets more and more fun each season. The views in the CO mountains are unreal.</p>
           <figure>
             <Img fluid={data.Abasin.childImageSharp.fluid} />
-            <FigCaption>The summit of Arapahoe Basin, one of my favorite places on earth.</FigCaption>
+            <figcaption>The summit of Arapahoe Basin, one of my favorite places on earth.</figcaption>
           </figure>
           <br></br>
           <p>I also enjoy cooking, playing bass guitar, watching movies, and Boston sports.</p>
           <figure>
             <Img fluid={data.RedSoxDodgers.childImageSharp.fluid} />
-            <FigCaption>Red Sox Dodgers circa 2013. The time flies!</FigCaption>
+            <figcaption>Red Sox Dodgers circa 2013. The time flies!</figcaption>
           </figure>
         </section>
       </ContentContainer>

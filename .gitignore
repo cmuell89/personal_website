@@ -8,3 +8,5 @@ yarn.lock
 
 # Python virtual env
 env/
+
+.vscode

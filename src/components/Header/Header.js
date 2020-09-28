@@ -64,6 +64,8 @@ const ResponsiveMenu = styled.div`
   background: white;
   padding: 2em;
   z-index: 9999;
+  overflow-y:auto;
+  padding-bottom: 50px;
 
   ${media.xsmall`
     display: none;
