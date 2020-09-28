@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { StaticQuery, graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 
-import { NavLinks } from '../../components';
+import { NavLinks, SocialGrid } from '../../components';
 import config from '../../config';
 import { scale } from '../../utils/typography';
 import media from '../../utils/mediaQueryTemplates';
@@ -136,6 +136,8 @@ export default class Header extends PureComponent {
             </StyledHeader>
             <ResponsiveMenu visible={this.state.showMobileMenu}>
               <NavLinks />
+              <br></br>
+              <SocialGrid />
             </ResponsiveMenu>
           </>
         )}
