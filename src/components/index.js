@@ -9,3 +9,4 @@ export { default as Input } from './Input/Input';
 export { default as NavLinks } from './NavLinks/NavLinks';
 export { default as NewsletterSignup } from './NewsletterSignup/NewsletterSignup';
 export { default as Sidebar } from './Sidebar/Sidebar';
+export { default as SocialGrid} from './SocialGrid/SocialGrid';
