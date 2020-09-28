@@ -16,16 +16,17 @@ const StyledArticle = styled.article`
   display: inline-block;
   background: black;
   width: 100%;
-  max-height: 680px;
+  max-width: 300px;
+  max-height: 640px;
   overflow: hidden;
   transition: all .15s ease-in;
 
   /* Adjust for size of card */
   ${props => props.size === 'small' && `
-    max-width: 150px;
+    max-width: 200px;
 
     & h2 {
-      font-size: 1em;
+      font-size: .75em;
     }
 
     & a {
@@ -37,7 +38,7 @@ const StyledArticle = styled.article`
   max-width: 300px;
 
   & h2 {
-    font-size: 1em;
+    font-size: 1.25em;
   }
 
   & a {
@@ -48,6 +49,10 @@ const StyledArticle = styled.article`
   &:hover {
     opacity: 0.85;
   }
+
+  ${media.small`
+    max-height: 580px;
+  `}
 
   ${media.small`
     max-height: 580px;
@@ -87,13 +92,23 @@ const ArticleCardContent = styled.span`
 const ArticleCardTitle = styled.h2`
   margin-bottom: auto;
   color: ${readableColor('#000')};
-  font-size: 2.7em;
+  font-size: 1.5em;
   line-height: 1.1em;
   word-wrap: normal;
   padding-top: 0.5em;
- 
+  
+  ${media.xsmall`
+  font-size: 1.5em;
+  padding-top: 0;
+`}
+
   ${media.small`
-    font-size: 2em;
+    font-size: 1.75em;
+    padding-top: 0;
+  `}
+
+  ${media.medium`
+    font-size: 2.0em;
     padding-top: 0;
   `}
 `;
