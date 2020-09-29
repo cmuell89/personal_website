@@ -48,17 +48,17 @@ export default function SocialGrid() {
         `}
       render={data => (
         <StyledSocialGrid>
-          <div class="item"><a href={data.cv.publicURL}
+          <div className="item"><a href={data.cv.publicURL}
             title="CV"><FaClipboardList size={24}/></a></div>
-          <div class="item"><a
+          <div className="item"><a
             href='https://www.linkedin.com/in/carl-mueller-794b9a26/'
             title="LinkedIn"><FaLinkedinIn size={24}/></a>
           </div>
-          <div class="item"><a
+          <div className="item"><a
             href='https://twitter.com/cmuell89'
             title="Twitter"><FaTwitter size={24}/></a>
           </div>
-          <div class="item"><a
+          <div className="item"><a
             href='https://github.com/cmuell89'
             title="GitHub"><FaGithub size={24}/></a>
           </div>

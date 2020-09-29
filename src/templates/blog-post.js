@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-// import Img from 'gatsby-image';
+import { DiscussionEmbed } from 'disqus-react';
 
 import Layout from '../components/layout';
 import { ArticleCoverAbout, ArticleFooter } from '../components';
@@ -44,20 +44,7 @@ const ArticleEndHorizontalRule = styled.hr`
 const PostDate = styled.p`
   font-size: 0.9em;
 `;
-// const CoverImageContainer = styled.div`
-//   flex-grow: 1;
-//   flex-shrink: 1;
-//   overflow: hidden;
-//   display: none;
 
-//   ${media.small`
-//     display: block;
-//   `}
-// `;
-// const CoverImage = styled(Img)`
-//   width: 350px;
-//   overflow-x: hidden;
-// `;
 const PostContent = styled.div`
   & blockquote {
     font-size: 0.9rem;
@@ -81,6 +68,12 @@ const PostContent = styled.div`
 export default function BlogPostTemplate({ data, location }) {
   const { markdownRemark: post } = data;
 
+  const disqusShortname = "www-carl-mueller-com";
+  const disqusConfig = {
+      identifier: post.id,
+      title: post.frontmatter.title,
+  }
+
   return (
     <Layout location={location} pageTitle={post.frontmatter.title}>
       <ArticleContainer>
@@ -93,6 +86,7 @@ export default function BlogPostTemplate({ data, location }) {
           </ArticleHeader>
           <PostContent dangerouslySetInnerHTML={{ __html: post.html }} />
           <ArticleEndHorizontalRule />
+          <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
           <ArticleFooter
             authors={post.frontmatter.authors}
             path={post.fields.slug}
@@ -103,13 +97,7 @@ export default function BlogPostTemplate({ data, location }) {
             img={post.frontmatter.featuredImage}
           />
         </Article>
-        {/* {post.frontmatter.featuredImage
-          ? (
-            <CoverImageContainer>
-            </CoverImageContainer>
-          )
-          : null
-        } */}
+        
       </ArticleContainer>
     </Layout>
   );
