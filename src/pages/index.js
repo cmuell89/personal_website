@@ -67,7 +67,7 @@ Home.propTypes = {
 
 export const homeQuery = graphql`
   query HomeQuery {
-    imageOne: file(relativePath: { eq: "carl_headshot.jpg" }) {
+    imageOne: file(relativePath: { eq: "carl_mueller_headshot_large.jpeg" }) {
       childImageSharp {
         fluid(maxWidth: 420) {
           ...GatsbyImageSharpFluid

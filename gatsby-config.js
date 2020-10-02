@@ -38,6 +38,7 @@ module.exports = {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
+          `gatsby-remark-bibliography`,
           "gatsby-remark-figure-caption",
           "gatsby-remark-images-grid",
           {

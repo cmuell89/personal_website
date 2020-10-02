@@ -4,28 +4,34 @@ date: "2018-10-26T00:00:00.000Z"
 type: research
 authors: ["Carl Mueller"]
 draft: false
-featuredImage: "./lichen_canny_edge.png"
-coverDesc: "The cover started as a photo of lichen on rock to which we applied canny edge detection to outline the texture of the rock and plant."
-tags: ["shoppy bot", "natural language understanding"]
+featuredImage: "./Placement.jpeg"
+coverDesc: "Sawyer hoping to avoid spilling coffee..."
+tags: ["LfD", "research"]
 ---
 
-**Lightning in a Bot's first product, [Shoppy Bot](https://shoppybot.com), is a natural language chatbot that Shopify store owners can use to query their business data.** The natural language interface is a novel approach to reporting and analytics in a backend retail setting, and one we hypothesis can provide faster and more efficient access to important data.
+## Why is this important?
 
-The first version of Shoppy Bot used [Wit.ai's](https://wit.ai) natural language API to convert user requests such as "how many customers have we had this week?" into structured data that we could convert into SQL queries and other various functions. Problems with these cloud services became apparent early on, therefore we began to explore what it would take to build our own Natural Language Understanding (NLU) service, one designed specifically for the task at hand.
+My PhD research's seminal work is called **Concept Constrained Learning from Demonstration** \cite{mueller2018robust}. It is this work that motivates my current research into constrained motion planning and human-robot interfaces, specifically augmented reality interfaces. Ultimately, I want to figure out how to make robots easily trainable and usable by non-roboticists. Physical automation is a wide-open frontier in the world of information technology. However, the introduction of collaborative robots into human environments presents a number of challenges often not required of large-scale industrial robots: safety in shared workspaces, rapidly changing task requirements, decision-making, and, perhaps most challenging, adhering to human expectations of behavior. As such, the foundational motivation behind this work is to provide human users the means to easily train collaborative robots to execute dynamic skills while adhering to important behavioral restrictions.
 
-This post serves as an overview of the theory behind our approach and outlines specific implementation details in developing our own NLU system, now known internally as "Bolt".
 
-## Theory
+## Background
 
-### Semantic Challenges
+### Learning from Demonstration
 
-Semantics is a field of linguistics which concerns itself with the meaning of language, both written and spoken. Natural Language Understanding is a broad field that attempts to assign semantics to spoken or written language in order to derive understanding. Computer scientists, linguists, and machine learning engineers attempt to use this understanding as actionable information when developing applications. NLU presents unique challenges to engineers due to ambiguousness, variability in style and formation, context, prior knowledge dependency and the disparity between different languages themselves.
+Robot Learning from Demonstration (LfD) consists of methods that attempt to learn successful robot behavior models from human input. A human operator interacts with a robotic system through some mode of demonstration, usually through kinesthetic demonstration (e.g. physical interaction), teleoperation (e.g. remote control), or passive observation (e.g. motion tracking observation). Demonstration ideally communicates information about the nature of the skill that the robotic learning system uses to build a learned model that resembles some latent (i.e. hidden) ground truth model. The methods by which robotic systems learn such models spans across the spectrum of machine learning. However there are three broad cateogrizations for robot LfD systems: 1) plan learning, 2) functional optimization, and 3) policy learning  \cite{ravichandar2020recent}.
 
-### Intent-Slot Paradigm
+![A human user (me) kinestheticaly demonstrating a skill.](ActionShot.jpeg)
 
-One successful method that provides a good framework for generating actionable information from natural language is the [intent-slot paradigm](http://www.cs.toronto.edu/~aditya/publications/contextual.pdf). The intent-slot paradigm is a method of Natural Language Understanding that combines a number of core Natural Language Processing and Information Extraction techniques in order to derive a semantic understanding of written language. In Shoppy Bot’s case, the derivation is a semantic understanding of the user’s question about their business data. There are three major types of information extracted under this NLU model: Intents, Slots, and Entities.
 
-#### Intents
+The ultimate goal of these learning methods is to facilitate the transfer of information from a non-roboticist, with some expert intuition about the skill, to the robotic learning system. This information is then used by robot skill learning methods to produce successful learned models of the task. Plan learning methods attempt to learn models that operate at high levels of task abstraction, either learning a primitive sequence or hierarchy. Functional optimization methods either directly optimize a candidate trajectory (potentially one derived from demonstration) using a known objective function, or they attempt to learn an objective from demonstration. These approaches often emulate or directly draw from Reinforcement Learning and Inverse Reinforcement Learning techniques. Lastly, policy learning methods produce models that output either trajectories or low-level actions directly.
+
+### Keyframe Learning from Demonstration
+
+CC-LfD is an augnmentation of a learning method called Keyframe LfD (KLfD) \cite{akgun2012keyframe}. In traditional KLfD, human operators teach a skill by providing distinct waypoints of robot state data. This represents a coarse trajectory for the robot to follow. This approach is powerful because it very easily allows users to specify robot motion, but it is somewhat brittle as the learned skill is really a concrete instantiation of one robot trajectory. Any variation to the environment or to changes in user expecations cannot be accomodated.
+
+Keyframe LfD can be make more robust through automating keyframe generation and through statistical learning. To automate this approach, users first provide high-rate-of-sampling demosntration trajectories of the skill, ideally expressing subtle variation. Demonstration trajectories are aligned using a technique called Dynamic Time Warping \cite{}, which is an algorithmic method to align similar-structural regions in sequential data from one sequence to another. The data points of these temporally aligned demonstration trajectories are clustered into sequential groups across demonstrations. These clusters of robot state data are fitted to learned *keyframe distributions*, which are used to generate waypoints that the robot follows sequentially to perform a skill. Forming statistical distributions to represent keyframes, as opposed to single points, enables the LfD algorithm to adapt to behavioral restrictions the human operator migth decide to place on the robot.
+
+## Concept Constrained Learning from Demonstration
 Intents are global properties of a text document (or user query) that map the document to an assigned goal or desire of the user. They can map to very broad concepts such as ‘weather’, ‘banking’, ‘location search’ or to specific concepts such as ‘get product info’, ‘schedule meeting, etc,. These intents are sometimes called user actions and it is the goal of Bolt to categorize queries into a set number of intents. The following query would be categorized to the given intent:
 
 > **Query**: What is the shipping information for order #2314?<br>
@@ -100,3 +106,5 @@ Bolt first classifies the user’s query to an intent. Each intent is associated
 ## Conclusion
 
 This post provided a fairly indepth overview of some of the theory and implementation details that go into making the Bolt NLU system function. Natural language understanding is exploding and becoming more advanced day by day. The intent-slot paradigm for NLU is a robust and relatively simplistic approach to NLU that can be achieved fairly easily with some simple and clever algorithms and engineering. With this approach, we're able to provide an NLU system that outperforms other cloud-based solutions on the market, and offer a more sophisticated chatbot experience.
+
+<bibliography></bibliography>

@@ -54,10 +54,6 @@ const StyledArticle = styled.article`
     max-height: 580px;
   `}
 
-  ${media.small`
-    max-height: 580px;
-  `}
-
   ${media.medium`
     max-height: 520px;
   `}
