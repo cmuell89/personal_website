@@ -2,11 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { DiscussionEmbed } from 'disqus-react';
+import { graphql } from 'gatsby'
 
 import Layout from '../components/layout';
 import { ArticleCoverAbout, ArticleFooter } from '../components';
 import media from '../utils/mediaQueryTemplates';
 
+import './blog-post.css'
 
 // Styled components
 const ArticleContainer = styled.div`
