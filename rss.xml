@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Dylan La Com' RSS feed]]></title><description><![CDATA[Carl Mueller's website]]></description><link>https://www.carl-mueller.com</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 19 Oct 2020 01:19:33 GMT</lastBuildDate><item><title><![CDATA[Augmented Reality for Constrained Learning from Demosntration]]></title><link>https://www.carl-mueller.com/research/arc-lfd/</link><guid isPermaLink="false">https://www.carl-mueller.com/research/arc-lfd/</guid><pubDate>Fri, 25 Sep 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Coming soon!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[2020 AAAI, HRI Pioneers, COVID19]]></title><link>https://www.carl-mueller.com/posts/update-sep2020/</link><guid isPermaLink="false">https://www.carl-mueller.com/posts/update-sep2020/</guid><pubDate>Tue, 01 Sep 2020 22:00:00 GMT</pubDate><content:encoded>&lt;p&gt;This past February, I had the privliege to attend 2020 AAAI Conference in New York City. I was selected into the Doctoral Consortium, which serves as a workshop for promising PhD students in the greater AI community. I had a wonderful time meeting people from all walks of life and enjoying the world’s most cosmopolitan city. I got to sit in on all sorts of interesting talks on all sorts of topics in AI and Machine Learning. I even sawy Geoffrey Hinton, Yann LeCunn, and Yoshio Bengio recieve their Turing Awards. Pretty amazing!&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Dylan La Com' RSS feed]]></title><description><![CDATA[Carl Mueller's website]]></description><link>https://www.carl-mueller.com</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 06 Dec 2020 20:03:43 GMT</lastBuildDate><item><title><![CDATA[Augmented Reality for Constrained Learning from Demosntration]]></title><link>https://www.carl-mueller.com/research/arc-lfd/</link><guid isPermaLink="false">https://www.carl-mueller.com/research/arc-lfd/</guid><pubDate>Fri, 25 Sep 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;We recently submitted a paper to ICRA 2021 that utilizes Augmented Reality to visualize models learned through user demonstration as well as an interface to add/remove/edit constraints on those models.&lt;/p&gt;
+&lt;p&gt;A more detailed summary is coming soon!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[2020 AAAI, HRI Pioneers, COVID19]]></title><link>https://www.carl-mueller.com/posts/update-sep2020/</link><guid isPermaLink="false">https://www.carl-mueller.com/posts/update-sep2020/</guid><pubDate>Tue, 01 Sep 2020 22:00:00 GMT</pubDate><content:encoded>&lt;p&gt;This past February, I had the privliege to attend 2020 AAAI Conference in New York City. I was selected into the Doctoral Consortium, which serves as a workshop for promising PhD students in the greater AI community. I had a wonderful time meeting people from all walks of life and enjoying the world’s most cosmopolitan city. I got to sit in on all sorts of interesting talks on all sorts of topics in AI and Machine Learning. I even sawy Geoffrey Hinton, Yann LeCunn, and Yoshio Bengio recieve their Turing Awards. Pretty amazing!&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 450px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 350px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -12,20 +13,20 @@
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 133.62831858407077%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAbABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAQFAwL/xAAWAQEBAQAAAAAAAAAAAAAAAAABAAL/2gAMAwEAAhADEAAAAUc7eGWMWxtp6fBMiw3/xAAaEAADAAMBAAAAAAAAAAAAAAAAAQIDERIx/9oACAEBAAEFAmhwc0ieucqSFePXiyVuy7pm3I/f/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAwEBPwEf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAgEBPwEf/8QAHRAAAQQCAwAAAAAAAAAAAAAAAQAQITECEUFhof/aAAgBAQAGPwJ8apRiN9KR4hNBbBaSo5b/xAAbEAEBAQADAQEAAAAAAAAAAAABEQAhMUFhcf/aAAgBAQABPyESDSnc41SnW8GIJYeA/m9EcYI0wqn2G+MPNZ24fldYVPWde//aAAwDAQACAAMAAAAQZBPw/8QAFhEBAQEAAAAAAAAAAAAAAAAAABEB/9oACAEDAQE/EImMV//EABcRAQEBAQAAAAAAAAAAAAAAAAARAVH/2gAIAQIBAT8QvF1Ef//EAB0QAQEBAQACAwEAAAAAAAAAAAERACExQWFxkdH/2gAIAQEAAT8QSBAaj9Z1Cjyng1CNDzkUzAv40IN7eID2nKYIOQPDlRwQSBydZi9IA08vdCea+sKnDJeT63ocT5ZqGxhv/9k=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 132.95454545454547%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAbABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAQFAwL/xAAWAQEBAQAAAAAAAAAAAAAAAAABAAL/2gAMAwEAAhADEAAAAUc7eGWMWxtp6fBMiw3/xAAaEAADAAMBAAAAAAAAAAAAAAAAAQIDERIx/9oACAEBAAEFAmhwc0ieucqSFePXiyVuy7pm3I/f/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAwEBPwEf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAgEBPwEf/8QAHRAAAQQCAwAAAAAAAAAAAAAAAQAQITECEUFhof/aAAgBAQAGPwJ8apRiN9KR4hNBbBaSo5b/xAAbEAEBAQADAQEAAAAAAAAAAAABEQAhMUFhcf/aAAgBAQABPyESDSnc41SnW8GIJYeA/m9EcYI0wqn2G+MPNZ24fldYVPWde//aAAwDAQACAAMAAAAQZBPw/8QAFhEBAQEAAAAAAAAAAAAAAAAAABEB/9oACAEDAQE/EImMV//EABcRAQEBAQAAAAAAAAAAAAAAAAARAVH/2gAIAQIBAT8QvF1Ef//EAB0QAQEBAQACAwEAAAAAAAAAAAERACExQWFxkdH/2gAIAQEAAT8QSBAaj9Z1Cjyng1CNDzkUzAv40IN7eID2nKYIOQPDlRwQSBydZi9IA08vdCea+sKnDJeT63ocT5ZqGxhv/9k=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;PosterSession&quot;
         title=&quot;PosterSession&quot;
-        src=&quot;/static/7d3ebd0d391d1e89037d9fe052956684/20e5d/PosterSession.jpg&quot;
-        srcset=&quot;/static/7d3ebd0d391d1e89037d9fe052956684/30b1b/PosterSession.jpg 113w,
-/static/7d3ebd0d391d1e89037d9fe052956684/863e1/PosterSession.jpg 225w,
-/static/7d3ebd0d391d1e89037d9fe052956684/20e5d/PosterSession.jpg 450w,
-/static/7d3ebd0d391d1e89037d9fe052956684/512c0/PosterSession.jpg 675w,
-/static/7d3ebd0d391d1e89037d9fe052956684/8e1fc/PosterSession.jpg 900w,
+        src=&quot;/static/7d3ebd0d391d1e89037d9fe052956684/70ebb/PosterSession.jpg&quot;
+        srcset=&quot;/static/7d3ebd0d391d1e89037d9fe052956684/f71f9/PosterSession.jpg 88w,
+/static/7d3ebd0d391d1e89037d9fe052956684/e52aa/PosterSession.jpg 175w,
+/static/7d3ebd0d391d1e89037d9fe052956684/70ebb/PosterSession.jpg 350w,
+/static/7d3ebd0d391d1e89037d9fe052956684/7349d/PosterSession.jpg 525w,
+/static/7d3ebd0d391d1e89037d9fe052956684/29d31/PosterSession.jpg 700w,
 /static/7d3ebd0d391d1e89037d9fe052956684/67226/PosterSession.jpg 3072w&quot;
-        sizes=&quot;(max-width: 450px) 100vw, 450px&quot;
+        sizes=&quot;(max-width: 350px) 100vw, 350px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -33,7 +34,7 @@
     &lt;/span&gt;&lt;figcaption&gt;The poster session for the Doctoral Consortium.&lt;/figcaption&gt;&lt;/figure&gt;
 &lt;figure&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 450px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 350px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -44,20 +45,20 @@
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 75.2212389380531%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABQAB/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQD/2gAMAwEAAhADEAAAAUcDwW4Sj//EABgQAQEBAQEAAAAAAAAAAAAAAAECABIR/9oACAEBAAEFAupM3Bm4xfu6rCJ//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAIAQIBAT8BV//EABgQAQADAQAAAAAAAAAAAAAAAAABMTIC/9oACAEBAAY/AtQ1DUKUvp//xAAbEAEAAgIDAAAAAAAAAAAAAAABABEhMUFxkf/aAAgBAQABPyF3pbSAHPvKd9TMczUDbL0k80E//9oADAMBAAIAAwAAABA7P//EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oACAEDAQE/EIj/xAAVEQEBAAAAAAAAAAAAAAAAAAAQEf/aAAgBAgEBPxCj/8QAGxAAAwEBAAMAAAAAAAAAAAAAAREhADFRYbH/2gAIAQEAAT8QSgFzr+YgWEGVzTiYw1cBtkk+Jl2IoWsmPwCQ/U3/2Q==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABQAB/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQD/2gAMAwEAAhADEAAAAUcDwW4Sj//EABgQAQEBAQEAAAAAAAAAAAAAAAECABIR/9oACAEBAAEFAupM3Bm4xfu6rCJ//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAIAQIBAT8BV//EABgQAQADAQAAAAAAAAAAAAAAAAABMTIC/9oACAEBAAY/AtQ1DUKUvp//xAAbEAEAAgIDAAAAAAAAAAAAAAABABEhMUFxkf/aAAgBAQABPyF3pbSAHPvKd9TMczUDbL0k80E//9oADAMBAAIAAwAAABA7P//EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oACAEDAQE/EIj/xAAVEQEBAAAAAAAAAAAAAAAAAAAQEf/aAAgBAgEBPxCj/8QAGxAAAwEBAAMAAAAAAAAAAAAAAREhADFRYbH/2gAIAQEAAT8QSgFzr+YgWEGVzTiYw1cBtkk+Jl2IoWsmPwCQ/U3/2Q==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;DrearyNYC&quot;
         title=&quot;DrearyNYC&quot;
-        src=&quot;/static/77ab0596824f0bcfadf6052e275458c2/20e5d/DrearyNYC.jpg&quot;
-        srcset=&quot;/static/77ab0596824f0bcfadf6052e275458c2/30b1b/DrearyNYC.jpg 113w,
-/static/77ab0596824f0bcfadf6052e275458c2/863e1/DrearyNYC.jpg 225w,
-/static/77ab0596824f0bcfadf6052e275458c2/20e5d/DrearyNYC.jpg 450w,
-/static/77ab0596824f0bcfadf6052e275458c2/512c0/DrearyNYC.jpg 675w,
-/static/77ab0596824f0bcfadf6052e275458c2/8e1fc/DrearyNYC.jpg 900w,
+        src=&quot;/static/77ab0596824f0bcfadf6052e275458c2/70ebb/DrearyNYC.jpg&quot;
+        srcset=&quot;/static/77ab0596824f0bcfadf6052e275458c2/f71f9/DrearyNYC.jpg 88w,
+/static/77ab0596824f0bcfadf6052e275458c2/e52aa/DrearyNYC.jpg 175w,
+/static/77ab0596824f0bcfadf6052e275458c2/70ebb/DrearyNYC.jpg 350w,
+/static/77ab0596824f0bcfadf6052e275458c2/7349d/DrearyNYC.jpg 525w,
+/static/77ab0596824f0bcfadf6052e275458c2/29d31/DrearyNYC.jpg 700w,
 /static/77ab0596824f0bcfadf6052e275458c2/a0850/DrearyNYC.jpg 4096w&quot;
-        sizes=&quot;(max-width: 450px) 100vw, 450px&quot;
+        sizes=&quot;(max-width: 350px) 100vw, 350px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -65,7 +66,7 @@
     &lt;/span&gt;&lt;figcaption&gt;Shot from the rooftop of Google NYC. It was bitterly cold that weekend..&lt;/figcaption&gt;&lt;/figure&gt;
 &lt;figure&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 450px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 350px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -76,20 +77,20 @@
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 75.2212389380531%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAABAACA//EABUBAQEAAAAAAAAAAAAAAAAAAAAC/9oADAMBAAIQAxAAAAEqi7iukWP/xAAaEAEBAAMBAQAAAAAAAAAAAAACAQADEhMx/9oACAEBAAEFAqDLx5SkbMS4wubEvv8A/8QAFhEBAQEAAAAAAAAAAAAAAAAAABEx/9oACAEDAQE/AdR//8QAFhEBAQEAAAAAAAAAAAAAAAAAABIx/9oACAECAQE/AcU//8QAHBAAAgICAwAAAAAAAAAAAAAAAAERIgIDEDFx/9oACAEBAAY/AmTh5JOx2LZKR274/8QAHBABAAMBAAMBAAAAAAAAAAAAAQARIUExUWGR/9oACAEBAAE/ITQ2slRVV11KeqMa7N1pcBnjx2J6i+v2f//aAAwDAQACAAMAAAAQu/8A/8QAFhEBAQEAAAAAAAAAAAAAAAAAAAER/9oACAEDAQE/EJTL/8QAGBEBAAMBAAAAAAAAAAAAAAAAARARITH/2gAIAQIBAT8QpwnY/wD/xAAbEAEBAAMBAQEAAAAAAAAAAAABEQAhMWGxQf/aAAgBAQABPxCmQaF2s8OOFRSU0UozhrNMMsdR+8y10GVPgYKwQWUvE9MGxaNaj4Z//9k=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAABAACA//EABUBAQEAAAAAAAAAAAAAAAAAAAAC/9oADAMBAAIQAxAAAAEqi7iukWP/xAAaEAEBAAMBAQAAAAAAAAAAAAACAQADEhMx/9oACAEBAAEFAqDLx5SkbMS4wubEvv8A/8QAFhEBAQEAAAAAAAAAAAAAAAAAABEx/9oACAEDAQE/AdR//8QAFhEBAQEAAAAAAAAAAAAAAAAAABIx/9oACAECAQE/AcU//8QAHBAAAgICAwAAAAAAAAAAAAAAAAERIgIDEDFx/9oACAEBAAY/AmTh5JOx2LZKR274/8QAHBABAAMBAAMBAAAAAAAAAAAAAQARIUExUWGR/9oACAEBAAE/ITQ2slRVV11KeqMa7N1pcBnjx2J6i+v2f//aAAwDAQACAAMAAAAQu/8A/8QAFhEBAQEAAAAAAAAAAAAAAAAAAAER/9oACAEDAQE/EJTL/8QAGBEBAAMBAAAAAAAAAAAAAAAAARARITH/2gAIAQIBAT8QpwnY/wD/xAAbEAEBAAMBAQEAAAAAAAAAAAABEQAhMWGxQf/aAAgBAQABPxCmQaF2s8OOFRSU0UozhrNMMsdR+8y10GVPgYKwQWUvE9MGxaNaj4Z//9k=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;PanPizza&quot;
         title=&quot;PanPizza&quot;
-        src=&quot;/static/8e7f2a53ddea34f66149ec199d9a7f31/20e5d/PanPizza.jpg&quot;
-        srcset=&quot;/static/8e7f2a53ddea34f66149ec199d9a7f31/30b1b/PanPizza.jpg 113w,
-/static/8e7f2a53ddea34f66149ec199d9a7f31/863e1/PanPizza.jpg 225w,
-/static/8e7f2a53ddea34f66149ec199d9a7f31/20e5d/PanPizza.jpg 450w,
-/static/8e7f2a53ddea34f66149ec199d9a7f31/512c0/PanPizza.jpg 675w,
-/static/8e7f2a53ddea34f66149ec199d9a7f31/8e1fc/PanPizza.jpg 900w,
+        src=&quot;/static/8e7f2a53ddea34f66149ec199d9a7f31/70ebb/PanPizza.jpg&quot;
+        srcset=&quot;/static/8e7f2a53ddea34f66149ec199d9a7f31/f71f9/PanPizza.jpg 88w,
+/static/8e7f2a53ddea34f66149ec199d9a7f31/e52aa/PanPizza.jpg 175w,
+/static/8e7f2a53ddea34f66149ec199d9a7f31/70ebb/PanPizza.jpg 350w,
+/static/8e7f2a53ddea34f66149ec199d9a7f31/7349d/PanPizza.jpg 525w,
+/static/8e7f2a53ddea34f66149ec199d9a7f31/29d31/PanPizza.jpg 700w,
 /static/8e7f2a53ddea34f66149ec199d9a7f31/a0850/PanPizza.jpg 4096w&quot;
-        sizes=&quot;(max-width: 450px) 100vw, 450px&quot;
+        sizes=&quot;(max-width: 350px) 100vw, 350px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -98,7 +99,7 @@
 &lt;p&gt;Missy also came to vist the weekend proceeding the conference. My parents also came down that weekend. My Uncle, Charlie Mueller PhD, took us to see Book of Mormon. It was truly hilarious and I hihgly recommend seeing it. Missy and I also saw the Lumineers in Brooklyn. The ongoing theme was the bitter cold. It was as cold as the East Coast gets.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 450px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 350px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -109,20 +110,20 @@
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 75.2212389380531%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAMBBAX/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEAMQAAABWxkGYXyX/8QAGRABAAMBAQAAAAAAAAAAAAAAAgEDERIA/9oACAEBAAEFAisKnr07og5p6uCVn//EABYRAAMAAAAAAAAAAAAAAAAAAAEQEv/aAAgBAwEBPwGQv//EABcRAQADAAAAAAAAAAAAAAAAAAABERL/2gAIAQIBAT8B1K3/xAAaEAACAwEBAAAAAAAAAAAAAAAAAQIRIRIx/9oACAEBAAY/AqKjg+taPNKhjLUqR//EABoQAQADAQEBAAAAAAAAAAAAAAEAESExUUH/2gAIAQEAAT8hYV8IVGWvayCk1FXECz6yCIstzkSC8En/2gAMAwEAAgADAAAAENPv/8QAFxEBAQEBAAAAAAAAAAAAAAAAAREAIf/aAAgBAwEBPxAZqaTm/8QAFxEBAQEBAAAAAAAAAAAAAAAAAQAhMf/aAAgBAgEBPxBI7Adv/8QAGxABAQEAAwEBAAAAAAAAAAAAAREAMUGBIXH/2gAIAQEAAT8QKaQLOcmHTujvu+YzzNrwOWqQUcGfuIAMI+4Tx03QAokJv//Z&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAMBBAX/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEAMQAAABWxkGYXyX/8QAGRABAAMBAQAAAAAAAAAAAAAAAgEDERIA/9oACAEBAAEFAisKnr07og5p6uCVn//EABYRAAMAAAAAAAAAAAAAAAAAAAEQEv/aAAgBAwEBPwGQv//EABcRAQADAAAAAAAAAAAAAAAAAAABERL/2gAIAQIBAT8B1K3/xAAaEAACAwEBAAAAAAAAAAAAAAAAAQIRIRIx/9oACAEBAAY/AqKjg+taPNKhjLUqR//EABoQAQADAQEBAAAAAAAAAAAAAAEAESExUUH/2gAIAQEAAT8hYV8IVGWvayCk1FXECz6yCIstzkSC8En/2gAMAwEAAgADAAAAENPv/8QAFxEBAQEBAAAAAAAAAAAAAAAAAREAIf/aAAgBAwEBPxAZqaTm/8QAFxEBAQEBAAAAAAAAAAAAAAAAAQAhMf/aAAgBAgEBPxBI7Adv/8QAGxABAQEAAwEBAAAAAAAAAAAAAREAMUGBIXH/2gAIAQEAAT8QKaQLOcmHTujvu+YzzNrwOWqQUcGfuIAMI+4Tx03QAokJv//Z&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;MissyInNYC&quot;
         title=&quot;MissyInNYC&quot;
-        src=&quot;/static/4055f883f751a48c4d1f673f5313441b/20e5d/MissyInNYC.jpg&quot;
-        srcset=&quot;/static/4055f883f751a48c4d1f673f5313441b/30b1b/MissyInNYC.jpg 113w,
-/static/4055f883f751a48c4d1f673f5313441b/863e1/MissyInNYC.jpg 225w,
-/static/4055f883f751a48c4d1f673f5313441b/20e5d/MissyInNYC.jpg 450w,
-/static/4055f883f751a48c4d1f673f5313441b/512c0/MissyInNYC.jpg 675w,
-/static/4055f883f751a48c4d1f673f5313441b/8e1fc/MissyInNYC.jpg 900w,
+        src=&quot;/static/4055f883f751a48c4d1f673f5313441b/70ebb/MissyInNYC.jpg&quot;
+        srcset=&quot;/static/4055f883f751a48c4d1f673f5313441b/f71f9/MissyInNYC.jpg 88w,
+/static/4055f883f751a48c4d1f673f5313441b/e52aa/MissyInNYC.jpg 175w,
+/static/4055f883f751a48c4d1f673f5313441b/70ebb/MissyInNYC.jpg 350w,
+/static/4055f883f751a48c4d1f673f5313441b/7349d/MissyInNYC.jpg 525w,
+/static/4055f883f751a48c4d1f673f5313441b/29d31/MissyInNYC.jpg 700w,
 /static/4055f883f751a48c4d1f673f5313441b/a0850/MissyInNYC.jpg 4096w&quot;
-        sizes=&quot;(max-width: 450px) 100vw, 450px&quot;
+        sizes=&quot;(max-width: 350px) 100vw, 350px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -130,7 +131,7 @@
     &lt;/span&gt;&lt;figcaption&gt;Walking the High Line with Missy in sub-zero temps!&lt;/figcaption&gt;&lt;/figure&gt;
 &lt;figure&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 450px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 350px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -141,20 +142,20 @@
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 133.62831858407077%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAbABQDASIAAhEBAxEB/8QAGQAAAwEBAQAAAAAAAAAAAAAAAAECAwQF/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQL/2gAMAwEAAhADEAAAAcOnzaTQxBtw0oZF/wD/xAAcEAACAgMBAQAAAAAAAAAAAAAAAgERAxIhBBP/2gAIAQEAAQUCwtWT08KL67TJZsbH0KIWKhVP/8QAGREAAwADAAAAAAAAAAAAAAAAAAERAhAS/9oACAEDAQE/AXjXTnUP/8QAFxEAAwEAAAAAAAAAAAAAAAAAABAREv/aAAgBAgEBPwGmlT//xAAaEAACAwEBAAAAAAAAAAAAAAAAAQIQMTNB/9oACAEBAAY/AkvGQrRNvK5xOUDlC8P/xAAgEAEAAgEEAgMAAAAAAAAAAAABABEhMVFx0UFhgZGh/9oACAEBAAE/IVdd6YBfmZ6g8tRIUR7luLQC2IvWab/N7nM+HuCrH0vcBtEKyOMif//aAAwDAQACAAMAAAAQHzF+/8QAFxEBAQEBAAAAAAAAAAAAAAAAAAERIf/aAAgBAwEBPxCETCdaf//EABcRAQEBAQAAAAAAAAAAAAAAAAEAESH/2gAIAQIBAT8QGCWp5Zv/xAAcEAADAAMBAQEAAAAAAAAAAAAAAREhMUFhkaH/2gAIAQEAAT8Q3oJeHN/g6gLTl45GNGvqWfBjRXEqHmAQVRvHvqpWR+CTNLhGkbCA2ppoZmVNzLKlp0//2Q==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 132.95454545454547%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAbABQDASIAAhEBAxEB/8QAGQAAAwEBAQAAAAAAAAAAAAAAAAECAwQF/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQL/2gAMAwEAAhADEAAAAcOnzaTQxBtw0oZF/wD/xAAcEAACAgMBAQAAAAAAAAAAAAAAAgERAxIhBBP/2gAIAQEAAQUCwtWT08KL67TJZsbH0KIWKhVP/8QAGREAAwADAAAAAAAAAAAAAAAAAAERAhAS/9oACAEDAQE/AXjXTnUP/8QAFxEAAwEAAAAAAAAAAAAAAAAAABAREv/aAAgBAgEBPwGmlT//xAAaEAACAwEBAAAAAAAAAAAAAAAAAQIQMTNB/9oACAEBAAY/AkvGQrRNvK5xOUDlC8P/xAAgEAEAAgEEAgMAAAAAAAAAAAABABEhMVFx0UFhgZGh/9oACAEBAAE/IVdd6YBfmZ6g8tRIUR7luLQC2IvWab/N7nM+HuCrH0vcBtEKyOMif//aAAwDAQACAAMAAAAQHzF+/8QAFxEBAQEBAAAAAAAAAAAAAAAAAAERIf/aAAgBAwEBPxCETCdaf//EABcRAQEBAQAAAAAAAAAAAAAAAAEAESH/2gAIAQIBAT8QGCWp5Zv/xAAcEAADAAMBAQEAAAAAAAAAAAAAAREhMUFhkaH/2gAIAQEAAT8Q3oJeHN/g6gLTl45GNGvqWfBjRXEqHmAQVRvHvqpWR+CTNLhGkbCA2ppoZmVNzLKlp0//2Q==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;TheHighLine&quot;
         title=&quot;TheHighLine&quot;
-        src=&quot;/static/6769451079588740aabcd022b54ca88e/20e5d/TheHighLine.jpg&quot;
-        srcset=&quot;/static/6769451079588740aabcd022b54ca88e/30b1b/TheHighLine.jpg 113w,
-/static/6769451079588740aabcd022b54ca88e/863e1/TheHighLine.jpg 225w,
-/static/6769451079588740aabcd022b54ca88e/20e5d/TheHighLine.jpg 450w,
-/static/6769451079588740aabcd022b54ca88e/512c0/TheHighLine.jpg 675w,
-/static/6769451079588740aabcd022b54ca88e/8e1fc/TheHighLine.jpg 900w,
+        src=&quot;/static/6769451079588740aabcd022b54ca88e/70ebb/TheHighLine.jpg&quot;
+        srcset=&quot;/static/6769451079588740aabcd022b54ca88e/f71f9/TheHighLine.jpg 88w,
+/static/6769451079588740aabcd022b54ca88e/e52aa/TheHighLine.jpg 175w,
+/static/6769451079588740aabcd022b54ca88e/70ebb/TheHighLine.jpg 350w,
+/static/6769451079588740aabcd022b54ca88e/7349d/TheHighLine.jpg 525w,
+/static/6769451079588740aabcd022b54ca88e/29d31/TheHighLine.jpg 700w,
 /static/6769451079588740aabcd022b54ca88e/67226/TheHighLine.jpg 3072w&quot;
-        sizes=&quot;(max-width: 450px) 100vw, 450px&quot;
+        sizes=&quot;(max-width: 350px) 100vw, 350px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -164,7 +165,7 @@
 &lt;p&gt;Due to CU Boulder shutting down in the late Spring and through the Summer, I was fortunate to be able to go to California and live with Missy for the summer. We didn’t get to do much since we were respecting social distancing, but we did sneak a trip to South Lake Tahoe. I got some solid mountain biking in there, and throughout the summer. I may have also got a new mountain bike as well…But more importantly, it was really nice to be able be with Missy as we still do long-distance. &lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 450px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 350px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -175,20 +176,20 @@
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 75.2212389380531%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAMEAgX/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAv/aAAwDAQACEAMQAAABpVzNTTyYP//EABoQAAMAAwEAAAAAAAAAAAAAAAABAwISEzH/2gAIAQEAAQUCVJGdZo7CPTU//8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAIAQMBAT8BiP/EABURAQEAAAAAAAAAAAAAAAAAAAAS/9oACAECAQE/AaU//8QAGhAAAgIDAAAAAAAAAAAAAAAAAAEgIjEyof/aAAgBAQAGPwLfhVtmIf/EABsQAAIBBQAAAAAAAAAAAAAAAAABESExUWGx/9oACAEBAAE/IYt60xxAgb4DCDqP/9oADAMBAAIAAwAAABBbD//EABYRAQEBAAAAAAAAAAAAAAAAAAABEf/aAAgBAwEBPxCSy//EABYRAQEBAAAAAAAAAAAAAAAAAAABEf/aAAgBAgEBPxC00//EAB0QAQADAAEFAAAAAAAAAAAAAAEAESGRMWFxgbH/2gAIAQEAAT8QSnoMRXyAJj9p5ljPcsMrOGUVBfmIpGif/9k=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAMEAgX/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAv/aAAwDAQACEAMQAAABpVzNTTyYP//EABoQAAMAAwEAAAAAAAAAAAAAAAABAwISEzH/2gAIAQEAAQUCVJGdZo7CPTU//8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAIAQMBAT8BiP/EABURAQEAAAAAAAAAAAAAAAAAAAAS/9oACAECAQE/AaU//8QAGhAAAgIDAAAAAAAAAAAAAAAAAAEgIjEyof/aAAgBAQAGPwLfhVtmIf/EABsQAAIBBQAAAAAAAAAAAAAAAAABESExUWGx/9oACAEBAAE/IYt60xxAgb4DCDqP/9oADAMBAAIAAwAAABBbD//EABYRAQEBAAAAAAAAAAAAAAAAAAABEf/aAAgBAwEBPxCSy//EABYRAQEBAAAAAAAAAAAAAAAAAAABEf/aAAgBAgEBPxC00//EAB0QAQADAAEFAAAAAAAAAAAAAAEAESGRMWFxgbH/2gAIAQEAAT8QSnoMRXyAJj9p5ljPcsMrOGUVBfmIpGif/9k=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Utah&quot;
         title=&quot;Utah&quot;
-        src=&quot;/static/0021dbd702b4e8db3e12fd881f3daa86/20e5d/Utah.jpg&quot;
-        srcset=&quot;/static/0021dbd702b4e8db3e12fd881f3daa86/30b1b/Utah.jpg 113w,
-/static/0021dbd702b4e8db3e12fd881f3daa86/863e1/Utah.jpg 225w,
-/static/0021dbd702b4e8db3e12fd881f3daa86/20e5d/Utah.jpg 450w,
-/static/0021dbd702b4e8db3e12fd881f3daa86/512c0/Utah.jpg 675w,
-/static/0021dbd702b4e8db3e12fd881f3daa86/8e1fc/Utah.jpg 900w,
+        src=&quot;/static/0021dbd702b4e8db3e12fd881f3daa86/70ebb/Utah.jpg&quot;
+        srcset=&quot;/static/0021dbd702b4e8db3e12fd881f3daa86/f71f9/Utah.jpg 88w,
+/static/0021dbd702b4e8db3e12fd881f3daa86/e52aa/Utah.jpg 175w,
+/static/0021dbd702b4e8db3e12fd881f3daa86/70ebb/Utah.jpg 350w,
+/static/0021dbd702b4e8db3e12fd881f3daa86/7349d/Utah.jpg 525w,
+/static/0021dbd702b4e8db3e12fd881f3daa86/29d31/Utah.jpg 700w,
 /static/0021dbd702b4e8db3e12fd881f3daa86/a0850/Utah.jpg 4096w&quot;
-        sizes=&quot;(max-width: 450px) 100vw, 450px&quot;
+        sizes=&quot;(max-width: 350px) 100vw, 350px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -196,7 +197,7 @@
     &lt;/span&gt;&lt;figcaption&gt;Driving across Utah. The landscape is surreal.&lt;/figcaption&gt;&lt;/figure&gt;
 &lt;figure&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 450px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 350px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -207,20 +208,20 @@
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 75.2212389380531%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAAB/8QAFgEBAQEAAAAAAAAAAAAAAAAAAAEC/9oADAMBAAIQAxAAAAFQyayuFR//xAAZEAACAwEAAAAAAAAAAAAAAAABAgADERL/2gAIAQEAAQUCDoYuJZbYAxnJ0z//xAAWEQEBAQAAAAAAAAAAAAAAAAAAERL/2gAIAQMBAT8Byj//xAAVEQEBAAAAAAAAAAAAAAAAAAAAEv/aAAgBAgEBPwG1v//EAB0QAAECBwAAAAAAAAAAAAAAAAABIRARIjEyQYH/2gAIAQEABj8CuZtLZS/RY//EABwQAAIDAAMBAAAAAAAAAAAAAAERACExQVFxof/aAAgBAQABPyENkewspuBfIm0LYAhOjsJMUcho2p//2gAMAwEAAgADAAAAEGsv/8QAFxEAAwEAAAAAAAAAAAAAAAAAAAERUf/aAAgBAwEBPxBUTh//xAAWEQEBAQAAAAAAAAAAAAAAAAABABH/2gAIAQIBAT8QcNpv/8QAGxABAQADAQEBAAAAAAAAAAAAAREAIUExUZH/2gAIAQEAAT8QA7DorzLx1Kwelg8yEQRw3+ZTAYEOk44K0O57kEgz5n//2Q==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAAB/8QAFgEBAQEAAAAAAAAAAAAAAAAAAAEC/9oADAMBAAIQAxAAAAFQyayuFR//xAAZEAACAwEAAAAAAAAAAAAAAAABAgADERL/2gAIAQEAAQUCDoYuJZbYAxnJ0z//xAAWEQEBAQAAAAAAAAAAAAAAAAAAERL/2gAIAQMBAT8Byj//xAAVEQEBAAAAAAAAAAAAAAAAAAAAEv/aAAgBAgEBPwG1v//EAB0QAAECBwAAAAAAAAAAAAAAAAABIRARIjEyQYH/2gAIAQEABj8CuZtLZS/RY//EABwQAAIDAAMBAAAAAAAAAAAAAAERACExQVFxof/aAAgBAQABPyENkewspuBfIm0LYAhOjsJMUcho2p//2gAMAwEAAgADAAAAEGsv/8QAFxEAAwEAAAAAAAAAAAAAAAAAAAERUf/aAAgBAwEBPxBUTh//xAAWEQEBAQAAAAAAAAAAAAAAAAABABH/2gAIAQIBAT8QcNpv/8QAGxABAQADAQEBAAAAAAAAAAAAAREAIUExUZH/2gAIAQEAAT8QA7DorzLx1Kwelg8yEQRw3+ZTAYEOk44K0O57kEgz5n//2Q==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;LakeTahoe&quot;
         title=&quot;LakeTahoe&quot;
-        src=&quot;/static/879c8bfd085be4b9909cd66deb13a814/20e5d/LakeTahoe.jpg&quot;
-        srcset=&quot;/static/879c8bfd085be4b9909cd66deb13a814/30b1b/LakeTahoe.jpg 113w,
-/static/879c8bfd085be4b9909cd66deb13a814/863e1/LakeTahoe.jpg 225w,
-/static/879c8bfd085be4b9909cd66deb13a814/20e5d/LakeTahoe.jpg 450w,
-/static/879c8bfd085be4b9909cd66deb13a814/512c0/LakeTahoe.jpg 675w,
-/static/879c8bfd085be4b9909cd66deb13a814/8e1fc/LakeTahoe.jpg 900w,
+        src=&quot;/static/879c8bfd085be4b9909cd66deb13a814/70ebb/LakeTahoe.jpg&quot;
+        srcset=&quot;/static/879c8bfd085be4b9909cd66deb13a814/f71f9/LakeTahoe.jpg 88w,
+/static/879c8bfd085be4b9909cd66deb13a814/e52aa/LakeTahoe.jpg 175w,
+/static/879c8bfd085be4b9909cd66deb13a814/70ebb/LakeTahoe.jpg 350w,
+/static/879c8bfd085be4b9909cd66deb13a814/7349d/LakeTahoe.jpg 525w,
+/static/879c8bfd085be4b9909cd66deb13a814/29d31/LakeTahoe.jpg 700w,
 /static/879c8bfd085be4b9909cd66deb13a814/a0850/LakeTahoe.jpg 4096w&quot;
-        sizes=&quot;(max-width: 450px) 100vw, 450px&quot;
+        sizes=&quot;(max-width: 350px) 100vw, 350px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -249,7 +250,7 @@
 &lt;p&gt;And so with that, farewell Shoppy Bot, and thanks for the good times.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[IROS, Departmental Award & Other Updates]]></title><link>https://www.carl-mueller.com/posts/update-2018/</link><guid isPermaLink="false">https://www.carl-mueller.com/posts/update-2018/</guid><pubDate>Wed, 23 Jan 2019 22:00:00 GMT</pubDate><content:encoded>&lt;p&gt;This past October, I got to travel to Madrid Spain to present my research at IROS 2018. It was a wonderful experience and I was so grateful for the opportunity. As my first trip to Europe, I was quite enamored with Madrid. Although chances are any European city would have charmed me, others told me Madrid is definitely a standout in Europe. I can’t wait to make it back which is more motivation to publish my next paper!&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 450px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 350px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -260,20 +261,20 @@
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 75.2212389380531%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAECAwT/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQL/2gAMAwEAAhADEAAAAeCpWazMP//EABsQAAMAAgMAAAAAAAAAAAAAAAABAgMEERIU/9oACAEBAAEFAo18lS9ejzoV8Do7H//EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oACAEDAQE/AUf/xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAgBAgEBPwGq/8QAHhAAAAQHAAAAAAAAAAAAAAAAAAECIQMQETFBYZH/2gAIAQEABj8Cqmx7GOh4iQxz/8QAHBAAAgICAwAAAAAAAAAAAAAAAAERMWFxIUFR/9oACAEBAAE/IV9SsCTahsiCg8HcFrgltzsl4f/aAAwDAQACAAMAAAAQt+//xAAWEQEBAQAAAAAAAAAAAAAAAAAAEQH/2gAIAQMBAT8Qmqf/xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAgBAgEBPxBt/8QAGxABAAIDAQEAAAAAAAAAAAAAAQARITFBgWH/2gAIAQEAAT8QXxLiIfSXt2sZccToTKvY4QV2YmClReo0FAOUT//Z&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAECAwT/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQL/2gAMAwEAAhADEAAAAeCpWazMP//EABsQAAMAAgMAAAAAAAAAAAAAAAABAgMEERIU/9oACAEBAAEFAo18lS9ejzoV8Do7H//EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oACAEDAQE/AUf/xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAgBAgEBPwGq/8QAHhAAAAQHAAAAAAAAAAAAAAAAAAECIQMQETFBYZH/2gAIAQEABj8Cqmx7GOh4iQxz/8QAHBAAAgICAwAAAAAAAAAAAAAAAAERMWFxIUFR/9oACAEBAAE/IV9SsCTahsiCg8HcFrgltzsl4f/aAAwDAQACAAMAAAAQt+//xAAWEQEBAQAAAAAAAAAAAAAAAAAAEQH/2gAIAQMBAT8Qmqf/xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAgBAgEBPxBt/8QAGxABAAIDAQEAAAAAAAAAAAAAAQARITFBgWH/2gAIAQEAAT8QXxLiIfSXt2sZccToTKvY4QV2YmClReo0FAOUT//Z&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;madridpalace&quot;
         title=&quot;madridpalace&quot;
-        src=&quot;/static/dc49688db46d3d751779986c28df9dab/20e5d/madridpalace.jpg&quot;
-        srcset=&quot;/static/dc49688db46d3d751779986c28df9dab/30b1b/madridpalace.jpg 113w,
-/static/dc49688db46d3d751779986c28df9dab/863e1/madridpalace.jpg 225w,
-/static/dc49688db46d3d751779986c28df9dab/20e5d/madridpalace.jpg 450w,
-/static/dc49688db46d3d751779986c28df9dab/512c0/madridpalace.jpg 675w,
-/static/dc49688db46d3d751779986c28df9dab/8e1fc/madridpalace.jpg 900w,
+        src=&quot;/static/dc49688db46d3d751779986c28df9dab/70ebb/madridpalace.jpg&quot;
+        srcset=&quot;/static/dc49688db46d3d751779986c28df9dab/f71f9/madridpalace.jpg 88w,
+/static/dc49688db46d3d751779986c28df9dab/e52aa/madridpalace.jpg 175w,
+/static/dc49688db46d3d751779986c28df9dab/70ebb/madridpalace.jpg 350w,
+/static/dc49688db46d3d751779986c28df9dab/7349d/madridpalace.jpg 525w,
+/static/dc49688db46d3d751779986c28df9dab/29d31/madridpalace.jpg 700w,
 /static/dc49688db46d3d751779986c28df9dab/a0850/madridpalace.jpg 4096w&quot;
-        sizes=&quot;(max-width: 450px) 100vw, 450px&quot;
+        sizes=&quot;(max-width: 350px) 100vw, 350px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -281,7 +282,7 @@
     &lt;/span&gt;&lt;figcaption&gt;Palacio Real de Madrid.&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 450px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 350px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -292,20 +293,20 @@
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 133.62831858407077%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAbABQDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAIBBAUD/8QAFgEBAQEAAAAAAAAAAAAAAAAAAgED/9oADAMBAAIQAxAAAAGNTBsFUxCLo0S80GJf/8QAHBAAAQQDAQAAAAAAAAAAAAAAAQACAxEEIkEj/9oACAEBAAEFAoCBLknzdqQSHyyl7aKu0VsucX//xAAYEQACAwAAAAAAAAAAAAAAAAAAARAREv/aAAgBAwEBPwEVxs//xAAXEQEAAwAAAAAAAAAAAAAAAAAAEBIh/9oACAECAQE/AWRV/8QAGRAAAwADAAAAAAAAAAAAAAAAABARAQIx/9oACAEBAAY/AlFqdLXl/wD/xAAeEAEAAgEEAwAAAAAAAAAAAAABABEhEDFBUWGB4f/aAAgBAQABPyHpSpABvlxKwI0aIY70cR+yBxelQbBxDwuUFB1OGn//2gAMAwEAAgADAAAAEOA/gv/EABcRAAMBAAAAAAAAAAAAAAAAAAABIRH/2gAIAQMBAT8QykYaxMj/xAAWEQEBAQAAAAAAAAAAAAAAAAAAARH/2gAIAQIBAT8QimRh/8QAHRABAAMBAAIDAAAAAAAAAAAAAQARITFBUXGBof/aAAgBAQABPxC4XaLeLXPy4Y6dRzjGEeD32KLFBotcqYxCAYeB9x6Xaij0IVpMvBPmFS6Bl6Qa43jnJcQOc9BOs9jP/9k=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 132.95454545454547%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAbABQDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAIBBAUD/8QAFgEBAQEAAAAAAAAAAAAAAAAAAgED/9oADAMBAAIQAxAAAAGNTBsFUxCLo0S80GJf/8QAHBAAAQQDAQAAAAAAAAAAAAAAAQACAxEEIkEj/9oACAEBAAEFAoCBLknzdqQSHyyl7aKu0VsucX//xAAYEQACAwAAAAAAAAAAAAAAAAAAARAREv/aAAgBAwEBPwEVxs//xAAXEQEAAwAAAAAAAAAAAAAAAAAAEBIh/9oACAECAQE/AWRV/8QAGRAAAwADAAAAAAAAAAAAAAAAABARAQIx/9oACAEBAAY/AlFqdLXl/wD/xAAeEAEAAgEEAwAAAAAAAAAAAAABABEhEDFBUWGB4f/aAAgBAQABPyHpSpABvlxKwI0aIY70cR+yBxelQbBxDwuUFB1OGn//2gAMAwEAAgADAAAAEOA/gv/EABcRAAMBAAAAAAAAAAAAAAAAAAABIRH/2gAIAQMBAT8QykYaxMj/xAAWEQEBAQAAAAAAAAAAAAAAAAAAARH/2gAIAQIBAT8QimRh/8QAHRABAAMBAAIDAAAAAAAAAAAAAQARITFBUXGBof/aAAgBAQABPxC4XaLeLXPy4Y6dRzjGEeD32KLFBotcqYxCAYeB9x6Xaij0IVpMvBPmFS6Bl6Qa43jnJcQOc9BOs9jP/9k=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;CurvyMadrid&quot;
         title=&quot;CurvyMadrid&quot;
-        src=&quot;/static/882c6ffdca5baff623ac0480565ae92f/20e5d/CurvyMadrid.jpg&quot;
-        srcset=&quot;/static/882c6ffdca5baff623ac0480565ae92f/30b1b/CurvyMadrid.jpg 113w,
-/static/882c6ffdca5baff623ac0480565ae92f/863e1/CurvyMadrid.jpg 225w,
-/static/882c6ffdca5baff623ac0480565ae92f/20e5d/CurvyMadrid.jpg 450w,
-/static/882c6ffdca5baff623ac0480565ae92f/512c0/CurvyMadrid.jpg 675w,
-/static/882c6ffdca5baff623ac0480565ae92f/8e1fc/CurvyMadrid.jpg 900w,
+        src=&quot;/static/882c6ffdca5baff623ac0480565ae92f/70ebb/CurvyMadrid.jpg&quot;
+        srcset=&quot;/static/882c6ffdca5baff623ac0480565ae92f/f71f9/CurvyMadrid.jpg 88w,
+/static/882c6ffdca5baff623ac0480565ae92f/e52aa/CurvyMadrid.jpg 175w,
+/static/882c6ffdca5baff623ac0480565ae92f/70ebb/CurvyMadrid.jpg 350w,
+/static/882c6ffdca5baff623ac0480565ae92f/7349d/CurvyMadrid.jpg 525w,
+/static/882c6ffdca5baff623ac0480565ae92f/29d31/CurvyMadrid.jpg 700w,
 /static/882c6ffdca5baff623ac0480565ae92f/67226/CurvyMadrid.jpg 3072w&quot;
-        sizes=&quot;(max-width: 450px) 100vw, 450px&quot;
+        sizes=&quot;(max-width: 350px) 100vw, 350px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -313,7 +314,7 @@
     &lt;/span&gt;&lt;figcaption&gt;Madrid is a beautiful city.&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 450px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 350px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -324,20 +325,20 @@
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 75.2212389380531%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAAC/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQL/2gAMAwEAAhADEAAAASMHiKdCh//EABkQAAIDAQAAAAAAAAAAAAAAAAEDAAISIv/aAAgBAQABBQKt4loEY4aIJm+rOwf/xAAYEQACAwAAAAAAAAAAAAAAAAAAAQIhUf/aAAgBAwEBPwFR0o//xAAXEQEAAwAAAAAAAAAAAAAAAAAAEiFR/9oACAECAQE/AZYt/8QAHhAAAgEDBQAAAAAAAAAAAAAAAAERAhIhEyIxQZH/2gAIAQEABj8Ce6IHd2+TCMEOhEadHh//xAAbEAEAAwADAQAAAAAAAAAAAAABABEhMUFRkf/aAAgBAQABPyFD4lpASrLNXOcEqUOTKnfqekeVf//aAAwDAQACAAMAAAAQq8//xAAXEQADAQAAAAAAAAAAAAAAAAAAESEB/9oACAEDAQE/EM0IjP/EABcRAAMBAAAAAAAAAAAAAAAAAAABESH/2gAIAQIBAT8QdMa2H//EAB0QAQEAAgIDAQAAAAAAAAAAAAERACFBUTFhgcH/2gAIAQEAAT8QA2WoLO+MQpAN6Q5wBCA2nnPViAybtp+3FDdUlp3EyrpARE0+5//Z&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAAC/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQL/2gAMAwEAAhADEAAAASMHiKdCh//EABkQAAIDAQAAAAAAAAAAAAAAAAEDAAISIv/aAAgBAQABBQKt4loEY4aIJm+rOwf/xAAYEQACAwAAAAAAAAAAAAAAAAAAAQIhUf/aAAgBAwEBPwFR0o//xAAXEQEAAwAAAAAAAAAAAAAAAAAAEiFR/9oACAECAQE/AZYt/8QAHhAAAgEDBQAAAAAAAAAAAAAAAAERAhIhEyIxQZH/2gAIAQEABj8Ce6IHd2+TCMEOhEadHh//xAAbEAEAAwADAQAAAAAAAAAAAAABABEhMUFRkf/aAAgBAQABPyFD4lpASrLNXOcEqUOTKnfqekeVf//aAAwDAQACAAMAAAAQq8//xAAXEQADAQAAAAAAAAAAAAAAAAAAESEB/9oACAEDAQE/EM0IjP/EABcRAAMBAAAAAAAAAAAAAAAAAAABESH/2gAIAQIBAT8QdMa2H//EAB0QAQEAAgIDAQAAAAAAAAAAAAERACFBUTFhgcH/2gAIAQEAAT8QA2WoLO+MQpAN6Q5wBCA2nnPViAybtp+3FDdUlp3EyrpARE0+5//Z&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;elmatador&quot;
         title=&quot;elmatador&quot;
-        src=&quot;/static/98a4c09673725c640714846264bd6677/20e5d/elmatador.jpg&quot;
-        srcset=&quot;/static/98a4c09673725c640714846264bd6677/30b1b/elmatador.jpg 113w,
-/static/98a4c09673725c640714846264bd6677/863e1/elmatador.jpg 225w,
-/static/98a4c09673725c640714846264bd6677/20e5d/elmatador.jpg 450w,
-/static/98a4c09673725c640714846264bd6677/512c0/elmatador.jpg 675w,
-/static/98a4c09673725c640714846264bd6677/8e1fc/elmatador.jpg 900w,
+        src=&quot;/static/98a4c09673725c640714846264bd6677/70ebb/elmatador.jpg&quot;
+        srcset=&quot;/static/98a4c09673725c640714846264bd6677/f71f9/elmatador.jpg 88w,
+/static/98a4c09673725c640714846264bd6677/e52aa/elmatador.jpg 175w,
+/static/98a4c09673725c640714846264bd6677/70ebb/elmatador.jpg 350w,
+/static/98a4c09673725c640714846264bd6677/7349d/elmatador.jpg 525w,
+/static/98a4c09673725c640714846264bd6677/29d31/elmatador.jpg 700w,
 /static/98a4c09673725c640714846264bd6677/a0850/elmatador.jpg 4096w&quot;
-        sizes=&quot;(max-width: 450px) 100vw, 450px&quot;
+        sizes=&quot;(max-width: 350px) 100vw, 350px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -347,7 +348,7 @@
 &lt;p&gt;This past spring break, I got to travel back to my “home away from home” (Santa Barbara) to see friends and be with Missy. It was so nice to spend time together as we’re still in a long distance relationship. We had a wonderful time and got to see the California “superbloom” and spend a few days in snowy Mammoth Lakes snowboarding.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 450px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 350px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -358,20 +359,20 @@
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 133.62831858407077%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAbABQDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAQCAwUB/8QAFQEBAQAAAAAAAAAAAAAAAAAAAgP/2gAMAwEAAhADEAAAAc2c7gkzgi1O7PnR0XJr/8QAHhAAAQMEAwAAAAAAAAAAAAAAAgEDEQASEyIhIzH/2gAIAQEAAQUCHVyRyXjIQtLyhNlLbSnRt2U0ujnUOQjVPP/EABcRAAMBAAAAAAAAAAAAAAAAAAABESH/2gAIAQMBAT8BhBPSo//EABcRAQEBAQAAAAAAAAAAAAAAAAAREkH/2gAIAQIBAT8BVxmv/8QAHhAAAgICAgMAAAAAAAAAAAAAAAECESExEiIyQVH/2gAIAQEABj8CvBco8h9KJasUfZ1TLTr6J3vR5FwwXJ2I/8QAHBAAAgIDAQEAAAAAAAAAAAAAAAERITFBUXFh/9oACAEBAAE/IZMSHGQsjXCcFvQ3KU4KSEhkp2gxZLfoxaDO+BsnBSCHZLO3jt2VL4U8j//aAAwDAQACAAMAAAAQ/Mdy/8QAGBEBAQEBAQAAAAAAAAAAAAAAAQAhEXH/2gAIAQMBAT8QQjl5u2CSdL//xAAYEQEBAQEBAAAAAAAAAAAAAAABEQAhQf/aAAgBAgEBPxAUiul7cj6y1bv/xAAdEAEAAgMBAQEBAAAAAAAAAAABESEAMUFhUXGh/9oACAEBAAE/EL0qOuR7A9yG2QsUsbr2JzScGamCteYpWISSVU/hhIO7WiEv9jma7AkM+sV8VhAyWMZQt6zzO8aKs7wz2tMWJ8RpxgjhAB8ArEgKIZ//2Q==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 132.95454545454547%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAbABQDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAQCAwUB/8QAFQEBAQAAAAAAAAAAAAAAAAAAAgP/2gAMAwEAAhADEAAAAc2c7gkzgi1O7PnR0XJr/8QAHhAAAQMEAwAAAAAAAAAAAAAAAgEDEQASEyIhIzH/2gAIAQEAAQUCHVyRyXjIQtLyhNlLbSnRt2U0ujnUOQjVPP/EABcRAAMBAAAAAAAAAAAAAAAAAAABESH/2gAIAQMBAT8BhBPSo//EABcRAQEBAQAAAAAAAAAAAAAAAAAREkH/2gAIAQIBAT8BVxmv/8QAHhAAAgICAgMAAAAAAAAAAAAAAAECESExEiIyQVH/2gAIAQEABj8CvBco8h9KJasUfZ1TLTr6J3vR5FwwXJ2I/8QAHBAAAgIDAQEAAAAAAAAAAAAAAAERITFBUXFh/9oACAEBAAE/IZMSHGQsjXCcFvQ3KU4KSEhkp2gxZLfoxaDO+BsnBSCHZLO3jt2VL4U8j//aAAwDAQACAAMAAAAQ/Mdy/8QAGBEBAQEBAQAAAAAAAAAAAAAAAQAhEXH/2gAIAQMBAT8QQjl5u2CSdL//xAAYEQEBAQEBAAAAAAAAAAAAAAABEQAhQf/aAAgBAgEBPxAUiul7cj6y1bv/xAAdEAEAAgMBAQEBAAAAAAAAAAABESEAMUFhUXGh/9oACAEBAAE/EL0qOuR7A9yG2QsUsbr2JzScGamCteYpWISSVU/hhIO7WiEv9jma7AkM+sV8VhAyWMZQt6zzO8aKs7wz2tMWJ8RpxgjhAB8ArEgKIZ//2Q==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;mammothdinner&quot;
         title=&quot;mammothdinner&quot;
-        src=&quot;/static/003d0b853f32d365f9204c26efa1f7ec/20e5d/mammothdinner.jpg&quot;
-        srcset=&quot;/static/003d0b853f32d365f9204c26efa1f7ec/30b1b/mammothdinner.jpg 113w,
-/static/003d0b853f32d365f9204c26efa1f7ec/863e1/mammothdinner.jpg 225w,
-/static/003d0b853f32d365f9204c26efa1f7ec/20e5d/mammothdinner.jpg 450w,
-/static/003d0b853f32d365f9204c26efa1f7ec/512c0/mammothdinner.jpg 675w,
-/static/003d0b853f32d365f9204c26efa1f7ec/8e1fc/mammothdinner.jpg 900w,
+        src=&quot;/static/003d0b853f32d365f9204c26efa1f7ec/70ebb/mammothdinner.jpg&quot;
+        srcset=&quot;/static/003d0b853f32d365f9204c26efa1f7ec/f71f9/mammothdinner.jpg 88w,
+/static/003d0b853f32d365f9204c26efa1f7ec/e52aa/mammothdinner.jpg 175w,
+/static/003d0b853f32d365f9204c26efa1f7ec/70ebb/mammothdinner.jpg 350w,
+/static/003d0b853f32d365f9204c26efa1f7ec/7349d/mammothdinner.jpg 525w,
+/static/003d0b853f32d365f9204c26efa1f7ec/29d31/mammothdinner.jpg 700w,
 /static/003d0b853f32d365f9204c26efa1f7ec/67226/mammothdinner.jpg 3072w&quot;
-        sizes=&quot;(max-width: 450px) 100vw, 450px&quot;
+        sizes=&quot;(max-width: 350px) 100vw, 350px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -379,7 +380,7 @@
     &lt;/span&gt;&lt;figcaption&gt;Dinner in Mammoth with Missy.&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 450px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 350px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -390,20 +391,20 @@
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 75.2212389380531%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAEEA//EABYBAQEBAAAAAAAAAAAAAAAAAAEAA//aAAwDAQACEAMQAAAB2cizaSIL/8QAHBAAAQMFAAAAAAAAAAAAAAAAAQACEQMQEhMh/9oACAEBAAEFAhUlF8LaFgXs7b//xAAXEQADAQAAAAAAAAAAAAAAAAAAARES/9oACAEDAQE/AcoiP//EABgRAAIDAAAAAAAAAAAAAAAAAAASAQIR/9oACAECAQE/AXnBrH//xAAbEAABBAMAAAAAAAAAAAAAAAAAAQIQESExMv/aAAgBAQAGPwLDTk0LU//EABsQAQACAgMAAAAAAAAAAAAAAAEAESFRQWHw/9oACAEBAAE/IQxse2Cqas8WFr1uOzccPM//2gAMAwEAAgADAAAAEAQP/8QAFhEBAQEAAAAAAAAAAAAAAAAAAGGx/9oACAEDAQE/EII6/8QAGREAAwADAAAAAAAAAAAAAAAAAAEhEWGh/9oACAECAQE/EHVmm/iP/8QAGxABAQADAAMAAAAAAAAAAAAAAREAITFhcZH/2gAIAQEAAT8QsaTQ0Y+EHa4u84WgBLspLPmEJ2nXXjFTQ9Jn/9k=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAEEA//EABYBAQEBAAAAAAAAAAAAAAAAAAEAA//aAAwDAQACEAMQAAAB2cizaSIL/8QAHBAAAQMFAAAAAAAAAAAAAAAAAQACEQMQEhMh/9oACAEBAAEFAhUlF8LaFgXs7b//xAAXEQADAQAAAAAAAAAAAAAAAAAAARES/9oACAEDAQE/AcoiP//EABgRAAIDAAAAAAAAAAAAAAAAAAASAQIR/9oACAECAQE/AXnBrH//xAAbEAABBAMAAAAAAAAAAAAAAAAAAQIQESExMv/aAAgBAQAGPwLDTk0LU//EABsQAQACAgMAAAAAAAAAAAAAAAEAESFRQWHw/9oACAEBAAE/IQxse2Cqas8WFr1uOzccPM//2gAMAwEAAgADAAAAEAQP/8QAFhEBAQEAAAAAAAAAAAAAAAAAAGGx/9oACAEDAQE/EII6/8QAGREAAwADAAAAAAAAAAAAAAAAAAEhEWGh/9oACAECAQE/EHVmm/iP/8QAGxABAQADAAMAAAAAAAAAAAAAAREAITFhcZH/2gAIAQEAAT8QsaTQ0Y+EHa4u84WgBLspLPmEJ2nXXjFTQ9Jn/9k=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;missyflowers&quot;
         title=&quot;missyflowers&quot;
-        src=&quot;/static/8b5393a15490e5a9faaa121dd7224e25/20e5d/missyflowers.jpg&quot;
-        srcset=&quot;/static/8b5393a15490e5a9faaa121dd7224e25/30b1b/missyflowers.jpg 113w,
-/static/8b5393a15490e5a9faaa121dd7224e25/863e1/missyflowers.jpg 225w,
-/static/8b5393a15490e5a9faaa121dd7224e25/20e5d/missyflowers.jpg 450w,
-/static/8b5393a15490e5a9faaa121dd7224e25/512c0/missyflowers.jpg 675w,
-/static/8b5393a15490e5a9faaa121dd7224e25/8e1fc/missyflowers.jpg 900w,
+        src=&quot;/static/8b5393a15490e5a9faaa121dd7224e25/70ebb/missyflowers.jpg&quot;
+        srcset=&quot;/static/8b5393a15490e5a9faaa121dd7224e25/f71f9/missyflowers.jpg 88w,
+/static/8b5393a15490e5a9faaa121dd7224e25/e52aa/missyflowers.jpg 175w,
+/static/8b5393a15490e5a9faaa121dd7224e25/70ebb/missyflowers.jpg 350w,
+/static/8b5393a15490e5a9faaa121dd7224e25/7349d/missyflowers.jpg 525w,
+/static/8b5393a15490e5a9faaa121dd7224e25/29d31/missyflowers.jpg 700w,
 /static/8b5393a15490e5a9faaa121dd7224e25/a0850/missyflowers.jpg 4096w&quot;
-        sizes=&quot;(max-width: 450px) 100vw, 450px&quot;
+        sizes=&quot;(max-width: 350px) 100vw, 350px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -414,10 +415,10 @@
 &lt;p&gt;My PhD research’s seminal work is called &lt;strong&gt;Concept Constrained Learning from Demonstration&lt;/strong&gt; &lt;span id=&quot;citation-0&quot; data-hover=&quot;&quot;&gt;&lt;span class=&quot;citation-number&quot;&gt;[1]&lt;/span&gt;&lt;/span&gt;. It is this work that motivates my current research into constrained motion planning and human-robot interfaces, specifically augmented reality interfaces. Ultimately, I want to figure out how to make robots easily trainable and usable by non-roboticists. Physical automation is a wide-open frontier in the world of information technology. However, the introduction of collaborative robots into human environments presents a number of challenges often not required of large-scale industrial robots: safety in shared workspaces, rapidly changing task requirements, decision-making, and, perhaps most challenging, adhering to human expectations of behavior. As such, the foundational motivation behind this work is to provide human users the means to easily train collaborative robots to execute dynamic skills while adhering to important behavioral restrictions.&lt;/p&gt;
 &lt;h2&gt;Background&lt;/h2&gt;
 &lt;h3&gt;Learning from Demonstration&lt;/h3&gt;
-&lt;p&gt;Robot Learning from Demonstration (LfD) consists of methods that attempt to learn successful robot behavior models from human input. A human operator interacts with a robotic system through some mode of demonstration, usually through kinesthetic demonstration (e.g. physical interaction), teleoperation (e.g. remote control), or passive observation (e.g. motion tracking observation). Demonstration ideally communicates information about the nature of the skill that the robotic learning system uses to build a learned model that resembles some latent (i.e. hidden) ground truth model. The methods by which robotic systems learn such models spans across the spectrum of machine learning. However there are three broad categorizations for robot LfD systems: 1) plan learning, 2) functional optimization, and 3) policy learning  &lt;span id=&quot;citation-0&quot; data-hover=&quot;&quot;&gt;&lt;span class=&quot;citation-number&quot;&gt;[2]&lt;/span&gt;&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Robot Learning from Demonstration (LfD) consists of methods that attempt to learn successful robot behavior models from human input. A human operator interacts with a robotic system through some mode of demonstration, usually through kinesthetic demonstration, teleoperation, or passive observation &lt;sup id=&quot;fnref-1&quot;&gt;&lt;a href=&quot;#fn-1&quot; class=&quot;footnote-ref&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;. Demonstration ideally communicates information about the nature of the skill that the robotic learning system uses to build a learned model that resembles some latent (i.e. hidden) ground truth model. The methods by which robotic systems learn such models spans across the spectrum of machine learning. However there are three broad categorizations for robot LfD systems: 1) plan learning, 2) functional optimization, and 3) policy learning  &lt;span id=&quot;citation-0&quot; data-hover=&quot;&quot;&gt;&lt;span class=&quot;citation-number&quot;&gt;[2]&lt;/span&gt;&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 450px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 350px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -428,31 +429,31 @@
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 55.75221238938053%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAMCBP/EABYBAQEBAAAAAAAAAAAAAAAAAAABAv/aAAwDAQACEAMQAAABtKW805h//8QAHBAAAgEFAQAAAAAAAAAAAAAAAgMTAAEREiIy/9oACAEBAAEFAm9U8hiWBajfLHAMI+f/xAAWEQEBAQAAAAAAAAAAAAAAAAAAARH/2gAIAQMBAT8Bka//xAAWEQADAAAAAAAAAAAAAAAAAAAAARH/2gAIAQIBAT8BbhD/xAAaEAACAwEBAAAAAAAAAAAAAAAAAQIRIRKh/9oACAEBAAY/AuBQXpsRpl1tCP/EABwQAQACAgMBAAAAAAAAAAAAAAEAESExQVGBsf/aAAgBAQABPyF0e0cvqvEZZ8uKOIzywv5GW6GY3cmJ/9oADAMBAAIAAwAAABBrH//EABcRAAMBAAAAAAAAAAAAAAAAAAABEVH/2gAIAQMBAT8QoqRh/8QAFxEAAwEAAAAAAAAAAAAAAAAAAAERQf/aAAgBAgEBPxC6Dd6f/8QAGxABAAMBAAMAAAAAAAAAAAAAAQARIVExQXH/2gAIAQEAAT8QoIrI6/dm3J2eB18seg2Oo4qsj4hVOagPkRT1DGABg1P/2Q==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 55.68181818181818%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAMCBP/EABYBAQEBAAAAAAAAAAAAAAAAAAABAv/aAAwDAQACEAMQAAABtKW805h//8QAHBAAAgEFAQAAAAAAAAAAAAAAAgMTAAEREiIy/9oACAEBAAEFAm9U8hiWBajfLHAMI+f/xAAWEQEBAQAAAAAAAAAAAAAAAAAAARH/2gAIAQMBAT8Bka//xAAWEQADAAAAAAAAAAAAAAAAAAAAARH/2gAIAQIBAT8BbhD/xAAaEAACAwEBAAAAAAAAAAAAAAAAAQIRIRKh/9oACAEBAAY/AuBQXpsRpl1tCP/EABwQAQACAgMBAAAAAAAAAAAAAAEAESExQVGBsf/aAAgBAQABPyF0e0cvqvEZZ8uKOIzywv5GW6GY3cmJ/9oADAMBAAIAAwAAABBrH//EABcRAAMBAAAAAAAAAAAAAAAAAAABEVH/2gAIAQMBAT8QoqRh/8QAFxEAAwEAAAAAAAAAAAAAAAAAAAERQf/aAAgBAgEBPxC6Dd6f/8QAGxABAAMBAAMAAAAAAAAAAAAAAQARIVExQXH/2gAIAQEAAT8QoIrI6/dm3J2eB18seg2Oo4qsj4hVOagPkRT1DGABg1P/2Q==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;ActionShot&quot;
         title=&quot;ActionShot&quot;
-        src=&quot;/static/4d3b3c608170205bce549ef23656749a/20e5d/ActionShot.jpg&quot;
-        srcset=&quot;/static/4d3b3c608170205bce549ef23656749a/30b1b/ActionShot.jpg 113w,
-/static/4d3b3c608170205bce549ef23656749a/863e1/ActionShot.jpg 225w,
-/static/4d3b3c608170205bce549ef23656749a/20e5d/ActionShot.jpg 450w,
-/static/4d3b3c608170205bce549ef23656749a/512c0/ActionShot.jpg 675w,
-/static/4d3b3c608170205bce549ef23656749a/8e1fc/ActionShot.jpg 900w,
+        src=&quot;/static/4d3b3c608170205bce549ef23656749a/70ebb/ActionShot.jpg&quot;
+        srcset=&quot;/static/4d3b3c608170205bce549ef23656749a/f71f9/ActionShot.jpg 88w,
+/static/4d3b3c608170205bce549ef23656749a/e52aa/ActionShot.jpg 175w,
+/static/4d3b3c608170205bce549ef23656749a/70ebb/ActionShot.jpg 350w,
+/static/4d3b3c608170205bce549ef23656749a/7349d/ActionShot.jpg 525w,
+/static/4d3b3c608170205bce549ef23656749a/29d31/ActionShot.jpg 700w,
 /static/4d3b3c608170205bce549ef23656749a/3acf0/ActionShot.jpg 2000w&quot;
-        sizes=&quot;(max-width: 450px) 100vw, 450px&quot;
+        sizes=&quot;(max-width: 350px) 100vw, 350px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;figcaption&gt;A human user (me) kinestheticaly demonstrating a skill.&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;The ultimate goal of these learning methods is to facilitate the transfer of information from a non-roboticist, with some expert intuition about the skill, to the robotic learning system. This information is then used by robot skill learning methods to produce successful learned models of the task. Plan learning methods attempt to learn models that operate at high levels of task abstraction, either learning a primitive sequence or hierarchy. Functional optimization methods either directly optimize a candidate trajectory (potentially one derived from demonstration) using a known objective function, or they attempt to learn an objective from demonstration. These approaches often emulate or directly draw from Reinforcement Learning and Inverse Reinforcement Learning techniques. Lastly, policy learning methods produce models that output either trajectories or low-level actions directly.&lt;/p&gt;
+&lt;p&gt;The ultimate goal of these learning methods is to facilitate the transfer of information from a non-roboticist, with some expert intuition about the skill, to the robotic learning system. This information is then used by robot skill learning methods to produce successful learned models of the task. Plan learning methods attempt to learn models that operate at high levels of task abstraction, either learning a primitive sequence or hierarchy. Functional optimization methods either directly optimize a candidate trajectory (potentially one derived from demonstration) using a known objective function, or they attempt to learn an objective from demonstration. These approaches often emulate or directly draw from Reinforcement Learning and Inverse Reinforcement Learning techniques. Lastly, policy learning methods produce models that output either trajectories or low-level actions directly &lt;sup id=&quot;fnref-2&quot;&gt;&lt;a href=&quot;#fn-2&quot; class=&quot;footnote-ref&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
 &lt;h3&gt;Keyframe Learning from Demonstration&lt;/h3&gt;
-&lt;p&gt;CC-LfD is an augnmentation of a learning method called Keyframe LfD (KLfD) &lt;span id=&quot;citation-0&quot; data-hover=&quot;&quot;&gt;&lt;span class=&quot;citation-number&quot;&gt;[3]&lt;/span&gt;&lt;/span&gt;. In traditional KLfD, human operators teach a skill by providing distinct waypoints of robot state data. This represents a coarse trajectory for the robot to follow. This approach is powerful because it very easily allows users to specify robot motion, but it is somewhat brittle as the learned skill is really a concrete instantiation of one robot trajectory. Any variation to the environment or to changes in user expecations cannot be accomodated.&lt;/p&gt;
+&lt;p&gt;CC-LfD is an augmentation of a learning method called Keyframe LfD (KLfD) &lt;span id=&quot;citation-0&quot; data-hover=&quot;&quot;&gt;&lt;span class=&quot;citation-number&quot;&gt;[3]&lt;/span&gt;&lt;/span&gt;. In traditional KLfD, human operators teach a skill by providing distinct waypoints of robot state data. This represents a coarse trajectory for the robot to follow. This approach is powerful because it very easily allows users to specify robot motion, but it is somewhat brittle as the learned skill is really a concrete instantiation of one robot trajectory. Any variation to the environment or to changes in user expectations cannot be accommodated.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 450px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 350px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -463,33 +464,295 @@
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 32.743362831858406%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAIAAACHqfpvAAAACXBIWXMAAAsSAAALEgHS3X78AAAA8ElEQVQY0zWR2W6FMAxE8///WGhBBSEC2cnCdk8T1Q/WeLyM4whTTSnlnDvPM4RgrfXeA85SUorTKLdVLUbHnK/r2vd9miYpJWWC4L7vnDNxSolBVMDQH2P03mkd3vf9ldL4UHKmnuLjOOZ5FsuyaK2hkIIFM6LhUsq+k7LOR6ksYetBc9s2pot1XWGRep4HKRJ3NdTg2f6I6apZNoJhNaa3UCAFxWvxqNEMuP5Dxq/Wk2WPlP+M66DByziHaEsabdqercE6Bw/GU4oAvhUA6LfW0SW+q43j+FOt73v8MIxd1/XVSFU/ALrui1O3v+B3Pj2/jm6z6+44AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 32.95454545454546%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAIAAACHqfpvAAAACXBIWXMAAAsSAAALEgHS3X78AAAA8ElEQVQY0zWR2W6FMAxE8///WGhBBSEC2cnCdk8T1Q/WeLyM4whTTSnlnDvPM4RgrfXeA85SUorTKLdVLUbHnK/r2vd9miYpJWWC4L7vnDNxSolBVMDQH2P03mkd3vf9ldL4UHKmnuLjOOZ5FsuyaK2hkIIFM6LhUsq+k7LOR6ksYetBc9s2pot1XWGRep4HKRJ3NdTg2f6I6apZNoJhNaa3UCAFxWvxqNEMuP5Dxq/Wk2WPlP+M66DByziHaEsabdqercE6Bw/GU4oAvhUA6LfW0SW+q43j+FOt73v8MIxd1/XVSFU/ALrui1O3v+B3Pj2/jm6z6+44AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Akgun Keyframe LfD&quot;
         title=&quot;Akgun Keyframe LfD&quot;
-        src=&quot;/static/c0c8ce24e8bfeb84899aa7e53e331d58/fc2a6/Akgun_Keyframe_LfD.png&quot;
-        srcset=&quot;/static/c0c8ce24e8bfeb84899aa7e53e331d58/2519b/Akgun_Keyframe_LfD.png 113w,
-/static/c0c8ce24e8bfeb84899aa7e53e331d58/3684f/Akgun_Keyframe_LfD.png 225w,
-/static/c0c8ce24e8bfeb84899aa7e53e331d58/fc2a6/Akgun_Keyframe_LfD.png 450w,
-/static/c0c8ce24e8bfeb84899aa7e53e331d58/23296/Akgun_Keyframe_LfD.png 675w,
-/static/c0c8ce24e8bfeb84899aa7e53e331d58/1cfc2/Akgun_Keyframe_LfD.png 900w,
+        src=&quot;/static/c0c8ce24e8bfeb84899aa7e53e331d58/13ae7/Akgun_Keyframe_LfD.png&quot;
+        srcset=&quot;/static/c0c8ce24e8bfeb84899aa7e53e331d58/942f4/Akgun_Keyframe_LfD.png 88w,
+/static/c0c8ce24e8bfeb84899aa7e53e331d58/4edbd/Akgun_Keyframe_LfD.png 175w,
+/static/c0c8ce24e8bfeb84899aa7e53e331d58/13ae7/Akgun_Keyframe_LfD.png 350w,
+/static/c0c8ce24e8bfeb84899aa7e53e331d58/52211/Akgun_Keyframe_LfD.png 525w,
+/static/c0c8ce24e8bfeb84899aa7e53e331d58/8c557/Akgun_Keyframe_LfD.png 700w,
 /static/c0c8ce24e8bfeb84899aa7e53e331d58/064b2/Akgun_Keyframe_LfD.png 1874w&quot;
-        sizes=&quot;(max-width: 450px) 100vw, 450px&quot;
+        sizes=&quot;(max-width: 350px) 100vw, 350px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
-    &lt;/span&gt;&lt;figcaption&gt;A visual representaiton of keyframe learning from demonstration (Akgun, 2012) where trajectories that outline a ‘P’ are clustering into keyframes.&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+    &lt;/span&gt;&lt;figcaption&gt;A visual representation of keyframe learning from demonstration (Akgun, 2012) where trajectories that outline a ‘P’ are clustering into keyframes.&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;Keyframe LfD can be made more robust through automating keyframe generation and through statistical learning. To automate this approach, users first provide high-rate-of-sampling demonstration trajectories of the skill, ideally expressing subtle variation. Demonstration trajectories are aligned using a technique called Dynamic Time Warping &lt;span id=&quot;citation-0&quot; data-hover=&quot;&quot;&gt;&lt;span class=&quot;citation-number&quot;&gt;[?]&lt;/span&gt;&lt;/span&gt;, which is an algorithmic method to align similar regions in sequential data from one sequence to another. The data points of these temporally aligned demonstration trajectories are clustered into sequential groups across demonstrations. These clusters of robot state data are fitted to learned &lt;em&gt;keyframe distributions&lt;/em&gt;, which are used to generate waypoints that the robot follows sequentially to perform a skill. Forming statistical distributions to represent keyframes, as opposed to single points, enables the LfD algorithm to adapt to behavioral restrictions the human operator might decide to place on the robot.&lt;/p&gt;
 &lt;h2&gt;Concept Constrained Learning from Demonstration&lt;/h2&gt;
-&lt;h3&gt;Recording of Demonstration Trajectories&lt;/h3&gt;
-&lt;h3&gt;Alignment&lt;/h3&gt;
-&lt;h3&gt;Clustering, Culling, and Filtering&lt;/h3&gt;
-&lt;h3&gt;Remodeling&lt;/h3&gt;
-&lt;h3&gt;Reconstruct Skill&lt;/h3&gt;
-&lt;p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Robust Robot Learning from Demonstration and Skill Repair Using Conceptual Constraints&lt;/b&gt; &lt;br&gt;Mueller, C., Venicx, J. and Hayes, B., 2018. 2018 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), pp. 6029--6036. &lt;/li&gt;&lt;li&gt;&lt;b&gt;Recent advances in robot learning from demonstration&lt;/b&gt; &lt;br&gt;Ravichandar, H., Polydoros, A.S., Chernova, S. and Billard, A., 2020. Annual Review of Control, Robotics, and Autonomous Systems, Vol 3. Annual Reviews.&lt;/li&gt;&lt;li&gt;&lt;b&gt;Keyframe-based learning from demonstration&lt;/b&gt; &lt;br&gt;Akgun, B., Cakmak, M., Jiang, K. and Thomaz, A.L., 2012. International Journal of Social Robotics, Vol 4(4), pp. 343--355. Springer.&lt;/li&gt;&lt;/ol&gt;&lt;/bibliography&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Developing the Natural Language Understanding Behind Shoppy Bot]]></title><link>https://www.carl-mueller.com/posts/developing-natural-language-understanding-for-shoppy-bot/</link><guid isPermaLink="false">https://www.carl-mueller.com/posts/developing-natural-language-understanding-for-shoppy-bot/</guid><pubDate>Thu, 26 Oct 2017 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;strong&gt;Lightning in a Bot’s first product, &lt;a href=&quot;https://shoppybot.com&quot;&gt;Shoppy Bot&lt;/a&gt;, is a natural language chatbot that Shopify store owners can use to query their business data.&lt;/strong&gt; The natural language interface is a novel approach to reporting and analytics in a backend retail setting, and one we hypothesis can provide faster and more efficient access to important data.&lt;/p&gt;
+&lt;p&gt;To this end, an algorithm called Concept Constrained Learning from Demonstration integrates behavioral restrictions, communicated by the user, into the keyframe LfD model. These restrictions are dubbed ‘concept constraints’ which represent prohibitions on the behavior of the robot system. This is accomplished by encoding concept constraints as Boolean planning predicates which when combined into logical forumlae and represent a multitude of concurrent constraints on the learning of keyframes. These planning predicates serve as rejection samplers during the distribution learning phase as well as the skill reconstruction phase. &lt;/p&gt;
+&lt;h3&gt;Algorithm Overview&lt;/h3&gt;
+&lt;p&gt;The algorithm follows these broad steps (right to left in the image cluster): &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Recording of Demonstration Trajectories and Constraints&lt;/li&gt;
+&lt;li&gt;Alignment of Trajectories&lt;/li&gt;
+&lt;li&gt;Clustering and Rejection Sampling Models&lt;/li&gt;
+&lt;li&gt;Culling of Keyframes&lt;/li&gt;
+&lt;li&gt;Remodeling&lt;/li&gt;
+&lt;li&gt;Skill Execution&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;Recording of Demonstration Trajectories&lt;/h4&gt;
+&lt;p&gt;The first step in CC-LfD, as with most LfD algorithms, is to capture demonstration trajectories provided by human operators. In CC-LfD, robot demonstration trajectories are captured via kinesthetic demonstration. What is unique to the CC-LfD demonstration process is that human teachers can provide constraint annotations. An annotation indicates the spatio-temporal region of a trajectory where a given constraint must hold true. In the published version of this work &lt;span id=&quot;citation-0&quot; data-hover=&quot;&quot;&gt;&lt;span class=&quot;citation-number&quot;&gt;[1]&lt;/span&gt;&lt;/span&gt;, this constraint annotation was done manually through programmed arm cuff buttons on the robot during experimentation. However, future work plans to use an augmented reality interface or to utilize a natural language interface. &lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 350px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/0044ff6f28d0645e64f8278a05838d70/a58fe/Demonstration.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 97.72727272727272%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAACXBIWXMAAAsSAAALEgHS3X78AAACfElEQVQ4y31T2W7aQBT1l/YD+gH9AB5oK+UZ8UCR4KVSGgqUlpQS1rDv+1ow2CxR2AwUQ8A2PZ5JDKlQj2Rr5s7dzpk7zHA43G63x+Nxs9lUq9VerzcajYYEWPT7/R4By/YGPDd5GFILy7LNZpOJRqOz2QzBq9UK1k6nU6vVcrlcsVjMZrOTyQRHiqLgPxPWwRInSdKRAFmYZDK5WCywWS6XtBpL8JtAEAQcSbKseo8eP7lzori9EIzKHMehICyJRMLn8wWDQWTBkUyC1fqKTHGh8ng81pr8D6jDq+D1eg3OqVQqHo+DbYIgQtBut+EAFuFw2Gq1Qips4awGz+dzWnkwGIDkdDqFTo8EDwTIC53K5TJqmkwmj8cD/263e6r89PSE/YCAKkeBLbSgV8jzPFIjHbSA/RSsENDF/gXaxVDZcAQLFQx4FUybAVVwuycAYdx5qVSCllpqTbZTMJBOpxFJ75bicDigSfQMCf1+P+icx58EazQaiLx4VdQiimIgEKhUKpqFoaXAxOv1guR5DOH4PBZaxlAoRCdHbRu3ipSYZ7wKmKYEuBtxuz0vqwmGAhg+0HluG96xaGS1XNKRyGdS198DHz7Hspn0QhA0bbVE9XodEqrBELNaKf8KRt13IZ7rU6c/4q7VH0MnKvhutztvAU8Yzatt5/MF788fV9bbbzEMnSKdMaR/juPvQwFF2r/UVo14yKDGILFOp2u1WurTk2isLBFgsSfcvtxlnJHaUTlIMj51bAqFApRmjEajwWDQ3t0/kEmddJV98/bdTtzQAvg7HA69Xs+43W6z2exyuWw229dLsNsddtv11cf3NzeqA9ycTqfFYgHtv1SdNn/PFKnjAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Demonstration&quot;
+        title=&quot;Demonstration&quot;
+        src=&quot;/static/0044ff6f28d0645e64f8278a05838d70/13ae7/Demonstration.png&quot;
+        srcset=&quot;/static/0044ff6f28d0645e64f8278a05838d70/942f4/Demonstration.png 88w,
+/static/0044ff6f28d0645e64f8278a05838d70/4edbd/Demonstration.png 175w,
+/static/0044ff6f28d0645e64f8278a05838d70/13ae7/Demonstration.png 350w,
+/static/0044ff6f28d0645e64f8278a05838d70/52211/Demonstration.png 525w,
+/static/0044ff6f28d0645e64f8278a05838d70/a58fe/Demonstration.png 548w&quot;
+        sizes=&quot;(max-width: 350px) 100vw, 350px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;figcaption&gt;Recording and constraint annotation&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h4&gt;Alignment&lt;/h4&gt;
+&lt;p&gt;After capturing demonstration trajectories, an important step is to generate a mapping between the points of one trajectory with points in the other. Under the assumption that a human operator demonstrates repeatedly the same skill, drawing from a consistent skill distribution, it is important to be able to know which regions of one trajectory correspond with regions in another.&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 350px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/230a2bc27b98ebc2de4172a8486c38c4/432e7/Alignment.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 96.59090909090908%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAIAAAAf7rriAAAACXBIWXMAAAsSAAALEgHS3X78AAACgUlEQVQ4y31UyXLaQBDlr+M/4ANcRYWqXInPPsVVgFjMbmF2UxSrJBMWIdAGGmkkyBtNTGTHSR9GrZ5+09OvnxRbr9eEkEvEFovFfD7f7XaqqmqatlqtZFlWFOWVmfKqKMvlcjKZHI/HWLVa3e/3wJzPZw5uNBq1Wq3ZbIqimMvler0egkHguy4lLnWIFwQXnHg4HGJPT094RMGdTqfVao1Go263WyqV4KAI4gfLMWxysIjl+NvtVtf1GOp8AD8/P1cqFcTzoWUymUKhcN3lzudgrOgZG6gGLvzQooz8DwxDI+g5nU7X6/Vo3Dk5J/tom1bgB+DSMIxPwGAItGIbg0D905tZpmUapqEbxCGSLDHCrmCOh2FI4F8PDddbhYbxsMc6XNZrDA9NvavMizuO8zM05BHiXP5t7ypDEjkhhwhGhXXQ75fKVVBdLpen06lHvXDgwbXMH7Bt2w8/HpbKK3xKqeuyVFW34WALBwlZAReOssPAXGE4XpFliAj+ZrOh1DOPkAS7NnID6pu6KQgCmr/iGRgHg5h0Jo3QKRQTV7umnzxK2atDDrs9j2OEyOf4WL1Rty1bFJuqup1Np8V8oVyptNvt1UaFGJEEkexV7Qxx+z64HI/HEMJvMMQITLPVromdcqnkeaxDltFs5/LFXre726hIRRwj5Dd6fHzE2Nm18RmAz/v7+/7gJUoG96WFlM1kQYFlWbwy2IbyZrMZA6NyIpHAYZxkLmb65iEIhvBtoaam7TEX4roQwGAwYOC7u7t4PP6h5tVQB+vX5LdiRYR3JNQLLnN5dXPzBd3FUqkU7gy5DYfD0V+GoCRJt7e3qdR3/EyGw5fJeAwJJZNJnPsLjzsPnBQ0NIYAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Alignment&quot;
+        title=&quot;Alignment&quot;
+        src=&quot;/static/230a2bc27b98ebc2de4172a8486c38c4/13ae7/Alignment.png&quot;
+        srcset=&quot;/static/230a2bc27b98ebc2de4172a8486c38c4/942f4/Alignment.png 88w,
+/static/230a2bc27b98ebc2de4172a8486c38c4/4edbd/Alignment.png 175w,
+/static/230a2bc27b98ebc2de4172a8486c38c4/13ae7/Alignment.png 350w,
+/static/230a2bc27b98ebc2de4172a8486c38c4/52211/Alignment.png 525w,
+/static/230a2bc27b98ebc2de4172a8486c38c4/432e7/Alignment.png 570w&quot;
+        sizes=&quot;(max-width: 350px) 100vw, 350px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;figcaption&gt;Trajectory alignment using DTW.&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;One important caveat in this alignment process is that the algorithm takes special note of constraint annotation boundaries, regions in spatio-temporal regions in a trajectory where the set of applied constraints changes.&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 350px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/1ff9e36847d86ddf6447e406e0194c18/e40ed/DTW.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 50%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsSAAALEgHS3X78AAABg0lEQVQoz61SS07DMBDN0bgEa9ZsS4OQEFwBFpCABIg7INpu2HEDJFAlAkGgNknT1k7iz3jshEk/YgEskBjpad7z2JbHb7yqqg6stQkiPhKGP4HqQ7vOa76uLfFkLb4ZYwae1jpo/hL17yXnXOQppY5XWtR1DZSBzixyC2cM6KIE1AA4ycFWFUhJQrUAgCVXFrBx1j60L7xu/inoQROPcbYhs2y/HCcdlmYdNk66PHrxRZruiDjenUevfvUc7ako8mWS7Ehap/1LpGm31SqOfTUa7ZEfWx4vik1TFNdmOj0xnJ+aaR5iPgnLLA/K949zOx6dyfjtHObz0DAWIOcBzmYBFkVg8jwE4pBlATB2oaU89OgHrv6tZefS9g+PFkII0UgJNaHRGsycgUMEGpOFSY4MA2NBA4IgM6QyoCgrEkimNLgyBbQ+ay80dE9j3cr/5ov/Iax1scc536a274WQN4yXfSHVQArZI93XWg1oWHvURZ/G6xunoem1exDNLem7SojLT6CB7nloDitRAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;DTW&quot;
+        title=&quot;DTW&quot;
+        src=&quot;/static/1ff9e36847d86ddf6447e406e0194c18/13ae7/DTW.png&quot;
+        srcset=&quot;/static/1ff9e36847d86ddf6447e406e0194c18/942f4/DTW.png 88w,
+/static/1ff9e36847d86ddf6447e406e0194c18/4edbd/DTW.png 175w,
+/static/1ff9e36847d86ddf6447e406e0194c18/13ae7/DTW.png 350w,
+/static/1ff9e36847d86ddf6447e406e0194c18/52211/DTW.png 525w,
+/static/1ff9e36847d86ddf6447e406e0194c18/8c557/DTW.png 700w,
+/static/1ff9e36847d86ddf6447e406e0194c18/e40ed/DTW.png 1378w&quot;
+        sizes=&quot;(max-width: 350px) 100vw, 350px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;figcaption&gt;An example of an alignment of two sequences using Dynamic Time Warping.&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h4&gt;Clustering and Rejection Sampling Modeling&lt;/h4&gt;
+&lt;p&gt;The bulk of the algorithm’s novelty lies in the way it facilities the learning of keyframes. Once an alignment has been established, sequential clusters of aligned points serve as the basis for keyframe models. Given the set of annotated constraints, each cluster&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 350px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/f21c0ce03b325ddd84f2b532eff69e05/b6a9b/Keyframing.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 100%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAACXBIWXMAAAsSAAALEgHS3X78AAACCklEQVQ4y52Uy5aaQBCGef9nceEuixmTgw4qAkaEARRBUJTRqAhyh25TgJc5HMfMyb/obqr7q+pLFYSqqmEYnv9LBEVRruvCCGNcm0vTVNf1xWKxWq0sy4LB8qr5fA5GgqZpz/NqWOXI9/1uqUaj0W634TMpBetlSVYUhej3+xX8OXI1BjsEBMZxnOPxCEaEUDWbpLG5MJ/BgLEsCzF7vR5ssNVqvYJeXvfHnbp9n2nqMxjuAg4GA1QqLxVFEbRhHBim8QwOgoCiugzDCoLAcVyn07FKX0maa7Y/0/RnMDyhKApsqeFwCCtFUYSrNkxzLE01TavDuOjxzVEQpVmObrMII3i/LMswysFyh8+4aooO5t2jI01UeuqK+vbkuXnpop4ktcg5SsMokGWF50fWytY+Qnm2lCWJ53ljo/mp+zWMsb6fkOOftr2+ursc4c9h01F//TYH1cHusOteMsy27YHc1Q4KpMP9Fq5LvcThxgysuRkruNgM5BC8RxwnD2vgcv9B2KN7690Sn9EFPp1Oe8cbjfjKC8LoIV/ZzZ3enZM7/6OAmQFtrvfszDNs52Ft1RRnITeh7W2RLcSQY0eCwigbN8hK+BlZud5uttK7WMAkSbZJMs+y7/8DIG1YQT14AdFsNiH1iv3EcfovJUmK8mznnDrSYWJ5BCQ91BoUHfVtvb1RP17Iqar/BbaQX34WwDSJAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Keyframing&quot;
+        title=&quot;Keyframing&quot;
+        src=&quot;/static/f21c0ce03b325ddd84f2b532eff69e05/13ae7/Keyframing.png&quot;
+        srcset=&quot;/static/f21c0ce03b325ddd84f2b532eff69e05/942f4/Keyframing.png 88w,
+/static/f21c0ce03b325ddd84f2b532eff69e05/4edbd/Keyframing.png 175w,
+/static/f21c0ce03b325ddd84f2b532eff69e05/13ae7/Keyframing.png 350w,
+/static/f21c0ce03b325ddd84f2b532eff69e05/52211/Keyframing.png 525w,
+/static/f21c0ce03b325ddd84f2b532eff69e05/b6a9b/Keyframing.png 530w&quot;
+        sizes=&quot;(max-width: 350px) 100vw, 350px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;figcaption&gt;Clustering of points and keyframing&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 350px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/a43d96f38e02d70fbe1e6ff685daae6f/b06ae/RejectionSampling.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 96.59090909090908%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAIAAAAf7rriAAAACXBIWXMAAAsSAAALEgHS3X78AAACMUlEQVQ4y51TW3OaQBjl93c603/Ql751WmeaaWJskzAG5aIxRixeMFwkiBREBFSUi/QYpkYeGjM9Dzvf7n5nv7NnvyUEQYjjOPuL3ZuBZKJWq2232+y/QNA0fSC7rmsYxuwZtm0jNk0zj/PRcRzLsiYTw5gYCApkRVEqlUq5XCZJstVq9Xo9juMajQbDMEhjWRbrgtBbrgLHsyRJKpB1XR8MBuCMRiNVVSEE8XA4xDQPRFF8etKTNFklgaZpBTLm7XYbR/b7fRiJGMpzDg7FERg7nY4iK1mwGqtqgSzLcrPZhE4s1ut1eCnLEsvulUNzLh4JPM97v02cVSDDj+l06jwDDnmet3AXgDNzjrH30tyjQD5+bYy2YwkjfmbP3vRUB9o22m7CDXfP/mTPWY7xFh5y0l0axdFxIxXIotpTxlKWZrZtZbts8MhPTEXTxqDNHbfJ01fMue/7hxov5MBfXlbPbrnrxgMdbfcV2hQlMuw9TcdpqirqDV2p0tfL5bIge7PZIIqiCA9Ta92w7XqapFgJwxBPne+i4HRqrlfrwA+wEsfJS2XIwDZ+SBInSZS80s/zxQJGkMwP3I5AA05MnWZoSZFe4eQOpWlGXny9Ir+rmgpTiNZd667TYB+o9pBFkxzM+Bd8Z64p43Ad7mWjbcaqNnzsD0d9d+6e/NJIwO3mwNQkqtUqOulkwQPgpayLn758pG4viVKphNbFN/h1Ct1uFx+GoqjS+ef3H96dXXz7A8eeE0I/1PtTAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;RejectionSampling&quot;
+        title=&quot;RejectionSampling&quot;
+        src=&quot;/static/a43d96f38e02d70fbe1e6ff685daae6f/13ae7/RejectionSampling.png&quot;
+        srcset=&quot;/static/a43d96f38e02d70fbe1e6ff685daae6f/942f4/RejectionSampling.png 88w,
+/static/a43d96f38e02d70fbe1e6ff685daae6f/4edbd/RejectionSampling.png 175w,
+/static/a43d96f38e02d70fbe1e6ff685daae6f/13ae7/RejectionSampling.png 350w,
+/static/a43d96f38e02d70fbe1e6ff685daae6f/52211/RejectionSampling.png 525w,
+/static/a43d96f38e02d70fbe1e6ff685daae6f/b06ae/RejectionSampling.png 560w&quot;
+        sizes=&quot;(max-width: 350px) 100vw, 350px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;figcaption&gt;Rejection Sampling to relearn constrained distributions.&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h4&gt;Culling&lt;/h4&gt;
+&lt;p&gt;&lt;figure&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 350px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/df0bc26b4b50a7998015134c3fac7e62/89a37/Culling.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 100%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAACXBIWXMAAAsSAAALEgHS3X78AAAB3UlEQVQ4y52UbXeaMBTH+f5fZmcvdO2LbaUVBecYnuwEkQdJBDKfq05DEOiuxLN2LaU9uy8ChPzyvw+5UTzPO51OD/9liqqqnPPaf1mWUUrDF0YIgfkoipRut5um6TOsLEsYl8tlkiTyU1qe5zAKIYq8CIJA0TTtNXi73TqOo+u6YRimaQ4GA62y9XpN7j0/9JrgzWYDTs5ms/l8vlgs4CWOYxA8HI+i/E1o2ATvdjuEUKfTwRhLWYgW5ouiYJtsQmgTDO5BViBy0ARlkF2tVhJO1mkwaVTe7/eu6zHG4srki8w2S6Lx2KmHn+5TSZ3zDMcBxqIyeIDAc1iWRMr2TFsf+iGZ5q+con9gicHGh8MBnPyO3AHyp1GS8hRhZNkWKP9d9gIuSjZjdEpFKsqLzxdHIha1e+2hPZS718ATOvmofnB8R64oH+kzn7DYHmNIeD1smIaFLchGTd4qfQinfdf2qCdnHmGoJHRCQw9J3hr9uNY+8SO/KHN+hNrJ3irKorkNoWB0SqSeove62CXXnWGWiXe2cZad/CA4u313e3N18+2nGz28pfnkzO+/GvjXfKm0Wq3RaMyhUYTg6dsGedlt7z8bNnLC801yq6r9fh9uhd67DALVWldfEHb/AOTRY8jWFezjAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Culling&quot;
+        title=&quot;Culling&quot;
+        src=&quot;/static/df0bc26b4b50a7998015134c3fac7e62/13ae7/Culling.png&quot;
+        srcset=&quot;/static/df0bc26b4b50a7998015134c3fac7e62/942f4/Culling.png 88w,
+/static/df0bc26b4b50a7998015134c3fac7e62/4edbd/Culling.png 175w,
+/static/df0bc26b4b50a7998015134c3fac7e62/13ae7/Culling.png 350w,
+/static/df0bc26b4b50a7998015134c3fac7e62/52211/Culling.png 525w,
+/static/df0bc26b4b50a7998015134c3fac7e62/89a37/Culling.png 532w&quot;
+        sizes=&quot;(max-width: 350px) 100vw, 350px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;figcaption&gt;Sparsification step that maintains constraint boundary keyframes.&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h4&gt;Reconstruct Skill&lt;/h4&gt;
+&lt;p&gt;&lt;figure&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 350px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/e46d2629a5f9b3ab75f1dc6f7aa4bde2/664c8/SkillExecution.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 100%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAACXBIWXMAAAsSAAALEgHS3X78AAABb0lEQVQ4y+2TTW+CQBCG/e09NE2b/gxvHkxsIqSABAT6wccBI0sKrYkFa4EEpQHdBe3Y1dbaJhoPPXUOk83MPpl3ZmdrruuWZbk8ymqSJBFCjoRVVT0eVhTlH/6yxcaqqgL/J5XzPOc4zrIs0zQ1TZNlOU1TqmU/jDGGzev3++ARQrZtHwRvp9N00vPM8esLxgTa3gPTXBzHsHagFqpVy8U0m3blrm4YcRLt8N9gXM5uDEXsiFEUvWXZ02AwtO0HhPKiIKQUNNb10DZPYQwnSPPitdm7pwnQOZ/P4zAkGG90VTzPPw+DT34Fw5eEq6Io+r4PIfpDHcdhWZZhWUmWoQXac1HMGPFqkq2HV1MVdUZyTmJ875EWpHWglyRJgiAYhSEc6LZAfDQOOh1hLdswjDv9VrfuaM1qYzuDpUE6HcPUXc9Zwa1WC1T9fIbfF3a5+PDV6eUJclCtXq83Gg3Yp3a7zRxgcE3ghfOzi2az+Q7ThGxJOSKk8QAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;SkillExecution&quot;
+        title=&quot;SkillExecution&quot;
+        src=&quot;/static/e46d2629a5f9b3ab75f1dc6f7aa4bde2/13ae7/SkillExecution.png&quot;
+        srcset=&quot;/static/e46d2629a5f9b3ab75f1dc6f7aa4bde2/942f4/SkillExecution.png 88w,
+/static/e46d2629a5f9b3ab75f1dc6f7aa4bde2/4edbd/SkillExecution.png 175w,
+/static/e46d2629a5f9b3ab75f1dc6f7aa4bde2/13ae7/SkillExecution.png 350w,
+/static/e46d2629a5f9b3ab75f1dc6f7aa4bde2/664c8/SkillExecution.png 524w&quot;
+        sizes=&quot;(max-width: 350px) 100vw, 350px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;figcaption&gt;Exeuction of a constrained skill&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h2&gt;Limitations&lt;/h2&gt;
+&lt;h2&gt;Future Work&lt;/h2&gt;
+&lt;h2&gt;References&lt;/h2&gt;
+&lt;p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Robust Robot Learning from Demonstration and Skill Repair Using Conceptual Constraints&lt;/b&gt; &lt;br&gt;Mueller, C., Venicx, J. and Hayes, B., 2018. 2018 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), pp. 6029--6036. &lt;/li&gt;&lt;li&gt;&lt;b&gt;Recent advances in robot learning from demonstration&lt;/b&gt; &lt;br&gt;Ravichandar, H., Polydoros, A.S., Chernova, S. and Billard, A., 2020. Annual Review of Control, Robotics, and Autonomous Systems, Vol 3. Annual Reviews.&lt;/li&gt;&lt;li&gt;&lt;b&gt;Keyframe-based learning from demonstration&lt;/b&gt; &lt;br&gt;Akgun, B., Cakmak, M., Jiang, K. and Thomaz, A.L., 2012. International Journal of Social Robotics, Vol 4(4), pp. 343--355. Springer.&lt;/li&gt;&lt;li&gt;&lt;b&gt;Robust Robot Learning from Demonstration and Skill Repair Using Conceptual Constraints&lt;/b&gt; &lt;br&gt;Mueller, C., Venicx, J. and Hayes, B., 2018. 2018 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), pp. 6029--6036. &lt;/li&gt;&lt;/ol&gt;&lt;/bibliography&gt;&lt;/p&gt;
+&lt;h5&gt;Footnotes&lt;/h5&gt;
+
+      &lt;div class=&quot;footnotes&quot;&gt;
+        &lt;hr/&gt;
+        &lt;ol &gt;
+    
+    &lt;li class=&quot;footnote-list-item&quot; id=&quot;fn-1&quot; &gt;
+          
+        
+      &lt;a href=&quot;#fnref-1&quot; class=&quot;footnote-backref&quot; style=&quot;display:inline;text-decoration: none;&quot;&gt;
+        ↩
+      &lt;/a&gt;
+    &lt;p class=&quot;footnote-paragraph&quot; style=&quot;display:inline; margin-left: 5px;&quot;&gt;In kinesthetic demonstration, a human operator physically manipulates the robot to enable its sensors to capture a trajectory. In teleoperation, the operator utilizes a remote control device to manipulate the robot. In passive observation, the robot’s external sensors observe a human demonstrating the task. This last method introduces something called the &lt;strong&gt;correspondence problem&lt;/strong&gt;: how does one map observational demonstration data to robot control state data?&lt;/p&gt;
+      &lt;/li&gt;
+      
+    
+
+    &lt;li class=&quot;footnote-list-item&quot; id=&quot;fn-2&quot; &gt;
+          
+        
+      &lt;a href=&quot;#fnref-2&quot; class=&quot;footnote-backref&quot; style=&quot;display:inline;text-decoration: none;&quot;&gt;
+        ↩
+      &lt;/a&gt;
+    &lt;p class=&quot;footnote-paragraph&quot; style=&quot;display:inline; margin-left: 5px;&quot;&gt;CC-LfD falls under the policy learning category, where the constrained acyclic directed keyframe graph generates a rough motion plan for the robot to follow. The graph model represents a policy that dictates robot behavior.&lt;/p&gt;
+      &lt;/li&gt;
+      
+    &lt;/ol&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Developing the Natural Language Understanding Behind Shoppy Bot]]></title><link>https://www.carl-mueller.com/posts/developing-natural-language-understanding-for-shoppy-bot/</link><guid isPermaLink="false">https://www.carl-mueller.com/posts/developing-natural-language-understanding-for-shoppy-bot/</guid><pubDate>Thu, 26 Oct 2017 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;strong&gt;Lightning in a Bot’s first product, &lt;a href=&quot;https://shoppybot.com&quot;&gt;Shoppy Bot&lt;/a&gt;, is a natural language chatbot that Shopify store owners can use to query their business data.&lt;/strong&gt; The natural language interface is a novel approach to reporting and analytics in a backend retail setting, and one we hypothesis can provide faster and more efficient access to important data.&lt;/p&gt;
 &lt;p&gt;The first version of Shoppy Bot used &lt;a href=&quot;https://wit.ai&quot;&gt;Wit.ai’s&lt;/a&gt; natural language API to convert user requests such as “how many customers have we had this week?” into structured data that we could convert into SQL queries and other various functions. Problems with these cloud services became apparent early on, therefore we began to explore what it would take to build our own Natural Language Understanding (NLU) service, one designed specifically for the task at hand.&lt;/p&gt;
 &lt;p&gt;This post serves as an overview of the theory behind our approach and outlines specific implementation details in developing our own NLU system, now known internally as “Bolt”.&lt;/p&gt;
 &lt;h2&gt;Theory&lt;/h2&gt;
@@ -528,7 +791,7 @@ Bolt uses the fantastic library Scikit-learn and its implementation of an SVM. S
 &lt;p&gt;Similar words are used repeatedly for similar user intents. It plays to Bolt’s advantage that queries are often specific to the task at hand, which limits the amount of noise (overlap of categories) and number of outliers (single data points invading deep into the region of a different category). This means that the distinction between one category and another in our geometric space is sharp. I won’t go too deep into how SVM’s work, but I suggest Wikipedia as a good starting point.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 392px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 350px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -539,17 +802,18 @@ Bolt uses the fantastic library Scikit-learn and its implementation of an SVM. S
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 95.57522123893806%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAYAAACQjC21AAAACXBIWXMAAAsTAAALEwEAmpwYAAAE3ElEQVQ4y2NgAIJJHT3iNY01wq2tzfxdbW18yLgTiDtAdHs7gt3WJtDd3i42Y+pUzmmTJjExQEFfdzcDQ9vsPu6G/hYZBhJAX1s708SeXrbVq1YyzZw2jWvW9Okc61evZgRLrlm4VNi3Jr7AJj8gP7oqXQQs1jOHtba5jrO3o5W9uW4qZ1XpLK7G2l6OzrZ2jo7Wbrb25nb+1sZ2gZamVpa25mY2oMt4JvX3C/f39gowzGzrFUgoyxB1Kgk7YlsSfNWpLKw5uT5P7M6szcwVtR3c//8zgL10/rIDS19vCfuyZSksHW2VfNOnp/BOm1LB2tHSwdne0swOMriro0OQoaG1nhekoXBKnZpDZfgJi+KAjxaF/vNg3ovy+qLq5/DY1cnimky4439mkFhK0GfdYNd7/uhB0dXZycXQ197Bk1aXzw4SCGpLtwUaet2yOOCFdVFwNUgs1PuBup/jo4wI9328wU53xYNdn5rH+d0PDXJ55uztcMMKpCY64DTYF0AX8jL0tLfz9HZ0MZc3VoJd6t2UlG5XGfYQaOhDu5KwAJCYj/NxXQvzS172gf+FswLuc61ZUc6ZEvzROdzjSaqn3QUOkJrmhkksYBd2AQ1cXl7K2ldfyw1zuldjfI9tRegzy+LAy65VwRq2uv+Vtli5SGXZHQy1t3lgFupxwc3Z8rgssne7uzrZujs7ORmmNNRzM/z/D3byDwcLu/cmBr4gtkd97Hqb8pAXNiUBOw18Llne07U3nGLdEmjg8lUtyOWQu7f9PS0fhwduCUHvwC7saOvlBLqQjQFoGPMTbzfLC872Sj8drHQvOFpKgBRkdhWoOtfFHrcuC35pU+41CSRmYvdcNdT9mkFs8BlpEN/X8YqGj/0tc4iXJ/L1dHczMqzs7+N56WKXeszHA+yF9/HhnG9c7ML/m+l7TstwLnCsibplUR7w2D6jsLuW4T9XQtp8EX+Xi1Go8fsf6OUOno72dkaGiQ0NPGrXHzK9crH3uxrsr34/wNfivbNpyA7vbK9c/3+WXi0xOQ4lvi8sciPeu6SVZIK0JyetlAMZUla4jBESfm0s3Z1dXGCzqyZO4jyXGMv71Mbc95eLrdJ7S+PeD3b6Oo8cA1232FcEgdT4V0dNt6kKempR6nvaujBMBSRW2lfIgoiQLpbOjg6IgdOqKrlA4XjPw9n4i5GO8Etbc9Uzmto8YI84ajp9MjdKWNRYLOjSHL/euiLkDTDRb06uL+VbP38ZBzxBd3RwAmOYFcxZVF/Hkrp4Kff1AG+Fd8a6YiCxXx4OUl9sLVyeWZhZ1+WEs4HE4iYXqzo3xpyyLAt6Y1MS7AZ2ZWcNOEMADeMBuhJS6swrLmSumDVb6IuDle0tQ11wWnxnZ2H40txQYZehLtiw8NIQsPeCerNcHOoiX9tWhtaBXTapmw9qIDfQy5DSZnp5OXPDlKkib61N1a6YGXGh58+DPp6MU4ElhHGxLzgfe7UnVTrWRx0AO2bGDI7JEydwtre1gfUBaQaG3v5+5t6WFnHURADBuIBne9Jkl5Y4IxB74uR+YaDrwD7r6epiYCgvLASVaRLrGupZO2trWbp7elgmTZzI1lBfz9XW2soDLKF5gDaD6caOZr4zFStZ0/vKVKN78u1vN2xjaW5tFunu6AAHCTAbMwAAMnXbuLftc78AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 95.45454545454545%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAYAAACQjC21AAAACXBIWXMAAAsTAAALEwEAmpwYAAAE3ElEQVQ4y2NgAIJJHT3iNY01wq2tzfxdbW18yLgTiDtAdHs7gt3WJtDd3i42Y+pUzmmTJjExQEFfdzcDQ9vsPu6G/hYZBhJAX1s708SeXrbVq1YyzZw2jWvW9Okc61evZgRLrlm4VNi3Jr7AJj8gP7oqXQQs1jOHtba5jrO3o5W9uW4qZ1XpLK7G2l6OzrZ2jo7Wbrb25nb+1sZ2gZamVpa25mY2oMt4JvX3C/f39gowzGzrFUgoyxB1Kgk7YlsSfNWpLKw5uT5P7M6szcwVtR3c//8zgL10/rIDS19vCfuyZSksHW2VfNOnp/BOm1LB2tHSwdne0swOMriro0OQoaG1nhekoXBKnZpDZfgJi+KAjxaF/vNg3ovy+qLq5/DY1cnimky4439mkFhK0GfdYNd7/uhB0dXZycXQ197Bk1aXzw4SCGpLtwUaet2yOOCFdVFwNUgs1PuBup/jo4wI9328wU53xYNdn5rH+d0PDXJ55uztcMMKpCY64DTYF0AX8jL0tLfz9HZ0MZc3VoJd6t2UlG5XGfYQaOhDu5KwAJCYj/NxXQvzS172gf+FswLuc61ZUc6ZEvzROdzjSaqn3QUOkJrmhkksYBd2AQ1cXl7K2ldfyw1zuldjfI9tRegzy+LAy65VwRq2uv+Vtli5SGXZHQy1t3lgFupxwc3Z8rgssne7uzrZujs7ORmmNNRzM/z/D3byDwcLu/cmBr4gtkd97Hqb8pAXNiUBOw18Llne07U3nGLdEmjg8lUtyOWQu7f9PS0fhwduCUHvwC7saOvlBLqQjQFoGPMTbzfLC872Sj8drHQvOFpKgBRkdhWoOtfFHrcuC35pU+41CSRmYvdcNdT9mkFs8BlpEN/X8YqGj/0tc4iXJ/L1dHczMqzs7+N56WKXeszHA+yF9/HhnG9c7ML/m+l7TstwLnCsibplUR7w2D6jsLuW4T9XQtp8EX+Xi1Go8fsf6OUOno72dkaGiQ0NPGrXHzK9crH3uxrsr34/wNfivbNpyA7vbK9c/3+WXi0xOQ4lvi8sciPeu6SVZIK0JyetlAMZUla4jBESfm0s3Z1dXGCzqyZO4jyXGMv71Mbc95eLrdJ7S+PeD3b6Oo8cA1232FcEgdT4V0dNt6kKempR6nvaujBMBSRW2lfIgoiQLpbOjg6IgdOqKrlA4XjPw9n4i5GO8Etbc9Uzmto8YI84ajp9MjdKWNRYLOjSHL/euiLkDTDRb06uL+VbP38ZBzxBd3RwAmOYFcxZVF/Hkrp4Kff1AG+Fd8a6YiCxXx4OUl9sLVyeWZhZ1+WEs4HE4iYXqzo3xpyyLAt6Y1MS7AZ2ZWcNOEMADeMBuhJS6swrLmSumDVb6IuDle0tQ11wWnxnZ2H40txQYZehLtiw8NIQsPeCerNcHOoiX9tWhtaBXTapmw9qIDfQy5DSZnp5OXPDlKkib61N1a6YGXGh58+DPp6MU4ElhHGxLzgfe7UnVTrWRx0AO2bGDI7JEydwtre1gfUBaQaG3v5+5t6WFnHURADBuIBne9Jkl5Y4IxB74uR+YaDrwD7r6epiYCgvLASVaRLrGupZO2trWbp7elgmTZzI1lBfz9XW2soDLKF5gDaD6caOZr4zFStZ0/vKVKN78u1vN2xjaW5tFunu6AAHCTAbMwAAMnXbuLftc78AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;hyperplane&quot;
         title=&quot;hyperplane&quot;
-        src=&quot;/static/ee94b5d9c99d348b59a03549a5ce621b/0acb4/hyperplane.png&quot;
-        srcset=&quot;/static/ee94b5d9c99d348b59a03549a5ce621b/2519b/hyperplane.png 113w,
-/static/ee94b5d9c99d348b59a03549a5ce621b/3684f/hyperplane.png 225w,
+        src=&quot;/static/ee94b5d9c99d348b59a03549a5ce621b/13ae7/hyperplane.png&quot;
+        srcset=&quot;/static/ee94b5d9c99d348b59a03549a5ce621b/942f4/hyperplane.png 88w,
+/static/ee94b5d9c99d348b59a03549a5ce621b/4edbd/hyperplane.png 175w,
+/static/ee94b5d9c99d348b59a03549a5ce621b/13ae7/hyperplane.png 350w,
 /static/ee94b5d9c99d348b59a03549a5ce621b/0acb4/hyperplane.png 392w&quot;
-        sizes=&quot;(max-width: 392px) 100vw, 392px&quot;
+        sizes=&quot;(max-width: 350px) 100vw, 350px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -564,7 +828,7 @@ Bolt uses the fantastic library Scikit-learn and its implementation of an SVM. S
 &lt;p&gt;The data structure that Bolt’s gazetteer uses is called a trie. In this scenario, a trie is an ordered tree structure that stores strings compactly, where each node of the tree is an object or structure that stores the current letter, potentially a word, and references or pointers to the next node. The idea is that in traversing a branch of the trie, you slowly build up a word letter by letter. Words that share the same prefix will start along the same branch.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 450px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 350px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -575,20 +839,20 @@ Bolt uses the fantastic library Scikit-learn and its implementation of an SVM. S
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 75.2212389380531%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAECBf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAd1UigD/xAAWEAEBAQAAAAAAAAAAAAAAAAAQEQD/2gAIAQEAAQUCZof/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAUEAEAAAAAAAAAAAAAAAAAAAAg/9oACAEBAAY/Al//xAAZEAEBAQADAAAAAAAAAAAAAAABABExQXH/2gAIAQEAAT8hXSOe4dkXqy//2gAMAwEAAgADAAAAEDQP/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPxA//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPxA//8QAGxABAQADAQEBAAAAAAAAAAAAAREAITFBgZH/2gAIAQEAAT8Q5jC9qY4BW+C9/cCp4xxBojEuW04gc3rAH3bn/9k=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAECBf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAd1UigD/xAAWEAEBAQAAAAAAAAAAAAAAAAAQEQD/2gAIAQEAAQUCZof/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAUEAEAAAAAAAAAAAAAAAAAAAAg/9oACAEBAAY/Al//xAAZEAEBAQADAAAAAAAAAAAAAAABABExQXH/2gAIAQEAAT8hXSOe4dkXqy//2gAMAwEAAgADAAAAEDQP/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPxA//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPxA//8QAGxABAQADAQEBAAAAAAAAAAAAAREAITFBgZH/2gAIAQEAAT8Q5jC9qY4BW+C9/cCp4xxBojEuW04gc3rAH3bn/9k=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;search trie&quot;
         title=&quot;search trie&quot;
-        src=&quot;/static/037763317989df7427c7fac152dedcb9/20e5d/search_trie.jpg&quot;
-        srcset=&quot;/static/037763317989df7427c7fac152dedcb9/30b1b/search_trie.jpg 113w,
-/static/037763317989df7427c7fac152dedcb9/863e1/search_trie.jpg 225w,
-/static/037763317989df7427c7fac152dedcb9/20e5d/search_trie.jpg 450w,
-/static/037763317989df7427c7fac152dedcb9/512c0/search_trie.jpg 675w,
-/static/037763317989df7427c7fac152dedcb9/8e1fc/search_trie.jpg 900w,
+        src=&quot;/static/037763317989df7427c7fac152dedcb9/70ebb/search_trie.jpg&quot;
+        srcset=&quot;/static/037763317989df7427c7fac152dedcb9/f71f9/search_trie.jpg 88w,
+/static/037763317989df7427c7fac152dedcb9/e52aa/search_trie.jpg 175w,
+/static/037763317989df7427c7fac152dedcb9/70ebb/search_trie.jpg 350w,
+/static/037763317989df7427c7fac152dedcb9/7349d/search_trie.jpg 525w,
+/static/037763317989df7427c7fac152dedcb9/29d31/search_trie.jpg 700w,
 /static/037763317989df7427c7fac152dedcb9/6a068/search_trie.jpg 960w&quot;
-        sizes=&quot;(max-width: 450px) 100vw, 450px&quot;
+        sizes=&quot;(max-width: 350px) 100vw, 350px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
