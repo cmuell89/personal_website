@@ -1,4 +1,36 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Dylan La Com' RSS feed]]></title><description><![CDATA[Carl Mueller's website]]></description><link>https://www.carl-mueller.com</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 06 Dec 2020 20:03:43 GMT</lastBuildDate><item><title><![CDATA[Augmented Reality for Constrained Learning from Demosntration]]></title><link>https://www.carl-mueller.com/research/arc-lfd/</link><guid isPermaLink="false">https://www.carl-mueller.com/research/arc-lfd/</guid><pubDate>Fri, 25 Sep 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;We recently submitted a paper to ICRA 2021 that utilizes Augmented Reality to visualize models learned through user demonstration as well as an interface to add/remove/edit constraints on those models.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Dylan La Com' RSS feed]]></title><description><![CDATA[Carl Mueller's website]]></description><link>https://www.carl-mueller.com</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 07 Dec 2020 00:18:27 GMT</lastBuildDate><item><title><![CDATA[Augmented Reality for Constrained Learning from Demonstration]]></title><link>https://www.carl-mueller.com/research/arc-lfd/</link><guid isPermaLink="false">https://www.carl-mueller.com/research/arc-lfd/</guid><pubDate>Fri, 25 Sep 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;We recently submitted a paper to ICRA 2021 that utilizes Augmented Reality to visualize models learned through user demonstration as well as an interface to add/remove/edit constraints on those models.&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 350px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/77ceaa3ea4fa412c6e4c2875b3f5bfd8/c30e1/ar_viz.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 55.68181818181818%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABYlAAAWJQFJUiTwAAADMklEQVQozx2SW0zTBxjF/7skLIuicpWGS5FAS5G2QIFgJ22FmU2UCi0XaaVDlNkGylAY11qww3ZAIRmWWZVSLoLg3HBFJG7LfDCxGbu4PfCwLc5kL1uWZcle9/Dbf3s4+b5zvuRLzskRaqpryDtYzAF5MdkKDWlSFS0il2UqMRhqOSArQXOoEr1OR2xsLClJidSmJCHZE0t5WhrVr1dyuLiIJPHWamtGONvWSVHZcd5uLkUuyyAuMwttfCq7Y5LJ2StFvyedLLmGbFkugiCQnJBKmbinylTIJGpMWj0dXRYM2kKaG8wI5lPtOM+/QVNdAUaThTankxRFOrlaNc53+mgo0VF/oo7w1RFcjQbOFlfhtDoYtHfQU3uOixVW7ty4xJSnh9kPvAgFReXoNbvQlmYx3FvP9ckhIisT3FvzE5ofwdhi4uaNCf75fpm/P3fzdN5NNHSZH1ZHeTL7LpujDj6ZGWXGN8RaaFp8WHiI5H0vMuxQc3u6j63FcX7/apOfv7jH1tIYy8EBHm8tEZ4aYnm8jZUxG+uTLayOnSHsPY+39wyDF+x4+9pZmwsgjPv8ONssLE5fYHbaL1oLEFme58foAssBH/7+dhYCk7zvcdNpfYuWYybeLDNQUlhCY+NpUb9CZC4kWh7h7tIcwsjAIKYTZgx6E8YaC5fdNsLBCtxd6RTJ4hFe2odckY8yX0VFnJLO3JPo0gwkpudxqtXOtGeK7aUwPz14yDdb9xE6HD3Um5q4PnORR/dbGe5WsX+vgCo/h0ZbJUq1mgJlAbkKBYoYKVWSI9i0teiMr1HX2cAtMTeP3cGs6xLRzY8Q7t7y8vSxm0mXFnWOhP3lx3jhlTgO5klp6jby4TUfmytLyPJyyY5JpzrbjP2omYnu03y5EWT7YRiXs5U6TSmLwy6EjwNVHC99+f+O/YeiysNk5cvFrBIJ+ix8dvsmK8EZJBkZSF9NwXHUytXBXp5FV/klekec6zz7eoOIv4eF9hYEV4eZhiPx7NqdSEJcAjpNJv39RqbesxKZOsej0BCfXruC1zNAcKALT9lJwr19PP92nV+3N/jtuwf8ufOEP3a2+ev5Dv8CfiThDYvkolcAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;ar viz&quot;
+        title=&quot;ar viz&quot;
+        src=&quot;/static/77ceaa3ea4fa412c6e4c2875b3f5bfd8/13ae7/ar_viz.png&quot;
+        srcset=&quot;/static/77ceaa3ea4fa412c6e4c2875b3f5bfd8/942f4/ar_viz.png 88w,
+/static/77ceaa3ea4fa412c6e4c2875b3f5bfd8/4edbd/ar_viz.png 175w,
+/static/77ceaa3ea4fa412c6e4c2875b3f5bfd8/13ae7/ar_viz.png 350w,
+/static/77ceaa3ea4fa412c6e4c2875b3f5bfd8/52211/ar_viz.png 525w,
+/static/77ceaa3ea4fa412c6e4c2875b3f5bfd8/8c557/ar_viz.png 700w,
+/static/77ceaa3ea4fa412c6e4c2875b3f5bfd8/c30e1/ar_viz.png 2399w&quot;
+        sizes=&quot;(max-width: 350px) 100vw, 350px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;figcaption&gt;AR visualizations of expected robot skill execution and various constraints.&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;A more detailed summary is coming soon!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[2020 AAAI, HRI Pioneers, COVID19]]></title><link>https://www.carl-mueller.com/posts/update-sep2020/</link><guid isPermaLink="false">https://www.carl-mueller.com/posts/update-sep2020/</guid><pubDate>Tue, 01 Sep 2020 22:00:00 GMT</pubDate><content:encoded>&lt;p&gt;This past February, I had the privliege to attend 2020 AAAI Conference in New York City. I was selected into the Doctoral Consortium, which serves as a workshop for promising PhD students in the greater AI community. I had a wonderful time meeting people from all walks of life and enjoying the world’s most cosmopolitan city. I got to sit in on all sorts of interesting talks on all sorts of topics in AI and Machine Learning. I even sawy Geoffrey Hinton, Yann LeCunn, and Yoshio Bengio recieve their Turing Awards. Pretty amazing!&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
