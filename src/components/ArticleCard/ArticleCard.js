@@ -88,6 +88,7 @@ const ArticleCardContent = styled.span`
 const ArticleCardTitle = styled.h2`
   margin-bottom: auto;
   color: ${readableColor('#000')};
+  background-color: rgba(0, 0, 0, 0.6);
   font-size: 1.5em;
   line-height: 1.1em;
   word-wrap: normal;
@@ -111,7 +112,7 @@ const ArticleCardTitle = styled.h2`
 const ArticleCardMeta = styled.span`
   margin-top: auto;
   color: ${rgba(readableColor('#000'), 0.7)};
-
+  background-color: rgba(0, 0, 0, 0.6);
   ${props => props.size === 'small' && `
     display: none;
   `}
@@ -130,7 +131,7 @@ export default class ArticleCard extends Component {
 
     return (
       <StyledArticle size={size}>
-        {featuredImage && (<ArticleImage fluid={featuredImage.childImageSharp.fluid} />)}
+        {featuredImage && (<ArticleImage class='center' fluid={featuredImage.childImageSharp.fluid} />)}
         <ArticleCardLink to={slug}>
           <ArticleCardContent>
             <ArticleCardTitle>{title}</ArticleCardTitle>

@@ -59,6 +59,11 @@ export default function NavLinks() {
         activeStyle={{ color: 'rgba(0,0,0,1)'}}
       >About</StyledNavLink>
       <StyledNavLink
+        to="/posts"
+        title="Posts"
+        activeStyle={{ color: 'rgba(0,0,0,1)'}}
+      >Posts</StyledNavLink>
+      <StyledNavLink
         to="/contact"
         title="Contact"
         activeStyle={{ color: 'rgba(0,0,0,1)'}}

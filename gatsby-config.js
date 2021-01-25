@@ -44,8 +44,15 @@ module.exports = {
           {
             resolve: 'gatsby-remark-images',
             options: {
-              maxWidth: 450,
+              maxWidth: 350,
             },
+          },
+          {
+            resolve: "gatsby-remark-embed-youtube",
+            options: {
+              width: 800,
+              height: 400
+            }
           },
           {
             resolve: 'gatsby-remark-responsive-iframe',

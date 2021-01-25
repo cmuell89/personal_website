@@ -55,10 +55,6 @@ export default function SocialGrid() {
             title="LinkedIn"><FaLinkedinIn size={24}/></a>
           </div>
           <div className="item"><a
-            href='https://twitter.com/cmuell89'
-            title="Twitter"><FaTwitter size={24}/></a>
-          </div>
-          <div className="item"><a
             href='https://github.com/cmuell89'
             title="GitHub"><FaGithub size={24}/></a>
           </div>

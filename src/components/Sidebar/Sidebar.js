@@ -24,7 +24,7 @@ const StyledNav = styled.nav`
 
 const StyledIcon = styled.div`
   position: fixed;
-  margin-top: 180px;
+  margin-top: 200px;
 `;
 
 
