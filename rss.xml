@@ -1,37 +1,162 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Dylan La Com' RSS feed]]></title><description><![CDATA[Carl Mueller's website]]></description><link>https://www.carl-mueller.com</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 07 Dec 2020 00:18:27 GMT</lastBuildDate><item><title><![CDATA[Augmented Reality for Constrained Learning from Demonstration]]></title><link>https://www.carl-mueller.com/research/arc-lfd/</link><guid isPermaLink="false">https://www.carl-mueller.com/research/arc-lfd/</guid><pubDate>Fri, 25 Sep 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;We recently submitted a paper to ICRA 2021 that utilizes Augmented Reality to visualize models learned through user demonstration as well as an interface to add/remove/edit constraints on those models.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Dylan La Com' RSS feed]]></title><description><![CDATA[Carl Mueller's website]]></description><link>https://www.carl-mueller.com</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 25 Jan 2021 19:43:04 GMT</lastBuildDate><item><title><![CDATA[Talking Robotics Seminar Presentation]]></title><link>https://www.carl-mueller.com/research/talking-robotics/</link><guid isPermaLink="false">https://www.carl-mueller.com/research/talking-robotics/</guid><pubDate>Mon, 25 Jan 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;I recently gave a virtual seminar presentation on the state of my thesis work. This includes prior work on CC-LfD and ARC-LfD, my current work on constrained motion planning, and future human-subjects studies coming down the pipeline. &lt;/p&gt;
+&lt;p&gt;The seminar series, called &lt;a href=&quot;https://talking-robotics.github.io/&quot;&gt;Talking Robotics&lt;/a&gt;, is hosted by a group of students and post-docs, one of whom I met at the AAAI Doctoral Consortium. It is a great opportunity for current students, post-docs, and faculty to continue to advertise their research and network with their peers, especially in light of the COVID19 pandemic.&lt;/p&gt;
+&lt;p&gt;The landing page for my presentation can be found &lt;a href=&quot;https://talking-robotics.github.io/session_details/carl.html&quot;&gt;HERE&lt;/a&gt;, but be sure to explore all the other great talks on the website!&lt;/p&gt;
+&lt;p&gt;You can also view my presentation directly below:&lt;/p&gt;
+&lt;p&gt;&lt;div class=&quot;gatsby-resp-iframe-wrapper&quot; style=&quot;padding-bottom: 50%; position: relative; height: 0; overflow: hidden; margin-bottom: 1.0725rem&quot; &gt; &lt;div&gt;&lt;iframe src=&quot;https://www.youtube.com/embed/X0H7rszq-QA&quot; style=&quot; position: absolute; top: 0; left: 0; width: 100%; height: 100%; &quot;&gt;&lt;/iframe&gt;&lt;/div&gt; &lt;/div&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Augmented Reality for Constrained Learning from Demonstration]]></title><link>https://www.carl-mueller.com/research/arc-lfd/</link><guid isPermaLink="false">https://www.carl-mueller.com/research/arc-lfd/</guid><pubDate>Fri, 25 Sep 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;We recently submitted a paper to ICRA 2021 that utilizes Augmented Reality to visualize models learned through user demonstration as well as an interface to add/remove/edit constraints on those models.&lt;/p&gt;
+&lt;h2&gt;Overview&lt;/h2&gt;
+&lt;p&gt;ARC-LfD is an augmented reality interfaces that enables users to visualize a learned keyframe model from CC-LfD. It accomplishes this through visualizations of sampled keyframes that the robot will follow as waypoints, as well as visualizations of constraints assigned to keyframes. In the below image, you can see sequences of expected robot behavior through keyframes, as well as visualizations of applied constraints.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 350px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/77ceaa3ea4fa412c6e4c2875b3f5bfd8/c30e1/ar_viz.png&quot;
+    href=&quot;/static/8ceab612f4922612b99dae5fb0f41598/e2c35/ar_viz_fig.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 55.68181818181818%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABYlAAAWJQFJUiTwAAADMklEQVQozx2SW0zTBxjF/7skLIuicpWGS5FAS5G2QIFgJ22FmU2UCi0XaaVDlNkGylAY11qww3ZAIRmWWZVSLoLg3HBFJG7LfDCxGbu4PfCwLc5kL1uWZcle9/Dbf3s4+b5zvuRLzskRaqpryDtYzAF5MdkKDWlSFS0il2UqMRhqOSArQXOoEr1OR2xsLClJidSmJCHZE0t5WhrVr1dyuLiIJPHWamtGONvWSVHZcd5uLkUuyyAuMwttfCq7Y5LJ2StFvyedLLmGbFkugiCQnJBKmbinylTIJGpMWj0dXRYM2kKaG8wI5lPtOM+/QVNdAUaThTankxRFOrlaNc53+mgo0VF/oo7w1RFcjQbOFlfhtDoYtHfQU3uOixVW7ty4xJSnh9kPvAgFReXoNbvQlmYx3FvP9ckhIisT3FvzE5ofwdhi4uaNCf75fpm/P3fzdN5NNHSZH1ZHeTL7LpujDj6ZGWXGN8RaaFp8WHiI5H0vMuxQc3u6j63FcX7/apOfv7jH1tIYy8EBHm8tEZ4aYnm8jZUxG+uTLayOnSHsPY+39wyDF+x4+9pZmwsgjPv8ONssLE5fYHbaL1oLEFme58foAssBH/7+dhYCk7zvcdNpfYuWYybeLDNQUlhCY+NpUb9CZC4kWh7h7tIcwsjAIKYTZgx6E8YaC5fdNsLBCtxd6RTJ4hFe2odckY8yX0VFnJLO3JPo0gwkpudxqtXOtGeK7aUwPz14yDdb9xE6HD3Um5q4PnORR/dbGe5WsX+vgCo/h0ZbJUq1mgJlAbkKBYoYKVWSI9i0teiMr1HX2cAtMTeP3cGs6xLRzY8Q7t7y8vSxm0mXFnWOhP3lx3jhlTgO5klp6jby4TUfmytLyPJyyY5JpzrbjP2omYnu03y5EWT7YRiXs5U6TSmLwy6EjwNVHC99+f+O/YeiysNk5cvFrBIJ+ix8dvsmK8EZJBkZSF9NwXHUytXBXp5FV/klekec6zz7eoOIv4eF9hYEV4eZhiPx7NqdSEJcAjpNJv39RqbesxKZOsej0BCfXruC1zNAcKALT9lJwr19PP92nV+3N/jtuwf8ufOEP3a2+ev5Dv8CfiThDYvkolcAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 55.68181818181818%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAIFAQT/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAv/aAAwDAQACEAMQAAAB50yhNIUg/8QAGxAAAgMAAwAAAAAAAAAAAAAAAQIAAxMRIiP/2gAIAQEAAQUCCJx4wVCJ2vCjfNDP/8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQMBAT8BJ//EABURAQEAAAAAAAAAAAAAAAAAABAR/9oACAECAQE/Aaf/xAAcEAADAAEFAAAAAAAAAAAAAAAAARECITFCUXH/2gAIAQEABj8CubnhyZsZXUT7LD//xAAbEAACAwADAAAAAAAAAAAAAAAAAREhMVFh0f/aAAgBAQABPyHUSa5ENCSZA6vR0FklTWlm0ss//9oADAMBAAIAAwAAABDD/wD/xAAWEQEBAQAAAAAAAAAAAAAAAAAAARH/2gAIAQMBAT8Qhkf/xAAWEQADAAAAAAAAAAAAAAAAAAABEFH/2gAIAQIBAT8QFL//xAAeEAEBAAICAgMAAAAAAAAAAAABEQAxIUFRYXGBkf/aAAgBAQABPxB6VZwIIdHn6y6SwtTb4dZeg9zvO/eC5qQ0WYWGtp5sCfGWK2xFL+Z//9k=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;ar viz&quot;
-        title=&quot;ar viz&quot;
-        src=&quot;/static/77ceaa3ea4fa412c6e4c2875b3f5bfd8/13ae7/ar_viz.png&quot;
-        srcset=&quot;/static/77ceaa3ea4fa412c6e4c2875b3f5bfd8/942f4/ar_viz.png 88w,
-/static/77ceaa3ea4fa412c6e4c2875b3f5bfd8/4edbd/ar_viz.png 175w,
-/static/77ceaa3ea4fa412c6e4c2875b3f5bfd8/13ae7/ar_viz.png 350w,
-/static/77ceaa3ea4fa412c6e4c2875b3f5bfd8/52211/ar_viz.png 525w,
-/static/77ceaa3ea4fa412c6e4c2875b3f5bfd8/8c557/ar_viz.png 700w,
-/static/77ceaa3ea4fa412c6e4c2875b3f5bfd8/c30e1/ar_viz.png 2399w&quot;
+        alt=&quot;ar viz fig&quot;
+        title=&quot;ar viz fig&quot;
+        src=&quot;/static/8ceab612f4922612b99dae5fb0f41598/70ebb/ar_viz_fig.jpg&quot;
+        srcset=&quot;/static/8ceab612f4922612b99dae5fb0f41598/f71f9/ar_viz_fig.jpg 88w,
+/static/8ceab612f4922612b99dae5fb0f41598/e52aa/ar_viz_fig.jpg 175w,
+/static/8ceab612f4922612b99dae5fb0f41598/70ebb/ar_viz_fig.jpg 350w,
+/static/8ceab612f4922612b99dae5fb0f41598/7349d/ar_viz_fig.jpg 525w,
+/static/8ceab612f4922612b99dae5fb0f41598/29d31/ar_viz_fig.jpg 700w,
+/static/8ceab612f4922612b99dae5fb0f41598/e2c35/ar_viz_fig.jpg 2399w&quot;
         sizes=&quot;(max-width: 350px) 100vw, 350px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;figcaption&gt;AR visualizations of expected robot skill execution and various constraints.&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;A more detailed summary is coming soon!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[2020 AAAI, HRI Pioneers, COVID19]]></title><link>https://www.carl-mueller.com/posts/update-sep2020/</link><guid isPermaLink="false">https://www.carl-mueller.com/posts/update-sep2020/</guid><pubDate>Tue, 01 Sep 2020 22:00:00 GMT</pubDate><content:encoded>&lt;p&gt;This past February, I had the privliege to attend 2020 AAAI Conference in New York City. I was selected into the Doctoral Consortium, which serves as a workshop for promising PhD students in the greater AI community. I had a wonderful time meeting people from all walks of life and enjoying the world’s most cosmopolitan city. I got to sit in on all sorts of interesting talks on all sorts of topics in AI and Machine Learning. I even sawy Geoffrey Hinton, Yann LeCunn, and Yoshio Bengio recieve their Turing Awards. Pretty amazing!&lt;/p&gt;
+&lt;p&gt;ARC-LfD also enables users to edit constraints through menus that allow for constraint specific parameter editing. Users can also add and remove the application of constraints by selecting an end-effector keyframe.&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 350px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/ef2a9d5f376660bbcc13aebc12da35e7/b0c0e/ar_interaction_fig.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 82.95454545454545%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAARABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAQFAv/EABYBAQEBAAAAAAAAAAAAAAAAAAABAv/aAAwDAQACEAMQAAABnpirMlpCWgXkXP8A/8QAHBAAAQQDAQAAAAAAAAAAAAAAAQACAxESEyEy/9oACAEBAAEFAtz8Jber6JjiZyH7rLUfYX//xAAVEQEBAAAAAAAAAAAAAAAAAAAQUf/aAAgBAwEBPwEh/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAgEBPwEf/8QAHhAAAQEJAAAAAAAAAAAAAAAAADEBAhAgITKRweH/2gAIAQEABj8CuabhwWgjuJP/xAAgEAEAAgECBwAAAAAAAAAAAAABADERIUEQUWFxkbHR/9oACAEBAAE/Ieot4tsTR8IoRmnnPtYRIYU0xpFIlkVlPY9cH//aAAwDAQACAAMAAAAQBOhB/8QAGBEAAgMAAAAAAAAAAAAAAAAAAAEQESH/2gAIAQMBAT8QsyDP/8QAFxEAAwEAAAAAAAAAAAAAAAAAAAEREP/aAAgBAgEBPxBqke//xAAfEAEAAgIBBQEAAAAAAAAAAAABABEhMWFRcYGRsfD/2gAIAQEAAT8QGxe2ViRa0kBLT7cxNoUKgwBtLVJTzxETjqhdC0j2Zo1zN/n5PxuiaPef/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;ar interaction fig&quot;
+        title=&quot;ar interaction fig&quot;
+        src=&quot;/static/ef2a9d5f376660bbcc13aebc12da35e7/70ebb/ar_interaction_fig.jpg&quot;
+        srcset=&quot;/static/ef2a9d5f376660bbcc13aebc12da35e7/f71f9/ar_interaction_fig.jpg 88w,
+/static/ef2a9d5f376660bbcc13aebc12da35e7/e52aa/ar_interaction_fig.jpg 175w,
+/static/ef2a9d5f376660bbcc13aebc12da35e7/70ebb/ar_interaction_fig.jpg 350w,
+/static/ef2a9d5f376660bbcc13aebc12da35e7/7349d/ar_interaction_fig.jpg 525w,
+/static/ef2a9d5f376660bbcc13aebc12da35e7/29d31/ar_interaction_fig.jpg 700w,
+/static/ef2a9d5f376660bbcc13aebc12da35e7/b0c0e/ar_interaction_fig.jpg 1622w&quot;
+        sizes=&quot;(max-width: 350px) 100vw, 350px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;figcaption&gt;Editing menus of ARC-LfD to reparameterize constraints applied to the CC-LfD model&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;Below is a video describing the ARC-LfD system:&lt;/p&gt;
+&lt;p&gt;&lt;div class=&quot;gatsby-resp-iframe-wrapper&quot; style=&quot;padding-bottom: 50%; position: relative; height: 0; overflow: hidden; margin-bottom: 1.0725rem&quot; &gt; &lt;div&gt;&lt;iframe src=&quot;https://www.youtube.com/embed/X0H7rszq-QA&quot; style=&quot; position: absolute; top: 0; left: 0; width: 100%; height: 100%; &quot;&gt;&lt;/iframe&gt;&lt;/div&gt; &lt;/div&gt;&lt;/p&gt;
+&lt;h2&gt;Interaction Flow&lt;/h2&gt;
+&lt;p&gt;The use interaction flow for the ARC-LfD:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Recording of demonstration trajectories and constraints&lt;/li&gt;
+&lt;li&gt;Visualization of the learned model&lt;/li&gt;
+&lt;li&gt;Constraint editing/application&lt;/li&gt;
+&lt;li&gt;Relearning of Constrained Keyframe Model via CC-LfD algorithm&lt;/li&gt;
+&lt;li&gt;Model acceptance and resulting skill execution&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The iterative aspect is represented by the looping of steps 2, 3, and 4.&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 350px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/5e3618a3e05d8aef0f7cc66302a2ff1c/0d333/ARC-LfD_Editing_Flowchart.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 95.45454545454545%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAATABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAIBBf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/9oADAMBAAIQAxAAAAHsKgsJgUD/xAAYEAADAQEAAAAAAAAAAAAAAAAAAREQIf/aAAgBAQABBQJ6zpSIiz//xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAEDAQE/AR//xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAECAQE/AR//xAAVEAEBAAAAAAAAAAAAAAAAAAAgIf/aAAgBAQAGPwIU/wD/xAAbEAADAQEAAwAAAAAAAAAAAAAAAREhMWFxof/aAAgBAQABPyHU2DbS78KaQoekex4EUyES4f/aAAwDAQACAAMAAAAQk9DD/8QAFhEAAwAAAAAAAAAAAAAAAAAAABAR/9oACAEDAQE/ECP/xAAWEQEBAQAAAAAAAAAAAAAAAAARABD/2gAIAQIBAT8QI3//xAAcEAEAAgMBAQEAAAAAAAAAAAABABEhMVFBYZH/2gAIAQEAAT8Qz0VM2QvmhtdvyBMIkWAW3VdlAuPK7AeCLKrL8iQRqBKFByf/2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;ARC LfD Editing Flowchart&quot;
+        title=&quot;ARC LfD Editing Flowchart&quot;
+        src=&quot;/static/5e3618a3e05d8aef0f7cc66302a2ff1c/70ebb/ARC-LfD_Editing_Flowchart.jpg&quot;
+        srcset=&quot;/static/5e3618a3e05d8aef0f7cc66302a2ff1c/f71f9/ARC-LfD_Editing_Flowchart.jpg 88w,
+/static/5e3618a3e05d8aef0f7cc66302a2ff1c/e52aa/ARC-LfD_Editing_Flowchart.jpg 175w,
+/static/5e3618a3e05d8aef0f7cc66302a2ff1c/70ebb/ARC-LfD_Editing_Flowchart.jpg 350w,
+/static/5e3618a3e05d8aef0f7cc66302a2ff1c/7349d/ARC-LfD_Editing_Flowchart.jpg 525w,
+/static/5e3618a3e05d8aef0f7cc66302a2ff1c/29d31/ARC-LfD_Editing_Flowchart.jpg 700w,
+/static/5e3618a3e05d8aef0f7cc66302a2ff1c/0d333/ARC-LfD_Editing_Flowchart.jpg 1175w&quot;
+        sizes=&quot;(max-width: 350px) 100vw, 350px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;figcaption&gt;The iterative interaction and model relearning flow diagram of ARC-LfD.&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h2&gt;Architecture&lt;/h2&gt;
+&lt;p&gt;The ARC-LfD architecture consists of two major subsystems:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Augmented Reality Subsystem&lt;/li&gt;
+&lt;li&gt;CC-LfD Subsystem&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;These two subsystems communicate via the pub/sub architecture of the Robot Operating System (ROS). Any time the user updates constraints on the mode, the AR Subsystem sends those updates to the CC-LfD subsystem which produces a new model, and sends a representation back to the AR Subsystem to update the visualizations.&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 350px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/e060700bb12ff3d76112dd9e51f5fffc/dbfa0/ARCLfD_Architecture.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 69.31818181818181%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAOABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAIDBf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAe1FSag//8QAGRABAAMBAQAAAAAAAAAAAAAAAQARMSEi/9oACAEBAAEFAmpyGIX5hn//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAWEAADAAAAAAAAAAAAAAAAAAAQIDH/2gAIAQEABj8CSD//xAAZEAEAAwEBAAAAAAAAAAAAAAABABEhkaH/2gAIAQEAAT8huYut7FYmxWylY+4AxP/aAAwDAQACAAMAAAAQ8M//xAAWEQEBAQAAAAAAAAAAAAAAAAABAFH/2gAIAQMBAT8QDZv/xAAVEQEBAAAAAAAAAAAAAAAAAAAQIf/aAAgBAgEBPxCn/8QAGhABAQEAAwEAAAAAAAAAAAAAAREAITFBUf/aAAgBAQABPxBAKWdLMESA8VOcbiPHmkRfp0tAvSucADD5d//Z&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;ARCLfD Architecture&quot;
+        title=&quot;ARCLfD Architecture&quot;
+        src=&quot;/static/e060700bb12ff3d76112dd9e51f5fffc/70ebb/ARCLfD_Architecture.jpg&quot;
+        srcset=&quot;/static/e060700bb12ff3d76112dd9e51f5fffc/f71f9/ARCLfD_Architecture.jpg 88w,
+/static/e060700bb12ff3d76112dd9e51f5fffc/e52aa/ARCLfD_Architecture.jpg 175w,
+/static/e060700bb12ff3d76112dd9e51f5fffc/70ebb/ARCLfD_Architecture.jpg 350w,
+/static/e060700bb12ff3d76112dd9e51f5fffc/7349d/ARCLfD_Architecture.jpg 525w,
+/static/e060700bb12ff3d76112dd9e51f5fffc/29d31/ARCLfD_Architecture.jpg 700w,
+/static/e060700bb12ff3d76112dd9e51f5fffc/dbfa0/ARCLfD_Architecture.jpg 2467w&quot;
+        sizes=&quot;(max-width: 350px) 100vw, 350px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;figcaption&gt;The iterative interaction and model relearning flow diagram of ARC-LfD.&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h2&gt;Future Work&lt;/h2&gt;
+&lt;p&gt;Future work will consist of running human-subjects studies to test the efficacy of this system both objectively: the skill success percentage compared to traditional constraint application, and subjectively: do users display a preference using this interface?&lt;/p&gt;
+&lt;h2&gt;References&lt;/h2&gt;
+&lt;p&gt;&lt;bibliography&gt;&lt;bibliography&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[2020 AAAI, HRI Pioneers, COVID19]]></title><link>https://www.carl-mueller.com/posts/update-sep2020/</link><guid isPermaLink="false">https://www.carl-mueller.com/posts/update-sep2020/</guid><pubDate>Tue, 01 Sep 2020 22:00:00 GMT</pubDate><content:encoded>&lt;p&gt;This past February, I had the privliege to attend 2020 AAAI Conference in New York City. I was selected into the Doctoral Consortium, which serves as a workshop for promising PhD students in the greater AI community. I had a wonderful time meeting people from all walks of life and enjoying the world’s most cosmopolitan city. I got to sit in on all sorts of interesting talks on all sorts of topics in AI and Machine Learning. I even sawy Geoffrey Hinton, Yann LeCunn, and Yoshio Bengio recieve their Turing Awards. Pretty amazing!&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 350px; &quot;
@@ -628,7 +753,7 @@
   &lt;/a&gt;
     &lt;/span&gt;&lt;figcaption&gt;An example of an alignment of two sequences using Dynamic Time Warping.&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;h4&gt;Clustering and Rejection Sampling Modeling&lt;/h4&gt;
-&lt;p&gt;The bulk of the algorithm’s novelty lies in the way it facilities the learning of keyframes. Once an alignment has been established, sequential clusters of aligned points serve as the basis for keyframe models. Given the set of annotated constraints, each cluster&lt;/p&gt;
+&lt;p&gt;The bulk of the algorithm’s novelty lies in the way it facilities the learning of keyframes. Once an alignment is completed, sequential clusters of aligned points serve as the basis for keyframe models. Each cluster of points are fitted with a statistical distribution (in this case Kernel Density Estimation). By modeling waypoints as distributions, rather than single points, we can integrate constraints by performing rejection sampling. Each inintial keyframe is sampled for collision free and constraint compliant points. After N number of such points are sampled, the distributions are refitted to this new sample set. This effectively shifts the keyframe distributions to become more representative of constraint-compliant collision-free configuration space.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 350px; &quot;
@@ -692,6 +817,7 @@
   &lt;/a&gt;
     &lt;/span&gt;&lt;figcaption&gt;Rejection Sampling to relearn constrained distributions.&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;h4&gt;Culling&lt;/h4&gt;
+&lt;p&gt;Once a dense sequence of keyframes is produce, the intermediate keyframe density is reduced to generate a more sparse model. It is important to note that keyframes representing when the set of applied constraints change are kept. &lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 350px; &quot;
@@ -724,6 +850,7 @@
   &lt;/a&gt;
     &lt;/span&gt;&lt;figcaption&gt;Sparsification step that maintains constraint boundary keyframes.&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;h4&gt;Reconstruct Skill&lt;/h4&gt;
+&lt;p&gt;Finally a skill is reconstructed by sampling in-sequence constraint-compliant waypoints from each keyframe distribution. Motion planning methods are then used to traverse from waypoint to waypoint.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 350px; &quot;
@@ -754,8 +881,9 @@
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;figcaption&gt;Exeuction of a constrained skill&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h2&gt;Limitations&lt;/h2&gt;
-&lt;h2&gt;Future Work&lt;/h2&gt;
+&lt;h2&gt;Limitations &amp;#x26; Future Work&lt;/h2&gt;
+&lt;p&gt;A limitation of CC-LfD is it’s reliance on unconstrained motion planning. If an environment change introducing an intermediate keyframe occlusion, the motion planners cannot rely on the density of sequential keyframes to maintain constraint adherance. Our guess as to why constraint copmliance does occur in motion planning in the first place is because the density of keyframes effectively restricts the space of feasible motion plans to likely sit within the same space as constraint-compliant motion plans. This is also because the demonstration data to produce these keyframes generally show constraint-compliant paths. &lt;/p&gt;
+&lt;p&gt;However, with occluded keyframes, the motion planning algorithms need to diverge away from the initial demonstration trajectory distributions in order to produce a collision-free motion plan. This divergence suddenly exposes the constaint naievete of unconstrained motion planners. Future work will look into integrating constrained motion planners into CC-LfD.&lt;/p&gt;
 &lt;h2&gt;References&lt;/h2&gt;
 &lt;p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Robust Robot Learning from Demonstration and Skill Repair Using Conceptual Constraints&lt;/b&gt; &lt;br&gt;Mueller, C., Venicx, J. and Hayes, B., 2018. 2018 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), pp. 6029--6036. &lt;/li&gt;&lt;li&gt;&lt;b&gt;Recent advances in robot learning from demonstration&lt;/b&gt; &lt;br&gt;Ravichandar, H., Polydoros, A.S., Chernova, S. and Billard, A., 2020. Annual Review of Control, Robotics, and Autonomous Systems, Vol 3. Annual Reviews.&lt;/li&gt;&lt;li&gt;&lt;b&gt;Keyframe-based learning from demonstration&lt;/b&gt; &lt;br&gt;Akgun, B., Cakmak, M., Jiang, K. and Thomaz, A.L., 2012. International Journal of Social Robotics, Vol 4(4), pp. 343--355. Springer.&lt;/li&gt;&lt;li&gt;&lt;b&gt;Robust Robot Learning from Demonstration and Skill Repair Using Conceptual Constraints&lt;/b&gt; &lt;br&gt;Mueller, C., Venicx, J. and Hayes, B., 2018. 2018 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), pp. 6029--6036. &lt;/li&gt;&lt;/ol&gt;&lt;/bibliography&gt;&lt;/p&gt;
 &lt;h5&gt;Footnotes&lt;/h5&gt;
